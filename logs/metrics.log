@@ -1,0 +1,10 @@
+[2026-04-05 06:46:33] INFO metrics: Checkpoint 0: computing ROUGE over 150 examples ...
+[2026-04-05 06:46:36] INFO metrics: Checkpoint 0: computing BERTScore ...
+[2026-04-05 06:46:49] INFO metrics: Checkpoint 0 Alpaca metrics:
+[2026-04-05 06:46:49] INFO metrics:   ROUGE-1:          0.4123
+[2026-04-05 06:46:49] INFO metrics:   ROUGE-2:          0.1982
+[2026-04-05 06:46:49] INFO metrics:   ROUGE-L:          0.2788
+[2026-04-05 06:46:49] INFO metrics:   BERTScore F1:     0.8229
+[2026-04-05 06:46:49] INFO metrics:   Avg length:       198.6 words
+[2026-04-05 06:46:49] INFO metrics:   Completion rate:  0.940
+[2026-04-05 06:46:49] INFO metrics: Saved combined metrics summary → results/metrics_summary.csv

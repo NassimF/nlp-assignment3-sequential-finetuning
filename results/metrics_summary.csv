@@ -1,0 +1,2 @@
+checkpoint,n_total,rouge1,rouge2,rougeL,bertscore_f1,avg_output_length,task_completion_rate
+0,150,0.41225505720649425,0.1981657128163908,0.2788419873937476,0.822912335395813,198.58,0.94

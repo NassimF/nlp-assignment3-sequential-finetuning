@@ -69,12 +69,21 @@ def call_judge(client, judge_model: str, system_prompt: str,
 
 
 def parse_judge_response(text: str) -> dict | None:
-    """Extract and parse the JSON object from the judge's response."""
+    """Extract and parse the JSON object from the judge's response.
+
+    Handles:
+    - Leading/trailing whitespace and newlines (Qwen3-235B thinking model
+      prepends \\n\\n before JSON after internal chain-of-thought)
+    - Markdown code fences (```json ... ```)
+    - Any non-JSON preamble before the opening brace
+    """
+    if not text:
+        return None
     text = text.strip()
     # Strip markdown fences if present
     text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.MULTILINE)
     text = re.sub(r"\s*```$", "", text, flags=re.MULTILINE)
-    # Find JSON object
+    # Find the first { and extract from there (handles leading whitespace/text)
     match = re.search(r"\{.*\}", text, flags=re.DOTALL)
     if match:
         try:

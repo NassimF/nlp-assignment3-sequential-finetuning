@@ -80,21 +80,30 @@ We evaluate three checkpoints: **ckpt0** (untuned base), **ckpt1** (after Stage 
 
 ### 2.1 Three-Checkpoint Comparison
 
-<!-- Table 4.1 from assignment requirements -->
+| Checkpoint | Judge Win Rate vs ckpt0 | ROUGE-1 | ROUGE-2 | ROUGE-L | BERTScore F1 | Avg Length | Completion | JSON Validity | Schema | Exact Match | Field F1 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0: Base (untuned) | — | 0.412 | 0.198 | 0.279 | 0.823 | 198.6 | 94.0% | 48.0% | 45.0% | 11.0% | 0.128 |
+| 1: Stage 1 (Alpaca) | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| 2: Stage 2 (Teacher JSON) | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
 
-| Checkpoint | Alpaca Judge Win Rate | ROUGE-L | BERTScore | JSON Validity | Schema Compliance | Exact Match |
-|---|---|---|---|---|---|---|
-| 0: Untuned base | — | — | — | — | — | — |
-| 1: After Stage 1 (Alpaca) | — | — | — | — | — | — |
-| 2: After Stage 2 (Teacher JSON) | — | — | — | — | — | — |
+*Table 2.1: Three-checkpoint comparison. Ckpt0 results measured on 150 Alpaca eval + 100 JSON eval prompts.*
 
 ### 2.2 Alpaca Evaluation Results
 
-_To be filled after Stage 5._
+**Checkpoint 0 — Baseline:** The untuned Phi-3.5 Mini Instruct already produces coherent responses on Alpaca prompts: 94% task completion rate, BERTScore F1 of 0.823, and average response length of 199 words. ROUGE-L of 0.279 reflects that the base model responds correctly but with different wording than the Alpaca reference answers — expected for a general instruction-following model not yet tuned to the Alpaca distribution.
+
+*Ckpt1 and Ckpt2 results to be filled after training completes.*
 
 ### 2.3 JSON Structured Output Evaluation
 
-_To be filled after Stage 5._
+**Checkpoint 0 — Baseline:** The base model achieves 48% JSON validity, meaning roughly half of responses can be parsed by `json.loads()`. The dominant failure modes are:
+- **Trailing content** (29 examples): model appends explanation text after the JSON object
+- **Invalid key format** (14 examples): uses single-quoted Python dict syntax instead of JSON double quotes
+- **Truncated/malformed** (8 examples): hits max_tokens mid-object or produces unbalanced braces
+
+Schema compliance (45%) and exact match (11%) are unsurprisingly low — the base model has no specific training signal for structured output tasks. Field F1 of 0.128 confirms it rarely extracts the right key-value pairs even when it produces valid JSON.
+
+*Ckpt1 and Ckpt2 results to be filled after training completes.*
 
 ### 2.4 Forgetting Analysis
 
@@ -199,10 +208,175 @@ The `structured_output_validity` dimension was given a neutral default of 3 for 
 
 ## Appendix: Full Prompt Templates
 
-### A. Teacher-Generation Prompts (5 task types)
+### A. Teacher-Generation System Prompt
 
-_See prompts/teacher_generation.yaml — filled in Stage 2._
+```
+You are an expert dataset creator for training language models on structured-output tasks.
+Your job is to generate high-quality, realistic instruction-following training examples.
+Always respond with ONLY a raw JSON object — no markdown, no code fences, no extra text.
+The response must be directly parseable by json.loads().
+```
 
-### B. Judge Evaluation Prompt
+### A.1 JSON Extraction Prompt
 
-_See prompts/judge_evaluation.yaml — filled in Stage 5._
+```
+Create a training example where a language model must extract structured information
+from unstructured text and return it as a JSON object.
+
+Domain: {domain}
+
+Return ONLY a JSON object with exactly these three fields:
+{
+  "instruction": "A clear instruction specifying exactly which fields to extract and return as JSON. Name the fields explicitly.",
+  "input": "A realistic {domain} passage (4-8 sentences) that naturally embeds the information to extract.",
+  "output": "A valid JSON object containing the extracted fields and their values."
+}
+
+Requirements:
+- instruction must name the exact JSON keys to extract
+- input must be natural prose, not already structured
+- output must be valid JSON parseable by json.loads()
+- output keys must match what the instruction requested
+```
+
+Domains rotated (15 values): medical clinical notes, invoice/billing, resume/CV, business news, e-commerce listing, customer support email, real estate listing, scientific abstract, restaurant review, shipping record, legal contract, hotel booking, academic transcript, police report, nutritional label.
+
+### A.2 Schema-Constrained Generation Prompt
+
+```
+Create a training example where a language model must generate a JSON object
+that strictly conforms to a given schema.
+
+Domain: {domain}
+
+Return ONLY a JSON object with exactly these three fields:
+{
+  "instruction": "Define a JSON schema (field names, types, and constraints) and ask the model to generate a valid conforming JSON object. Include 4-7 required fields with mixed types.",
+  "input": "Optional context or description that the generated JSON should reflect.",
+  "output": "A valid JSON object that fully conforms to the schema defined in the instruction."
+}
+```
+
+### A.3 Classification JSON Output Prompt
+
+```
+Create a training example where a language model must classify a piece of text
+and return the classification result as a structured JSON object.
+
+Classification type: {domain}
+
+Return ONLY a JSON object with exactly these three fields:
+{
+  "instruction": "Describe the classification task. List the exact allowed label values. Specify the output JSON schema.",
+  "input": "A realistic text sample that belongs to one of the defined categories.",
+  "output": "A valid JSON object containing the classification result."
+}
+
+Requirements:
+- instruction must define a fixed, closed set of allowed labels (3-6 labels)
+- output must include at least a label field and one additional field (confidence or reasoning)
+```
+
+### A.4 JSON Repair Prompt
+
+```
+Create a training example where a language model must repair malformed JSON
+and return the corrected, valid JSON.
+
+Error type to introduce: {error_type}
+
+Return ONLY a JSON object with exactly these three fields:
+{
+  "instruction": "Instruct the model to fix the malformed JSON provided in the input and return only the corrected valid JSON.",
+  "input": "A realistic JSON object that contains the specified error(s) with 4-8 fields.",
+  "output": "The corrected, valid JSON that fixes all errors in the input."
+}
+
+Requirements:
+- instruction should NOT describe the specific error — just ask to fix/repair the JSON
+- output must preserve the original data while fixing only the errors
+```
+
+Error types rotated (12 values): trailing comma, single quotes, missing comma, unquoted values, missing bracket, bare word keys, JS comments, Python None/True/False, extra text around JSON, duplicate keys, numbers as strings, mismatched brackets.
+
+### A.5 Tool-Call Generation Prompt
+
+```
+Create a training example where a language model must produce a JSON object
+representing a function/tool call based on a natural language user request.
+
+Tool domain: {domain}
+
+Return ONLY a JSON object with exactly these three fields:
+{
+  "instruction": "Define a function/tool with its name, description, and parameter schema. Ask the model to generate the JSON function call based on the user request.",
+  "input": "A natural language user request that maps to a specific call of the defined function.",
+  "output": "A valid JSON object: {\"name\": \"function_name\", \"arguments\": {...}}"
+}
+
+Requirements:
+- instruction must define 3-6 parameters of mixed types
+- output argument values must correctly reflect the user request
+```
+
+---
+
+### B. Judge Evaluation Prompt (v3)
+
+**System:**
+```
+You are an impartial judge evaluating the quality of two AI assistant responses to the same instruction.
+Your task is to score both responses on six dimensions and declare a winner.
+
+Scoring dimensions (all use a 1-5 integer scale):
+  instruction_following        - Did the response directly address what was asked?
+  correctness                  - Is the content factually accurate and logically sound?
+  clarity                      - Is the response clear, well-organized, and easy to understand?
+  completeness                 - Does the response cover all required aspects of the instruction?
+  structured_output_validity   - If the instruction requires JSON/structured output, is it valid?
+                                 Score 3 (neutral) if no structured output is required.
+  hallucination_risk           - How free is the response from fabricated or unsupported claims?
+                                 5 = no hallucinations detected. 1 = response freely fabricates facts.
+
+Winner determination rule:
+  - Compute avg_A = mean of all six scores for Response A
+  - Compute avg_B = mean of all six scores for Response B
+  - If avg_A > avg_B + 0.3, set winner to "A"
+  - If avg_B > avg_A + 0.3, set winner to "B"
+  - Otherwise set winner to "tie"
+
+Output ONLY a valid JSON object. No markdown fences, no text before or after the JSON.
+```
+
+**User:**
+```
+## Instruction
+{instruction}
+
+## Input context (may be empty)
+{input}
+
+## Response A (Checkpoint: {checkpoint_a})
+{response_a}
+
+## Response B (Checkpoint: {checkpoint_b})
+{response_b}
+
+Evaluate both responses on all six dimensions. Return a JSON object matching this schema exactly:
+{
+  "prompt_id": "{prompt_id}",
+  "checkpoint_a": "{checkpoint_a}",
+  "checkpoint_b": "{checkpoint_b}",
+  "response_a_scores": {
+    "instruction_following": <integer 1-5>,
+    "correctness": <integer 1-5>,
+    "clarity": <integer 1-5>,
+    "completeness": <integer 1-5>,
+    "structured_output_validity": <integer 1-5>,
+    "hallucination_risk": <integer 1-5>
+  },
+  "response_b_scores": { ... },
+  "winner": "A" or "B" or "tie",
+  "justification": "<one paragraph citing specific evidence from both responses>"
+}
+```

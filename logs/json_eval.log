@@ -1,0 +1,7 @@
+[2026-04-05 06:46:32] INFO json_eval: Checkpoint 0 JSON eval:
+[2026-04-05 06:46:32] INFO json_eval:   Validity:          0.480
+[2026-04-05 06:46:32] INFO json_eval:   Schema compliance: 0.450
+[2026-04-05 06:46:32] INFO json_eval:   Exact match:       0.110
+[2026-04-05 06:46:32] INFO json_eval:   Field F1 (mean):   0.128
+[2026-04-05 06:46:32] INFO json_eval:   Error taxonomy:    {'trailing_content': 29, 'none': 48, 'truncated_or_malformed': 8, 'invalid_key_format': 14, 'other_json_error': 1}
+[2026-04-05 06:46:32] INFO json_eval: Saved combined JSON eval summary → results/json_eval_summary.csv
