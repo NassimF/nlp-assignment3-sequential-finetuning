@@ -23,7 +23,17 @@ from pathlib import Path
 import torch
 from peft import PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from transformers.cache_utils import DynamicCache
 from tqdm import tqdm
+
+# Phi-3.5 Mini's custom modeling_phi3.py references several DynamicCache
+# attributes that were removed or renamed in newer transformers. Patch them back.
+if not hasattr(DynamicCache, "seen_tokens"):
+    DynamicCache.seen_tokens = property(lambda self: self.get_seq_length())
+if not hasattr(DynamicCache, "get_max_length"):
+    DynamicCache.get_max_length = lambda self: None
+if not hasattr(DynamicCache, "get_usable_length"):
+    DynamicCache.get_usable_length = lambda self, seq_len, layer_idx=0: self.get_seq_length(layer_idx)
 
 from src.utils import get_logger, load_config, log_gpu_info
 
