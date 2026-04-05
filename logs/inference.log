@@ -14,3 +14,7 @@
 [2026-04-05 05:44:23] INFO generate_responses: Checkpoint 0 — JSON eval
 [2026-04-05 06:46:30] INFO generate_responses:   Saved 100 responses → logs/responses_ckpt0_json.jsonl
 [2026-04-05 06:46:30] INFO generate_responses: All inference complete.
+[2026-04-05 15:51:02] INFO generate_responses: GPU 0: NVIDIA A100-SXM4-80GB, 81920 MiB, 81050 MiB, 535.230.02
+[2026-04-05 15:51:02] INFO generate_responses: GPU 1: NVIDIA A100-SXM4-80GB, 81920 MiB, 81050 MiB, 535.230.02
+[2026-04-05 15:51:02] INFO generate_responses: Loading model at checkpoint 1 ...
+[2026-04-05 15:51:20] INFO generate_responses: Checkpoint 1 — Alpaca eval
