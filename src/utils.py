@@ -124,3 +124,15 @@ def load_api_client() -> OpenAI:
         raise RuntimeError("UTSA_BASE_URL not set — check your .env file")
 
     return OpenAI(api_key=api_key, base_url=base_url)
+
+
+def get_model_name(config: dict, role: str) -> str:
+    """
+    Return the model name for 'teacher' or 'judge'.
+    UTSA_MODEL env var overrides config if set (useful for quick swaps).
+    """
+    load_dotenv()
+    env_override = os.environ.get("UTSA_MODEL")
+    if env_override and role in ("teacher", "judge"):
+        return env_override
+    return config["model"][role]

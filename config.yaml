@@ -8,8 +8,8 @@
 # ── Models ────────────────────────────────────────────────────────────────────
 model:
   student: "microsoft/Phi-3.5-mini-instruct"
-  teacher: "meta-llama/Meta-Llama-3.1-70B-Instruct"  # update to UTSA API model name if different
-  judge:   "meta-llama/Meta-Llama-3.1-70B-Instruct"  # same as teacher
+  teacher: "Llama-3.3-70B-Instruct-awq"   # UTSA API model name
+  judge:   "Llama-3.3-70B-Instruct-awq"   # same model
 
 # ── 4-bit Quantization (QLoRA) ────────────────────────────────────────────────
 quantization:
