@@ -164,7 +164,7 @@ def main():
         logging_steps=s1["logging_steps"],
         save_steps=s1["save_steps"],
         save_total_limit=2,
-        max_seq_length=s1["max_seq_length"],
+        max_length=s1["max_seq_length"],
         dataset_text_field="text",
         gradient_checkpointing=True,
         gradient_checkpointing_kwargs={"use_reentrant": False},
