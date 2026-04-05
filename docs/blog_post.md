@@ -60,10 +60,30 @@ _To be written after experiments are complete._
 
 ## 4. Prompt Engineering
 
-<!-- Design process for teacher-generation prompts and judge prompts.
-     Show evidence of iteration — what failed first and why. -->
+### 4.1 Teacher Model Selection and Iteration
 
-_To be written in Stage 5._
+The assignment recommended Llama 3.1 70B Instruct as the teacher model. The UTSA API offered a stronger alternative — **Qwen3-235B** (`qwen3-235b-a22b-thinking-2507-fp8`), a 235-billion-parameter reasoning model. We initially selected it expecting higher-quality training examples.
+
+**What failed:** Qwen3-235B is a *thinking* model that performs extended internal chain-of-thought reasoning before producing visible output. During testing, we observed that even with `max_tokens=4096`, the model exhausted its entire token budget on internal reasoning and returned `content=None` — no usable output at all. Disabling thinking mode via `chat_template_kwargs: {enable_thinking: false}` did not resolve the issue.
+
+**Decision:** We switched the teacher to **Llama 3.3 70B Instruct** (`llama-3.3-70b-instruct-awq`). This is a standard instruction-following model with no thinking overhead. In testing it produced well-structured, valid JSON on the first attempt across all five task types, with a 0% failure rate on four of five task types and 8.6% failure rate on the harder `json_repair` task.
+
+**Judge model:** Qwen3-235B was retained as the judge. For evaluation we make far fewer API calls (~300 pairwise comparisons vs ~1100 generation calls), so the slower thinking overhead is acceptable. The model's extended reasoning capability is an advantage for producing well-calibrated, nuanced scores across six evaluation dimensions.
+
+### 4.2 Teacher Prompt Design
+
+Each of the five task-type prompts follows a consistent structure:
+1. **Role framing** — system prompt establishes the teacher as a dataset creator
+2. **Task specification** — describes the structured-output task type
+3. **Domain injection** — a `{domain}` or `{error_type}` slot filled per call for diversity
+4. **Output schema** — explicit three-field schema (`instruction`, `input`, `output`) with requirements
+5. **Validity constraint** — explicitly states the `output` field must be parseable by `json.loads()`
+
+The domain/error-type rotation across 12–15 values per task type ensures lexical and semantic diversity in the training set. All prompts instruct the model to return raw JSON with no markdown fences.
+
+### 4.3 Judge Prompt Design
+
+_To be written in Stage 5 after judge prompt iteration._
 
 ---
 
