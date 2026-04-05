@@ -1,0 +1,36 @@
+# Judge-evaluation prompt templates for Stage 5 pairwise comparison.
+# Used by src/evaluation/judge_eval.py when calling Llama 3.1 70B Instruct
+# as the judge model.
+#
+# The judge must score both responses on 6 dimensions and declare a winner.
+# Response order is randomized per call to reduce position bias.
+#
+# Filled in Stage 5 — stub only below.
+
+pairwise_judge: |
+  [STUB — implemented in Stage 5]
+
+  Required output format (JSON):
+  {
+    "prompt_id": "<id>",
+    "checkpoint_a": "<checkpoint_name>",
+    "checkpoint_b": "<checkpoint_name>",
+    "response_a_scores": {
+      "instruction_following": <1-5>,
+      "correctness": <1-5>,
+      "clarity": <1-5>,
+      "completeness": <1-5>,
+      "structured_output_validity": <1-5>,
+      "hallucination_risk": <1-5>
+    },
+    "response_b_scores": {
+      "instruction_following": <1-5>,
+      "correctness": <1-5>,
+      "clarity": <1-5>,
+      "completeness": <1-5>,
+      "structured_output_validity": <1-5>,
+      "hallucination_risk": <1-5>
+    },
+    "winner": "A" | "B" | "tie",
+    "justification": "<one paragraph>"
+  }

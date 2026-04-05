@@ -1,0 +1,111 @@
+# =============================================================================
+# Assignment 3 — Sequential Instruction Tuning
+# Single source of truth for all hyperparameters, paths, and model names.
+# Do not hardcode any of these values in source files — always import via
+# src/utils.py:load_config().
+# =============================================================================
+
+# ── Models ────────────────────────────────────────────────────────────────────
+model:
+  student: "microsoft/Phi-3.5-mini-instruct"
+  teacher: "meta-llama/Meta-Llama-3.1-70B-Instruct"  # update to UTSA API model name if different
+  judge:   "meta-llama/Meta-Llama-3.1-70B-Instruct"  # same as teacher
+
+# ── 4-bit Quantization (QLoRA) ────────────────────────────────────────────────
+quantization:
+  load_in_4bit: true
+  bnb_4bit_compute_dtype: "bfloat16"   # A100 supports bfloat16 natively
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+
+# ── LoRA ──────────────────────────────────────────────────────────────────────
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+# ── Stage 1 Training — Alpaca ─────────────────────────────────────────────────
+stage1:
+  epochs: 3
+  learning_rate: 2.0e-5
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4        # effective batch size = 16
+  max_seq_length: 1024
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  save_steps: 500
+  logging_steps: 50
+  fp16: false
+  bf16: true                            # A100 supports bf16
+  checkpoint_dir: "checkpoints/stage1"
+  log_file: "logs/stage1_train.log"
+  loss_csv: "logs/stage1_loss.csv"
+
+# ── Stage 2 Training — Teacher-Generated JSON ─────────────────────────────────
+stage2:
+  epochs: 2
+  learning_rate: 2.0e-5
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  max_seq_length: 1024
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  save_steps: 200
+  logging_steps: 25
+  fp16: false
+  bf16: true
+  checkpoint_dir: "checkpoints/stage2"
+  log_file: "logs/stage2_train.log"
+  loss_csv: "logs/stage2_loss.csv"
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+data:
+  alpaca_dataset: "yahma/alpaca-cleaned"
+  alpaca_train_path: "data/alpaca_train.jsonl"
+  alpaca_eval_path:  "data/alpaca_eval.jsonl"
+  alpaca_eval_size: 150
+  json_train_path: "data/json_train.jsonl"
+  json_eval_path:  "data/json_eval.jsonl"
+  json_eval_size: 100               # 20 per task type
+  json_examples_per_type: 200       # 5 types × 200 = 1000 train examples
+  seed: 42
+
+# ── Inference ─────────────────────────────────────────────────────────────────
+inference:
+  max_new_tokens: 512
+  temperature: 0.1
+  do_sample: false
+
+# ── Evaluation ────────────────────────────────────────────────────────────────
+evaluation:
+  judge_max_new_tokens: 1024
+  judge_temperature: 0.0
+  results_dir: "results"
+  logs_dir: "logs"
+  judge_dimensions:
+    - "instruction_following"
+    - "correctness"
+    - "clarity"
+    - "completeness"
+    - "structured_output_validity"
+    - "hallucination_risk"
+
+# ── API (UTSA OpenAI-compatible endpoint) ─────────────────────────────────────
+api:
+  base_url_env: "UTSA_BASE_URL"     # env var name — value lives in .env
+  api_key_env:  "OPENAI_API_KEY"    # env var name — value lives in .env
+
+# ── Ablation ──────────────────────────────────────────────────────────────────
+ablation:
+  stage2_lr_sweep: [2.0e-5, 1.0e-5, 5.0e-6]
+  stage2_data_fractions: [1.0, 0.5, 0.25]

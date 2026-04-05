@@ -1,0 +1,28 @@
+# Teacher-model prompt templates for Stage 2 JSON dataset generation.
+# Each template is fed to Llama 3.1 70B Instruct to generate training examples
+# via imitation learning. All responses are validated for JSON correctness
+# before inclusion in the training set.
+#
+# Filled in Stage 2 — stubs only below.
+
+task_types:
+
+  json_extraction: |
+    [STUB — implemented in Stage 2]
+    Task: Extract structured information from unstructured text into a JSON object.
+
+  schema_constrained_generation: |
+    [STUB — implemented in Stage 2]
+    Task: Given a schema, produce a valid JSON object that conforms to it.
+
+  classification_json_output: |
+    [STUB — implemented in Stage 2]
+    Task: Classify the input and return the result as a JSON object with a fixed label set.
+
+  json_repair: |
+    [STUB — implemented in Stage 2]
+    Task: Fix malformed or invalid JSON into valid, well-formatted JSON.
+
+  tool_call_generation: |
+    [STUB — implemented in Stage 2]
+    Task: Produce a JSON object representing a function/tool call with named parameters.
