@@ -29,14 +29,9 @@ lora:
   r: 16
   lora_alpha: 32
   lora_dropout: 0.05
-  target_modules:
-    - "q_proj"
-    - "k_proj"
-    - "v_proj"
-    - "o_proj"
-    - "gate_proj"
-    - "up_proj"
-    - "down_proj"
+  # "all-linear" targets every linear layer — robust across model architectures.
+  # Phi-3.5 Mini uses qkv_proj/o_proj/gate_up_proj/down_proj (not q/k/v separately).
+  target_modules: "all-linear"
   bias: "none"
   task_type: "CAUSAL_LM"
 
