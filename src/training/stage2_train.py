@@ -87,12 +87,27 @@ def load_json_dataset(path: str, tokenizer) -> Dataset:
 def main():
     parser = argparse.ArgumentParser(description="Stage 2 QLoRA training on teacher-generated JSON data.")
     parser.add_argument("--config", default="config.yaml")
+    parser.add_argument("--lr", type=float, default=None,
+                        help="Override learning rate (ablation use)")
+    parser.add_argument("--data_fraction", type=float, default=1.0,
+                        help="Fraction of training data to use, e.g. 0.5 (ablation use)")
+    parser.add_argument("--output_suffix", default="",
+                        help="Suffix appended to checkpoint_dir and log paths for ablation runs")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
-    s2 = cfg["stage2"]
+    s2 = cfg["stage2"].copy()
     s1 = cfg["stage1"]
-    logger = get_logger("stage2_train", s2["log_file"])
+
+    # Apply CLI overrides for ablation
+    if args.lr is not None:
+        s2["learning_rate"] = args.lr
+    if args.output_suffix:
+        s2["checkpoint_dir"] = s2["checkpoint_dir"].rstrip("/") + args.output_suffix
+        s2["log_file"] = s2["log_file"].replace(".log", f"{args.output_suffix}.log")
+        s2["loss_csv"] = s2["loss_csv"].replace(".csv", f"{args.output_suffix}.csv")
+
+    logger = get_logger(f"stage2_train{args.output_suffix}", s2["log_file"])
 
     logger.info("=" * 60)
     logger.info("Stage 2 — QLoRA fine-tuning on teacher-generated JSON data")
@@ -113,6 +128,10 @@ def main():
     # ── Dataset ──────────────────────────────────────────────────────────────
     logger.info(f"Loading dataset: {cfg['data']['json_train_path']}")
     train_dataset = load_json_dataset(cfg["data"]["json_train_path"], tokenizer)
+    if args.data_fraction < 1.0:
+        n = max(1, int(len(train_dataset) * args.data_fraction))
+        train_dataset = train_dataset.select(range(n))
+        logger.info(f"Data fraction {args.data_fraction}: using {n}/{len(train_dataset)} examples")
     logger.info(f"Training examples: {len(train_dataset)}")
 
     # ── Quantization config ──────────────────────────────────────────────────

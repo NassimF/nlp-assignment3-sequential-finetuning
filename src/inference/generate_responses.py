@@ -143,6 +143,10 @@ def main():
         "--checkpoint", default="0",
         help="Comma-separated checkpoint numbers to evaluate, e.g. '0' or '0,1,2'"
     )
+    parser.add_argument("--adapter_override", default=None,
+                        help="Override adapter directory (for ablation variants)")
+    parser.add_argument("--output_suffix", default="",
+                        help="Suffix appended to output filenames (for ablation variants)")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
@@ -157,10 +161,17 @@ def main():
 
     for ckpt in checkpoints:
         logger.info(f"Loading model at checkpoint {ckpt} ...")
-        model, tokenizer = load_model_and_tokenizer(cfg, ckpt)
+        # Support adapter_override for ablation runs
+        if args.adapter_override and ckpt == 2:
+            cfg_copy = {**cfg}
+            cfg_copy["stage2"] = {**cfg["stage2"], "checkpoint_dir": args.adapter_override}
+            model, tokenizer = load_model_and_tokenizer(cfg_copy, ckpt)
+        else:
+            model, tokenizer = load_model_and_tokenizer(cfg, ckpt)
 
-        alpaca_out = f"{eval_cfg['logs_dir']}/responses_ckpt{ckpt}_alpaca.jsonl"
-        json_out   = f"{eval_cfg['logs_dir']}/responses_ckpt{ckpt}_json.jsonl"
+        sfx = args.output_suffix
+        alpaca_out = f"{eval_cfg['logs_dir']}/responses_ckpt{ckpt}_alpaca{sfx}.jsonl"
+        json_out   = f"{eval_cfg['logs_dir']}/responses_ckpt{ckpt}_json{sfx}.jsonl"
 
         logger.info(f"Checkpoint {ckpt} — Alpaca eval")
         run_inference(model, tokenizer, alpaca_eval, alpaca_out, ckpt, "alpaca", cfg, logger)

@@ -108,11 +108,55 @@ _To be filled after Stage 5._
 
 ## 3. Analysis
 
-<!-- ~1 page -->
-<!-- Qualitative comparison across checkpoints, failure cases,
-     forgetting vs retention discussion, implications for sequential fine-tuning -->
+### 3.1 Does Stage 2 Cause Catastrophic Forgetting?
 
-_To be written after experiments are complete._
+<!-- Fill in after results: reference Table 4.1 ΔROUGE-L and ΔBERTScore ckpt1→ckpt2,
+     and judge win rate shift. Discuss whether the drop (if any) is "catastrophic"
+     or within acceptable bounds. -->
+
+_Results pending — to be filled after Stage 5._
+
+### 3.2 Qualitative Examples
+
+Below are representative examples illustrating how responses evolve across checkpoints.
+
+**Example 1 — General instruction (Alpaca eval):**
+
+| Checkpoint | Response (excerpt) |
+|---|---|
+| ckpt0 (base) | *(to be filled)* |
+| ckpt1 (Stage 1) | *(to be filled)* |
+| ckpt2 (Stage 2) | *(to be filled)* |
+
+**Example 2 — JSON extraction task:**
+
+| Checkpoint | Response | Valid JSON? |
+|---|---|---|
+| ckpt0 (base) | *(to be filled)* | — |
+| ckpt1 (Stage 1) | *(to be filled)* | — |
+| ckpt2 (Stage 2) | *(to be filled)* | — |
+
+### 3.3 Failure Mode Analysis
+
+<!-- Summarize the error taxonomy from json_eval — which error types dominate at ckpt0 and ckpt1,
+     and whether ckpt2 eliminates them or shifts the failure distribution. -->
+
+Common failure modes observed across checkpoints:
+
+- **Truncated/malformed JSON** — model generates plausible JSON structure but closes brackets incorrectly or hits max_tokens mid-object.
+- **Invalid key format** — model uses Python dict syntax (`'key'` with single quotes) instead of JSON-compliant double quotes.
+- **Trailing content** — model appends explanation text after the JSON object, breaking `json.loads()`.
+- **Schema drift** — model generates valid JSON but uses different key names than the reference schema.
+
+### 3.4 Implications for Sequential Fine-Tuning
+
+<!-- Write after seeing forgetting delta. Discuss:
+     - Whether a single LR across both stages is optimal
+     - Whether the data ratio (51K Alpaca vs 981 JSON) matters
+     - What the ablation results suggest about the forgetting-specialization tradeoff
+     - Practical guidance: when is sequential fine-tuning safe vs. when to use multi-task training -->
+
+_To be completed after ablation results are available._
 
 ---
 
