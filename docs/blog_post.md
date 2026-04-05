@@ -7,12 +7,70 @@
 
 ## 1. Methodology
 
-<!-- ~1 page -->
-<!-- Cover: student model choice, Alpaca data source, imitation learning pipeline,
-     teacher model setup, training design for both stages, hardware (DGX A100-80GB),
-     judge model choice, evaluation protocol, hyperparameters table -->
+### 1.1 Overview
 
-_To be written after experiments are complete._
+We study sequential instruction tuning of a small language model across two stages:
+**Stage 1** fine-tunes on a large general-purpose instruction dataset to build broad instruction-following ability; **Stage 2** continues training on a domain-specific structured-output dataset generated via imitation learning from a stronger teacher model. The core question is whether Stage 2 specialization comes at the cost of the general competence gained in Stage 1 — a form of catastrophic forgetting.
+
+### 1.2 Student Model
+
+We use **Phi-3.5 Mini Instruct** (`microsoft/Phi-3.5-mini-instruct`) as the student: a 3.8B-parameter transformer that balances capability with trainability under compute constraints. Phi-3.5 Mini supports long contexts (128K tokens), uses a combined `qkv_proj` projection (not separate Q/K/V), and has an active open-source community with a well-documented chat template.
+
+### 1.3 Stage 1 — Alpaca Fine-Tuning
+
+We load the `yahma/alpaca-cleaned` dataset (52,002 examples after removing empty-output entries) and hold out 150 examples for evaluation (seed=42). The training set (~51K examples) covers diverse general instruction types: open-ended generation, question answering, summarization, classification, and creative writing.
+
+**QLoRA setup:** The model is loaded in 4-bit NF4 quantization via `bitsandbytes`. A LoRA adapter (r=16, α=32, dropout=0.05) is applied to all linear layers (`target_modules="all-linear"`) via PEFT, yielding **25.2M trainable parameters** (0.65% of 3.85B total). Training uses TRL's `SFTTrainer` with `max_length=1024`, cosine LR schedule, and 3% warmup.
+
+### 1.4 Stage 2 — Imitation Learning from Teacher JSON
+
+**Teacher model:** We use **Llama 3.3 70B Instruct** (`llama-3.3-70b-instruct-awq`) via the UTSA OpenAI-compatible API. Our initial choice was Qwen3-235B, but that model exhausts its full 4096-token budget on internal chain-of-thought reasoning, returning `content=None` — making batch generation impractical (see Section 4).
+
+**Dataset construction:** We generate 1,081 examples across five structured-output task types (Table 1.1). Each task type uses a dedicated prompt template with a rotatable domain or error-type slot to maximize lexical diversity. All outputs are double-validated with `json.loads()`: outer wrapper plus inner `output` field. After discarding 100 failures (mostly `json_repair`), 981 examples form the training set; 100 additional examples are held out for evaluation.
+
+| Task Type | Description | Train | Eval |
+|---|---|---|---|
+| `json_extraction` | Extract fields from unstructured text into JSON | 196 | 20 |
+| `schema_constrained_generation` | Generate JSON conforming to a given schema | 200 | 20 |
+| `classification_json_output` | Classify input, output as JSON label+confidence | 200 | 20 |
+| `json_repair` | Fix malformed JSON (type mismatches, missing keys) | 185 | 20 |
+| `tool_call_generation` | Generate tool-call argument JSON for function APIs | 200 | 20 |
+| **Total** | | **981** | **100** |
+
+*Table 1.1: Teacher-generated JSON dataset composition.*
+
+The Stage 2 adapter is trained on the merged Stage 1 model (base + Stage 1 LoRA merged via `merge_and_unload()`), then a fresh LoRA adapter (same hyperparameters) is applied and trained for 2 epochs.
+
+### 1.5 Training Infrastructure
+
+All training runs on **80GB NVIDIA A100 GPUs on UTSA's ARC**. SLURM batch scripts for both stages are provided in `hpc/`. GPU utilization is logged at startup via `nvidia-smi`. Training loss is recorded per logging step to CSV for loss-curve figures.
+
+### 1.6 Hyperparameters
+
+| Parameter | Stage 1 | Stage 2 |
+|---|---|---|
+| Base model | Phi-3.5 Mini Instruct (3.8B) | Phi-3.5 Mini + Stage 1 merged |
+| Training data | Alpaca-cleaned (~51K) | Teacher JSON (981) |
+| Epochs | 3 | 2 |
+| Effective batch size | 16 (4 × 4 accum) | 16 |
+| Learning rate | 2e-5 | 2e-5 |
+| LR schedule | Cosine + 3% warmup | Cosine + 3% warmup |
+| Max sequence length | 1024 | 1024 |
+| LoRA rank / alpha | 16 / 32 | 16 / 32 |
+| LoRA dropout | 0.05 | 0.05 |
+| Quantization | NF4 4-bit (bfloat16 compute) | NF4 4-bit (bfloat16 compute) |
+
+*Table 1.2: Training hyperparameters.*
+
+### 1.7 Evaluation Protocol
+
+We evaluate three checkpoints: **ckpt0** (untuned base), **ckpt1** (after Stage 1), and **ckpt2** (after Stage 2). For each checkpoint, responses are generated on both the Alpaca eval set (150 prompts) and the JSON eval set (100 prompts) using greedy decoding (temperature=0.1, do_sample=False, max_new_tokens=512).
+
+**Automatic metrics (Alpaca):** ROUGE-1/2/L, BERTScore F1 (distilbert-base-uncased rescaler), average output length, task completion rate (≥10 tokens).
+
+**JSON metrics:** Validity rate (`json.loads()` success), schema compliance, exact-match accuracy, field-level F1 (for extraction tasks), error taxonomy (truncated/malformed, invalid key format, trailing content, invalid value).
+
+**LLM-as-judge:** We use **Qwen3-235B** (`qwen3-235b-a22b-thinking-2507-fp8`) to perform pairwise comparisons across all three checkpoint pairs (0v1, 1v2, 0v2). The judge scores each response on 6 dimensions (1–5 scale): instruction following, correctness, clarity, completeness, structured output validity, and hallucination risk. Winner is determined by average score differential with a 0.3 tie threshold. Response order is randomized per call to reduce position bias.
 
 ---
 
@@ -83,7 +141,15 @@ The domain/error-type rotation across 12–15 values per task type ensures lexic
 
 ### 4.3 Judge Prompt Design
 
-_To be written in Stage 5 after judge prompt iteration._
+The judge prompt went through three iterations before producing reliable, self-consistent output.
+
+**v1 — "Which is better?":** A simple prompt asking the judge to pick the better response and explain why. The judge produced verbose natural-language justifications but no structured scores, making aggregation impossible and preventing per-dimension analysis.
+
+**v2 — Explicit 1–5 scale:** We added explicit scoring instructions for all 6 dimensions. The judge now returned numerical scores, but winner declarations were often inconsistent with the scores themselves — the model would assign Response A higher average scores across all dimensions but still declare Response B the winner, apparently overriding its own scores with a holistic impression.
+
+**v3 (current) — Deterministic winner derivation:** We resolved the inconsistency by giving the judge an explicit winner computation rule: calculate `avg_A` and `avg_B`, declare the winner based on a 0.3 differential threshold (ties if `|avg_A - avg_B| < 0.3`). This removes ambiguity — the judge no longer has to "decide" the winner; it follows from the scores it already assigned. We also clarified `hallucination_risk` direction (higher = better = fewer hallucinations, to match the other dimensions) and required the justification to cite specific evidence from both responses rather than generic observations.
+
+The `structured_output_validity` dimension was given a neutral default of 3 for non-structured-output prompts so it doesn't penalize general instruction-following comparisons where JSON validity is irrelevant.
 
 ---
 

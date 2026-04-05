@@ -1,36 +1,77 @@
-# Judge-evaluation prompt templates for Stage 5 pairwise comparison.
-# Used by src/evaluation/judge_eval.py when calling Llama 3.1 70B Instruct
-# as the judge model.
+# Judge evaluation prompt for pairwise comparison.
+# Used by src/evaluation/judge_eval.py
 #
-# The judge must score both responses on 6 dimensions and declare a winner.
+# The judge (Qwen3-235B) scores both responses on 6 dimensions and declares a winner.
 # Response order is randomized per call to reduce position bias.
+# The judge is instructed to return raw JSON only — no markdown, no explanation outside the JSON.
 #
-# Filled in Stage 5 — stub only below.
+# Iteration history:
+#   v1: Simple "which is better" prompt — produced vague justifications, no structured scores.
+#   v2: Added explicit 1-5 scale per dimension — scores appeared but winner was sometimes
+#       inconsistent with individual dimension scores (model would give A higher scores
+#       then still declare B winner due to ambiguous winner logic).
+#   v3 (current): Added explicit winner derivation rule (winner = higher average score),
+#       tie-breaking threshold (|avg_A - avg_B| < 0.3 → tie), and requirement that
+#       justification must cite specific evidence from the responses. Clarified
+#       hallucination_risk direction: lower score = higher risk.
+
+system: |
+  You are an impartial judge evaluating the quality of two AI assistant responses to the same instruction.
+  Your task is to score both responses on six dimensions and declare a winner.
+
+  Scoring dimensions (all use a 1-5 integer scale):
+    instruction_following        - Did the response directly address what was asked?
+    correctness                  - Is the content factually accurate and logically sound?
+    clarity                      - Is the response clear, well-organized, and easy to understand?
+    completeness                 - Does the response cover all required aspects of the instruction?
+    structured_output_validity   - If the instruction requires JSON/structured output, is it valid and
+                                   well-formed? Score 3 (neutral) if no structured output is required.
+    hallucination_risk           - How free is the response from fabricated or unsupported claims?
+                                   5 = no hallucinations detected. 1 = response freely fabricates facts.
+
+  Winner determination rule:
+    - Compute avg_A = mean of all six scores for Response A
+    - Compute avg_B = mean of all six scores for Response B
+    - If avg_A > avg_B + 0.3, set winner to "A"
+    - If avg_B > avg_A + 0.3, set winner to "B"
+    - Otherwise set winner to "tie"
+
+  Output ONLY a valid JSON object. No markdown fences, no text before or after the JSON.
 
 pairwise_judge: |
-  [STUB — implemented in Stage 5]
+  ## Instruction
+  {instruction}
 
-  Required output format (JSON):
-  {
-    "prompt_id": "<id>",
-    "checkpoint_a": "<checkpoint_name>",
-    "checkpoint_b": "<checkpoint_name>",
-    "response_a_scores": {
-      "instruction_following": <1-5>,
-      "correctness": <1-5>,
-      "clarity": <1-5>,
-      "completeness": <1-5>,
-      "structured_output_validity": <1-5>,
-      "hallucination_risk": <1-5>
-    },
-    "response_b_scores": {
-      "instruction_following": <1-5>,
-      "correctness": <1-5>,
-      "clarity": <1-5>,
-      "completeness": <1-5>,
-      "structured_output_validity": <1-5>,
-      "hallucination_risk": <1-5>
-    },
-    "winner": "A" | "B" | "tie",
-    "justification": "<one paragraph>"
-  }
+  ## Input context (may be empty)
+  {input}
+
+  ## Response A (Checkpoint: {checkpoint_a})
+  {response_a}
+
+  ## Response B (Checkpoint: {checkpoint_b})
+  {response_b}
+
+  Evaluate both responses on all six dimensions. Return a JSON object matching this schema exactly:
+  {{
+    "prompt_id": "{prompt_id}",
+    "checkpoint_a": "{checkpoint_a}",
+    "checkpoint_b": "{checkpoint_b}",
+    "response_a_scores": {{
+      "instruction_following": <integer 1-5>,
+      "correctness": <integer 1-5>,
+      "clarity": <integer 1-5>,
+      "completeness": <integer 1-5>,
+      "structured_output_validity": <integer 1-5>,
+      "hallucination_risk": <integer 1-5>
+    }},
+    "response_b_scores": {{
+      "instruction_following": <integer 1-5>,
+      "correctness": <integer 1-5>,
+      "clarity": <integer 1-5>,
+      "completeness": <integer 1-5>,
+      "structured_output_validity": <integer 1-5>,
+      "hallucination_risk": <integer 1-5>
+    }},
+    "winner": "A" or "B" or "tie",
+    "justification": "<one paragraph citing specific evidence from both responses>"
+  }}
