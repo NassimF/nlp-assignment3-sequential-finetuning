@@ -1,0 +1,24 @@
+[2026-04-05 15:51:16] INFO stage2_train: ============================================================
+[2026-04-05 15:51:16] INFO stage2_train: Stage 2 — QLoRA fine-tuning on teacher-generated JSON data
+[2026-04-05 15:51:16] INFO stage2_train: ============================================================
+[2026-04-05 15:51:16] INFO stage2_train: GPU 0: NVIDIA A100-SXM4-80GB, 81920 MiB, 78355 MiB, 535.230.02
+[2026-04-05 15:51:16] INFO stage2_train: GPU 1: NVIDIA A100-SXM4-80GB, 81920 MiB, 78011 MiB, 535.230.02
+[2026-04-05 15:51:16] INFO stage2_train: Loading tokenizer: microsoft/Phi-3.5-mini-instruct
+[2026-04-05 15:51:16] INFO stage2_train: Loading dataset: data/json_train.jsonl
+[2026-04-05 15:51:16] INFO stage2_train: Training examples: 981
+[2026-04-05 15:51:16] INFO stage2_train: Loading base model: microsoft/Phi-3.5-mini-instruct
+[2026-04-05 15:51:22] INFO stage2_train: Loading Stage 1 adapter from: checkpoints/stage1
+[2026-04-05 15:51:33] INFO stage2_train: Stage 1 adapter merged into base model.
+[2026-04-05 15:51:35] INFO stage2_train: Starting training ...
+[2026-04-05 15:51:35] INFO stage2_train:   Epochs:            2
+[2026-04-05 15:51:35] INFO stage2_train:   Batch size:        4
+[2026-04-05 15:51:35] INFO stage2_train:   Grad accum steps:  4
+[2026-04-05 15:51:35] INFO stage2_train:   Effective batch:   16
+[2026-04-05 15:51:35] INFO stage2_train:   Learning rate:     2e-05
+[2026-04-05 15:51:35] INFO stage2_train:   Max seq length:    1024
+[2026-04-05 15:52:29] INFO stage2_train: step=25  loss=1.0909
+[2026-04-05 15:53:20] INFO stage2_train: step=50  loss=0.8829
+[2026-04-05 15:54:11] INFO stage2_train: step=75  loss=0.8154
+[2026-04-05 15:55:03] INFO stage2_train: step=100  loss=0.7505
+[2026-04-05 15:55:52] INFO stage2_train: Saving adapter to checkpoints/stage2 ...
+[2026-04-05 15:55:52] INFO stage2_train: Stage 2 training complete.
