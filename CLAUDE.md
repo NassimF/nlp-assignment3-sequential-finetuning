@@ -27,8 +27,13 @@ conda activate nlp-assignment3   # cloned from alpaca-lora, has torch 2.9.1
 ## Models
 
 - **Student**: `microsoft/Phi-3.5-mini-instruct` (fine-tuned locally via QLoRA)
-- **Teacher**: `llama-3.3-70b-instruct-awq` — used for data generation (fast, reliable JSON output)
-- **Judge**: `qwen3-235b-a22b-thinking-2507-fp8` — used for evaluation scoring (235B reasoning model)
+- **Teacher**: `llama-3.3-70b-instruct-awq` — data generation. Qwen3-235B was tested first but
+  rejected: it is a thinking model that exhausts its token budget on internal reasoning before
+  producing visible output (content=None even at max_tokens=4096), making batch generation
+  impractical. Llama 3.3 70B produces reliable, well-structured JSON output.
+- **Judge**: `qwen3-235b-a22b-thinking-2507-fp8` — evaluation scoring. Thinking model is fine here
+  since we make far fewer judge calls and higher reasoning quality produces better-calibrated
+  pairwise scores across 6 dimensions.
 
 ## API Credentials
 

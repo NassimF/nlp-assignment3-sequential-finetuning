@@ -8,8 +8,14 @@
 # ── Models ────────────────────────────────────────────────────────────────────
 model:
   student: "microsoft/Phi-3.5-mini-instruct"
-  teacher: "llama-3.3-70b-instruct-awq"            # UTSA API — fast, reliable JSON generation
-  judge:   "qwen3-235b-a22b-thinking-2507-fp8"   # UTSA API — strongest model for quality scoring
+  # Teacher: Llama 3.3 70B chosen over Qwen3-235B for data generation.
+  # Qwen3-235B is a thinking model that exhausts its token budget on internal
+  # reasoning before producing visible content (content=None at max_tokens<=4096),
+  # making batch generation impractical. Llama 3.3 70B produces reliable JSON output.
+  teacher: "llama-3.3-70b-instruct-awq"
+  # Judge: Qwen3-235B used for evaluation — fewer calls, quality matters more than speed.
+  # Its reasoning capability produces better-calibrated pairwise scores across 6 dimensions.
+  judge:   "qwen3-235b-a22b-thinking-2507-fp8"
 
 # ── 4-bit Quantization (QLoRA) ────────────────────────────────────────────────
 quantization:
