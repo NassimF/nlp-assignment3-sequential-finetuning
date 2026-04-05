@@ -8,8 +8,8 @@
 # ── Models ────────────────────────────────────────────────────────────────────
 model:
   student: "microsoft/Phi-3.5-mini-instruct"
-  teacher: "Llama-3.3-70B-Instruct-awq"   # UTSA API model name
-  judge:   "Llama-3.3-70B-Instruct-awq"   # same model
+  teacher: "llama-3.3-70b-instruct-awq"            # UTSA API — fast, reliable JSON generation
+  judge:   "qwen3-235b-a22b-thinking-2507-fp8"   # UTSA API — strongest model for quality scoring
 
 # ── 4-bit Quantization (QLoRA) ────────────────────────────────────────────────
 quantization:

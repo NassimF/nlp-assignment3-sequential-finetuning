@@ -1,0 +1,38 @@
+[2026-04-05 03:09:39] INFO prepare_alpaca: Loading yahma/alpaca-cleaned ...
+[2026-04-05 03:09:43] INFO prepare_alpaca: Raw size: 51760
+[2026-04-05 03:09:43] INFO prepare_alpaca: After filtering: 51089
+[2026-04-05 03:09:47] INFO prepare_alpaca: Saved 50939 train examples → data/alpaca_train.jsonl
+[2026-04-05 03:09:47] INFO prepare_alpaca: Saved 150 eval examples  → data/alpaca_eval.jsonl
+[2026-04-05 03:09:47] INFO prepare_alpaca: Sample train example:
+[2026-04-05 03:09:47] INFO prepare_alpaca:   instruction: Name three ways to save energy in the office....
+[2026-04-05 03:09:47] INFO prepare_alpaca:   input:       (empty)
+[2026-04-05 03:09:47] INFO prepare_alpaca:   output:      Here are three ways to save energy in the office:
+
+1. Turn off equipment when no...
+[2026-04-05 03:14:38] INFO generate_json: Teacher model: llama-3.3-70b-instruct-awq
+[2026-04-05 03:14:38] INFO generate_json: Task types: ['json_extraction', 'schema_constrained_generation', 'classification_json_output', 'json_repair', 'tool_call_generation']
+[2026-04-05 03:14:38] INFO generate_json: Generating 200 train + 20 eval per task type
+[2026-04-05 03:14:38] INFO generate_json: Generating task: json_extraction (220 examples) ...
+[2026-04-05 03:16:48] INFO generate_json:   json_extraction: 220 generated, 0 failed/discarded
+[2026-04-05 03:16:48] INFO generate_json:   → 200 train, 20 eval
+[2026-04-05 03:16:48] INFO generate_json: Generating task: schema_constrained_generation (220 examples) ...
+[2026-04-05 03:18:57] INFO generate_json:   schema_constrained_generation: 220 generated, 0 failed/discarded
+[2026-04-05 03:18:57] INFO generate_json:   → 200 train, 20 eval
+[2026-04-05 03:18:57] INFO generate_json: Generating task: classification_json_output (220 examples) ...
+[2026-04-05 03:20:22] INFO generate_json:   classification_json_output: 220 generated, 0 failed/discarded
+[2026-04-05 03:20:22] INFO generate_json:   → 200 train, 20 eval
+[2026-04-05 03:20:22] INFO generate_json: Generating task: json_repair (220 examples) ...
+[2026-04-05 03:22:41] INFO generate_json:   json_repair: 201 generated, 19 failed/discarded
+[2026-04-05 03:22:41] INFO generate_json:   → 181 train, 20 eval
+[2026-04-05 03:22:41] INFO generate_json: Generating task: tool_call_generation (220 examples) ...
+[2026-04-05 03:24:52] INFO generate_json:   tool_call_generation: 220 generated, 0 failed/discarded
+[2026-04-05 03:24:52] INFO generate_json:   → 200 train, 20 eval
+[2026-04-05 03:24:52] INFO generate_json: Saved 981 train → data/json_train.jsonl
+[2026-04-05 03:24:52] INFO generate_json: Saved 100 eval  → data/json_eval.jsonl
+[2026-04-05 03:24:52] INFO generate_json: 
+Per-task breakdown:
+[2026-04-05 03:24:52] INFO generate_json:   json_extraction: 200 train, 20 eval
+[2026-04-05 03:24:52] INFO generate_json:   schema_constrained_generation: 200 train, 20 eval
+[2026-04-05 03:24:52] INFO generate_json:   classification_json_output: 200 train, 20 eval
+[2026-04-05 03:24:52] INFO generate_json:   json_repair: 181 train, 20 eval
+[2026-04-05 03:24:52] INFO generate_json:   tool_call_generation: 200 train, 20 eval

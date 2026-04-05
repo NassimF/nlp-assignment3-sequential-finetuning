@@ -1,28 +1,198 @@
-# Teacher-model prompt templates for Stage 2 JSON dataset generation.
-# Each template is fed to Llama 3.1 70B Instruct to generate training examples
-# via imitation learning. All responses are validated for JSON correctness
-# before inclusion in the training set.
-#
-# Filled in Stage 2 — stubs only below.
+# Teacher-model prompt templates for Stage 2b JSON dataset generation.
+# Called by src/data/generate_json_dataset.py with {domain} / {error_type} filled in.
+# The teacher (Qwen3-235B) returns a complete training example as a JSON object.
+# Both the outer wrapper and the inner "output" field are validated for JSON correctness.
+
+system: |
+  You are an expert dataset creator for training language models on structured-output tasks.
+  Your job is to generate high-quality, realistic instruction-following training examples.
+  Always respond with ONLY a raw JSON object — no markdown, no code fences, no extra text.
+  The response must be directly parseable by json.loads().
 
 task_types:
 
-  json_extraction: |
-    [STUB — implemented in Stage 2]
-    Task: Extract structured information from unstructured text into a JSON object.
+  json_extraction:
+    description: "Extract structured fields from unstructured text into a JSON object."
+    prompt_template: |
+      Create a training example where a language model must extract structured information
+      from unstructured text and return it as a JSON object.
 
-  schema_constrained_generation: |
-    [STUB — implemented in Stage 2]
-    Task: Given a schema, produce a valid JSON object that conforms to it.
+      Domain: {domain}
 
-  classification_json_output: |
-    [STUB — implemented in Stage 2]
-    Task: Classify the input and return the result as a JSON object with a fixed label set.
+      Return ONLY a JSON object with exactly these three fields:
+      {{
+        "instruction": "A clear instruction specifying exactly which fields to extract and return as JSON. Name the fields explicitly.",
+        "input": "A realistic {domain} passage (4-8 sentences) that naturally embeds the information to extract.",
+        "output": "A valid JSON object containing the extracted fields and their values."
+      }}
 
-  json_repair: |
-    [STUB — implemented in Stage 2]
-    Task: Fix malformed or invalid JSON into valid, well-formatted JSON.
+      Requirements:
+      - instruction must name the exact JSON keys to extract
+      - input must be natural prose, not already structured
+      - output must be valid JSON parseable by json.loads()
+      - output keys must match what the instruction requested
 
-  tool_call_generation: |
-    [STUB — implemented in Stage 2]
-    Task: Produce a JSON object representing a function/tool call with named parameters.
+    domains:
+      - "medical clinical notes"
+      - "invoice and billing documents"
+      - "job resume / CV"
+      - "news article about a business merger or acquisition"
+      - "e-commerce product listing"
+      - "customer support email"
+      - "real estate property listing"
+      - "scientific paper abstract"
+      - "restaurant review"
+      - "shipping and logistics record"
+      - "legal contract clause"
+      - "hotel booking confirmation"
+      - "academic transcript"
+      - "police incident report"
+      - "nutritional label text"
+
+  schema_constrained_generation:
+    description: "Given a schema, generate a valid JSON object that conforms to it."
+    prompt_template: |
+      Create a training example where a language model must generate a JSON object
+      that strictly conforms to a given schema.
+
+      Domain: {domain}
+
+      Return ONLY a JSON object with exactly these three fields:
+      {{
+        "instruction": "Define a JSON schema (field names, types, and constraints) and ask the model to generate a valid conforming JSON object. Include 4-7 required fields with mixed types (string, number, boolean, array, or nested object).",
+        "input": "Optional context or description that the generated JSON should reflect (can be a short sentence or empty string).",
+        "output": "A valid JSON object that fully conforms to the schema defined in the instruction."
+      }}
+
+      Requirements:
+      - instruction must clearly specify the schema with field names and types
+      - output must contain all required fields with correct types
+      - output must be valid JSON parseable by json.loads()
+      - include at least one nested object or array in the schema
+
+    domains:
+      - "user account profile for a SaaS application"
+      - "product catalog entry for an online store"
+      - "API response for a weather service"
+      - "configuration file for a web server"
+      - "event record for a calendar application"
+      - "financial transaction record"
+      - "sensor reading from an IoT device"
+      - "employee record in an HR system"
+      - "patient record in a hospital system"
+      - "order record for a food delivery app"
+      - "book entry for a library catalog"
+      - "flight booking record"
+      - "social media post metadata"
+      - "repository metadata for a software package"
+      - "research experiment log entry"
+
+  classification_json_output:
+    description: "Classify input text and return the result as a JSON object with fixed labels."
+    prompt_template: |
+      Create a training example where a language model must classify a piece of text
+      and return the classification result as a structured JSON object.
+
+      Classification type: {domain}
+
+      Return ONLY a JSON object with exactly these three fields:
+      {{
+        "instruction": "Describe the classification task. List the exact allowed label values. Specify the output JSON schema (e.g., label, confidence, reasoning fields).",
+        "input": "A realistic text sample that belongs to one of the defined categories.",
+        "output": "A valid JSON object containing the classification result with all fields specified in the instruction."
+      }}
+
+      Requirements:
+      - instruction must define a fixed, closed set of allowed labels (3-6 labels)
+      - input must be realistic and unambiguous
+      - output must be valid JSON parseable by json.loads()
+      - output must include at least a label field and one additional field (e.g., confidence or reasoning)
+
+    domains:
+      - "sentiment analysis (positive / negative / neutral)"
+      - "topic classification (technology / sports / politics / entertainment / business / health)"
+      - "email intent detection (inquiry / complaint / request / feedback / spam)"
+      - "urgency classification (critical / high / medium / low)"
+      - "toxicity detection (toxic / non-toxic / borderline)"
+      - "language detection (English / Spanish / French / German / Other)"
+      - "news category classification (breaking / feature / opinion / review)"
+      - "customer support ticket type (billing / technical / account / general)"
+      - "medical symptom severity (severe / moderate / mild / none)"
+      - "review helpfulness (very helpful / helpful / neutral / not helpful)"
+      - "code quality classification (clean / needs refactoring / buggy / incomplete)"
+      - "question type classification (factual / opinion / hypothetical / procedural)"
+
+  json_repair:
+    description: "Fix malformed or invalid JSON and return the corrected valid JSON."
+    prompt_template: |
+      Create a training example where a language model must repair malformed JSON
+      and return the corrected, valid JSON.
+
+      Error type to introduce: {error_type}
+
+      Return ONLY a JSON object with exactly these three fields:
+      {{
+        "instruction": "Instruct the model to fix the malformed JSON provided in the input and return only the corrected valid JSON.",
+        "input": "A realistic JSON object that contains the specified error(s). The JSON should be realistic (e.g., a user record, product entry, or config) and contain 4-8 fields.",
+        "output": "The corrected, valid JSON that fixes all errors in the input."
+      }}
+
+      Requirements:
+      - input must contain the specific error type described
+      - input should look like realistic data, not obviously fake
+      - output must be valid JSON parseable by json.loads()
+      - output must preserve the original intent/data while fixing only the errors
+      - instruction should NOT describe the specific error — just ask to fix/repair the JSON
+
+    error_types:
+      - "trailing comma after the last element in an object or array"
+      - "single quotes used instead of double quotes for strings"
+      - "missing comma between key-value pairs"
+      - "unquoted string values that should be quoted"
+      - "missing closing bracket or brace"
+      - "keys without quotes (bare word keys)"
+      - "comments inside the JSON (// or /* */)"
+      - "Python-style None / True / False instead of null / true / false"
+      - "extra text or explanation before or after the JSON object"
+      - "duplicate keys in the same object"
+      - "number values formatted as strings that should be numbers"
+      - "mismatched bracket types (e.g., array opened with { instead of [)"
+
+  tool_call_generation:
+    description: "Generate a JSON object representing a function/tool call with named parameters."
+    prompt_template: |
+      Create a training example where a language model must produce a JSON object
+      representing a function/tool call based on a natural language user request.
+
+      Tool domain: {domain}
+
+      Return ONLY a JSON object with exactly these three fields:
+      {{
+        "instruction": "Define a function/tool with its name, description, and parameter schema (name, type, description, required). Then ask the model to generate the JSON function call based on the user request in the input.",
+        "input": "A natural language user request that maps to a specific call of the defined function.",
+        "output": "A valid JSON object representing the function call, with the function name and a nested arguments object containing the parameter values."
+      }}
+
+      Requirements:
+      - instruction must define the function schema with 3-6 parameters of mixed types
+      - input must be a realistic natural language request, not already in JSON
+      - output must be valid JSON parseable by json.loads()
+      - output format: {{"name": "function_name", "arguments": {{...}}}}
+      - argument values must correctly reflect the user request in the input
+
+    domains:
+      - "web search and information retrieval"
+      - "calendar and scheduling"
+      - "weather and location services"
+      - "email sending and management"
+      - "database query and filtering"
+      - "file system operations"
+      - "payment and billing"
+      - "user account management"
+      - "notification and messaging"
+      - "image and media processing"
+      - "code execution and testing"
+      - "translation and language services"
+      - "data analytics and aggregation"
+      - "map and navigation services"
+      - "e-commerce cart and order management"

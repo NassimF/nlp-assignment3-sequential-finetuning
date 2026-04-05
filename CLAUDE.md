@@ -27,8 +27,8 @@ conda activate nlp-assignment3   # cloned from alpaca-lora, has torch 2.9.1
 ## Models
 
 - **Student**: `microsoft/Phi-3.5-mini-instruct` (fine-tuned locally via QLoRA)
-- **Teacher**: Llama 3.1 70B Instruct (called via UTSA OpenAI-compatible API)
-- **Judge**: Llama 3.1 70B Instruct (same API)
+- **Teacher**: `llama-3.3-70b-instruct-awq` — used for data generation (fast, reliable JSON output)
+- **Judge**: `qwen3-235b-a22b-thinking-2507-fp8` — used for evaluation scoring (235B reasoning model)
 
 ## API Credentials
 
@@ -44,7 +44,7 @@ Check/update `model.teacher` and `model.judge` in `config.yaml` if needed.
 | Stage | Description | Status |
 |-------|-------------|--------|
 | 1 | Scaffold, env, config | ✅ Complete |
-| 2 | Data prep (Alpaca + teacher JSON) | ⬜ Todo |
+| 2 | Data prep (Alpaca + teacher JSON) | 🔄 In progress (Alpaca done, JSON generating) |
 | 3 | Stage 1 QLoRA training (Alpaca) | ⬜ Todo |
 | 4 | Stage 2 QLoRA training (JSON) | ⬜ Todo |
 | 5 | Judge eval + forgetting analysis | ⬜ Todo |
