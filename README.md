@@ -77,8 +77,8 @@ cp .env.example .env
 
 ### 4. (Optional) Update model names in config.yaml
 
-If the UTSA API uses different model name strings for Llama 3.1 70B Instruct,
-update `model.teacher` and `model.judge` in `config.yaml`.
+If the UTSA API model name strings differ from the defaults, update
+`model.teacher` and `model.judge` in `config.yaml`.
 
 ---
 
@@ -99,30 +99,26 @@ Produces:
 
 ## Training
 
-### Stage 1 — Alpaca QLoRA (DGX)
+Training is run on **UTSA ARC** using 80GB NVIDIA A100 GPUs via SLURM.
 
-```bash
-conda activate nlp-assignment3
-python src/training/stage1_train.py --config config.yaml
-# Or in tmux: tmux new -s stage1; python src/training/stage1_train.py --config config.yaml
-```
-
-### Stage 1 — Alpaca QLoRA (UTSA ARC)
+### Stage 1 — Alpaca QLoRA
 
 ```bash
 sbatch hpc/stage1_train.sbatch
 ```
 
-### Stage 2 — Teacher JSON QLoRA (DGX)
-
-```bash
-python src/training/stage2_train.py --config config.yaml
-```
-
-### Stage 2 — Teacher JSON QLoRA (UTSA ARC)
+### Stage 2 — Teacher JSON QLoRA
 
 ```bash
 sbatch hpc/stage2_train.sbatch
+```
+
+To run directly (e.g., for debugging):
+
+```bash
+conda activate nlp-assignment3
+python src/training/stage1_train.py --config config.yaml
+python src/training/stage2_train.py --config config.yaml
 ```
 
 Checkpoints are saved to `checkpoints/stage1/` and `checkpoints/stage2/` (gitignored).
@@ -167,5 +163,5 @@ See [docs/blog_post.md](docs/blog_post.md) for the full report.
 
 ## Hardware
 
-Trained on NVIDIA A100-SXM4-80GB (DGX server).
-Equivalent SLURM scripts for UTSA ARC provided in `hpc/`.
+Trained on **UTSA ARC** using 80GB NVIDIA A100 GPUs.
+SLURM batch scripts are provided in `hpc/` for both training stages.
