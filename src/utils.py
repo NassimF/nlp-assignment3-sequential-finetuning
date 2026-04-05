@@ -113,8 +113,11 @@ def load_api_client() -> OpenAI:
     """
     Build an OpenAI client pointed at the UTSA endpoint.
     Reads OPENAI_API_KEY and UTSA_BASE_URL from .env (or environment).
+
+    Also applies NO_PROXY so the system HTTPS_PROXY (xa-proxy.utsarr.net)
+    does not intercept requests to the private UTSA IP.
     """
-    load_dotenv()
+    load_dotenv(override=True)   # override any system-level OPENAI_API_KEY
     api_key = os.environ.get("OPENAI_API_KEY")
     base_url = os.environ.get("UTSA_BASE_URL")
 
@@ -122,6 +125,14 @@ def load_api_client() -> OpenAI:
         raise RuntimeError("OPENAI_API_KEY not set — check your .env file")
     if not base_url:
         raise RuntimeError("UTSA_BASE_URL not set — check your .env file")
+
+    # Bypass system proxy (HTTPS_PROXY=xa-proxy.utsarr.net) for the UTSA private IP.
+    no_proxy = os.environ.get("NO_PROXY", "")
+    utsa_host = base_url.split("//")[-1].split("/")[0].split(":")[0]
+    if utsa_host not in no_proxy:
+        combined = f"{no_proxy},{utsa_host}" if no_proxy else utsa_host
+        os.environ["NO_PROXY"] = combined
+        os.environ["no_proxy"] = combined
 
     return OpenAI(api_key=api_key, base_url=base_url)
 
