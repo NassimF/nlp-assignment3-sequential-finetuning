@@ -1,0 +1,3 @@
+[2026-04-05 07:56:35] module warning: NVML driver not loaded, some GPU memory will be unavailable
+[2026-04-05 08:15:42] CUDA warning: Device reset after GPU OOM recovery
+[2026-04-05 09:30:15] warning: /tmp scheduler: Job memory usage slightly elevated (52GB/64GB)

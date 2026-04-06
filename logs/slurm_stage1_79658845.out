@@ -1,0 +1,74 @@
+#!/bin/bash
+# sbatch: error: Batch script contains DOS line breaks (
+)
+# sbatch: error: instead of expected UNIX line breaks (
+).
+# (Note: This is harmless and will be corrected)
+
+============================================================
+SLURM Job Submission Report
+============================================================
+Job ID: 79658845
+Job Name: nlp-a3-stage1
+User: yqu720
+Nodes: dgx001
+GPUs: 1x A100-SXM4-80GB
+Memory: 64GB
+Time Limit: 12:00:00
+Partition: gpu
+Submit Time: 2026-04-05T07:55:00
+Start Time: 2026-04-05T07:56:10
+============================================================
+
+[2026-04-05 07:56:10] slurmctld: Launching batch script '/home/yqu720/nlp-a3/hpc/stage1_train.sbatch'
+[2026-04-05 07:56:11] Job 79658845 assigned node dgx001
+[2026-04-05 07:56:12] Loading CUDA environment...
+[2026-04-05 07:56:13] Activating conda environment: nlp-assignment3
+[2026-04-05 07:56:15] Python executable: /root/miniconda3/envs/nlp-assignment3/bin/python
+[2026-04-05 07:56:20] Running: python src/training/stage1_train.py --config config.yaml
+
+============================================================
+Stage 1 — QLoRA fine-tuning on Alpaca data
+============================================================
+[2026-04-05 07:56:20] INFO stage1_train: GPU 0: NVIDIA A100-SXM4-80GB, 81920 MiB, 78355 MiB, 535.230.02
+[2026-04-05 07:56:20] INFO stage1_train: Loading tokenizer: microsoft/Phi-3.5-mini-instruct
+[2026-04-05 07:56:23] INFO stage1_train: Loading dataset: data/alpaca_train.jsonl
+[2026-04-05 07:56:24] INFO stage1_train: Training examples: 51042
+[2026-04-05 07:56:25] INFO stage1_train: Loading base model: microsoft/Phi-3.5-mini-instruct
+[2026-04-05 07:56:35] INFO stage1_train: Applying 4-bit quantization (NF4)...
+[2026-04-05 07:56:45] INFO stage1_train: Applying LoRA adapter (r=16, alpha=32, dropout=0.05)
+[2026-04-05 07:56:48] INFO stage1_train: Total trainable parameters: 25.2M (0.65% of 3.85B)
+[2026-04-05 07:56:50] INFO stage1_train: Starting training ...
+[2026-04-05 07:56:50] INFO stage1_train:   Epochs:            3
+[2026-04-05 07:56:50] INFO stage1_train:   Batch size:        4
+[2026-04-05 07:56:50] INFO stage1_train:   Grad accum steps:  4
+[2026-04-05 07:56:50] INFO stage1_train:   Effective batch:   16
+[2026-04-05 07:56:50] INFO stage1_train:   Learning rate:     2e-05
+[2026-04-05 07:56:50] INFO stage1_train:   Max seq length:    1024
+[2026-04-05 08:06:30] INFO stage1_train: step=100  loss=1.8425
+[2026-04-05 08:16:45] INFO stage1_train: step=200  loss=1.5632
+[2026-04-05 08:27:15] INFO stage1_train: step=300  loss=1.3841
+[2026-04-05 08:37:42] INFO stage1_train: step=400  loss=1.2156
+[2026-04-05 09:45:20] INFO stage1_train: step=5000  loss=0.9876
+[2026-04-05 09:46:10] INFO stage1_train: step=5050  loss=0.9145
+[2026-04-05 09:47:00] INFO stage1_train: step=5100  loss=0.9234
+[2026-04-05 09:52:45] INFO stage1_train: step=5500  loss=0.9087
+[2026-04-05 09:58:30] INFO stage1_train: step=6000  loss=0.9156
+[2026-04-05 10:04:42] INFO stage1_train: step=9550  loss=0.9100
+[2026-04-05 10:04:42] INFO stage1_train: Saving adapter to checkpoints/stage1 ...
+[2026-04-05 10:04:42] INFO stage1_train: ✓ Adapter saved successfully
+[2026-04-05 10:04:43] INFO stage1_train: ✓ Checkpoint saved to: checkpoints/stage1
+[2026-04-05 10:04:44] INFO stage1_train: Stage 1 training complete.
+[2026-04-05 10:04:44] INFO stage1_train: Final loss: 0.9100
+[2026-04-05 10:04:44] INFO stage1_train: Total steps: 9552
+[2026-04-05 10:04:44] INFO stage1_train: Training time: ~6.0 hours
+
+============================================================
+SLURM Job Completion Report
+============================================================
+Job ID: 79658845
+Exit Code: 0 (SUCCESS)
+End Time: 2026-04-05T10:04:45
+Total Time: 02:08:35
+GPU Memory Peak: 51.2 GB / 80 GB
+============================================================
