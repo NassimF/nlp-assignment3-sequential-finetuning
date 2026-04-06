@@ -170,15 +170,17 @@ We run two Stage 2 ablation variants from the same Stage 1 checkpoint, keeping a
 
 Both variants train to 2 epochs; inference is run on the Alpaca and JSON eval sets.
 
-| Variant | Stage 2 LR | Stage 2 Data | Final Loss | Alpaca ROUGE-L | JSON Validity | Δ ROUGE-L vs ckpt1 | Δ JSON Valid vs ckpt1 |
-|---|---|---|---|---|---|---|---|
-| Baseline (ckpt2) | 2e-5 | 981 (100%) | 0.751 | 0.283 | 56.0% | +0.003 | −2.0pp |
-| LR=1e-5 | 1e-5 | 981 (100%) | 0.926 | *TBD* | *TBD* | *TBD* | *TBD* |
-| data_fraction=0.5 | 2e-5 | ~490 (50%) | *TBD* | *TBD* | *TBD* | *TBD* | *TBD* |
+| Variant | Stage 2 LR | Stage 2 Data | Steps | Final Loss | Alpaca ROUGE-L | JSON Validity | Δ ROUGE-L vs ckpt1 | Δ JSON Valid vs ckpt1 |
+|---|---|---|---|---|---|---|---|---|
+| Baseline (ckpt2) | 2e-5 | 981 (100%) | ~124 | 0.751 | 0.283 | 56.0% | +0.003 | −2.0pp |
+| LR=1e-5 | 1e-5 | 981 (100%) | ~124 | ~0.926 | *TBD* | *TBD* | *TBD* | *TBD* |
+| data_fraction=0.5 | 2e-5 | ~490 (50%) | ~62 | ~0.930 | *TBD* | *TBD* | *TBD* | *TBD* |
 
 *Table 2.5: Ablation results — effect of Stage 2 learning rate and data size on forgetting vs specialization tradeoff.*
 
-The LR=1e-5 variant's higher final training loss (0.926 vs 0.751) is expected — with a lower learning rate the model fits the JSON data less aggressively, which may better preserve Alpaca performance at the cost of lower JSON specialization. Results pending evaluation.
+Both ablation variants converge to similar final losses (~0.926–0.930) despite different reasons: LR=1e-5 takes smaller gradient steps over the same data, while data_fraction=0.5 takes baseline-sized steps over half the data (~62 steps vs ~124). This near-identical loss pattern means the two variants are roughly equivalent in terms of total learning signal absorbed — they are testing the same underlying variable (how aggressively Stage 2 updates the model) from different angles.
+
+**Hypothesis:** Both variants should show higher Alpaca retention than the baseline (less overfitting to JSON distribution) at the cost of lower JSON validity improvement. If the -2pp JSON validity regression at baseline is driven by over-aggressiveness, both variants should eliminate or reduce it. If instead it reflects a genuine format-learning tradeoff, both will show similar or worse JSON validity with better Alpaca scores. Results to be filled upon evaluation completion.
 
 ---
 
