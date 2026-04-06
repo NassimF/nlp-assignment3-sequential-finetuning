@@ -163,7 +163,22 @@ The only category showing regression is **creative writing** (−0.025 ROUGE-L),
 
 ### 2.5 Ablation Study
 
-The ablation study (LR=1e-5 and data_fraction=0.5 variants) was implemented in `scripts/run_ablation.sh` but not run due to time constraints given the sequential inference bottleneck. The `stage2_train.py` script supports `--lr` and `--data_fraction` CLI arguments for easy reproduction. Based on the main results, the primary hypothesis to test would be whether a lower LR (1e-5 vs 2e-5) reduces the -2pp JSON validity regression while maintaining Alpaca performance.
+We run two Stage 2 ablation variants from the same Stage 1 checkpoint, keeping all other hyperparameters fixed:
+
+- **LR=1e-5** (`_ablr1e5`): halved learning rate vs the 2e-5 baseline
+- **data_fraction=0.5** (`_abfrac50`): half the Stage 2 training data (~490 examples) at baseline LR=2e-5
+
+Both variants train to 2 epochs; inference is run on the Alpaca and JSON eval sets.
+
+| Variant | Stage 2 LR | Stage 2 Data | Final Loss | Alpaca ROUGE-L | JSON Validity | Δ ROUGE-L vs ckpt1 | Δ JSON Valid vs ckpt1 |
+|---|---|---|---|---|---|---|---|
+| Baseline (ckpt2) | 2e-5 | 981 (100%) | 0.751 | 0.283 | 56.0% | +0.003 | −2.0pp |
+| LR=1e-5 | 1e-5 | 981 (100%) | 0.926 | *TBD* | *TBD* | *TBD* | *TBD* |
+| data_fraction=0.5 | 2e-5 | ~490 (50%) | *TBD* | *TBD* | *TBD* | *TBD* | *TBD* |
+
+*Table 2.5: Ablation results — effect of Stage 2 learning rate and data size on forgetting vs specialization tradeoff.*
+
+The LR=1e-5 variant's higher final training loss (0.926 vs 0.751) is expected — with a lower learning rate the model fits the JSON data less aggressively, which may better preserve Alpaca performance at the cost of lower JSON specialization. Results pending evaluation.
 
 ---
 

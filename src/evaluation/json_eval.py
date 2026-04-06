@@ -135,8 +135,8 @@ def evaluate_example(response: str, reference_str: str, task_type: str) -> dict:
 # Main
 # ---------------------------------------------------------------------------
 
-def evaluate_checkpoint(checkpoint: int, cfg: dict, logger) -> dict:
-    response_file = f"{cfg['evaluation']['logs_dir']}/responses_ckpt{checkpoint}_json.jsonl"
+def evaluate_checkpoint(checkpoint: int, cfg: dict, logger, suffix: str = "") -> dict:
+    response_file = f"{cfg['evaluation']['logs_dir']}/responses_ckpt{checkpoint}_json{suffix}.jsonl"
     if not Path(response_file).exists():
         logger.warning(f"Response file not found: {response_file}")
         return {}
@@ -187,7 +187,7 @@ def evaluate_checkpoint(checkpoint: int, cfg: dict, logger) -> dict:
     # Save per-checkpoint detail
     out_dir = Path(cfg["evaluation"]["results_dir"])
     out_dir.mkdir(exist_ok=True)
-    detail_path = out_dir / f"json_eval_ckpt{checkpoint}.json"
+    detail_path = out_dir / f"json_eval_ckpt{checkpoint}{suffix}.json"
     with open(detail_path, "w") as f:
         json.dump({"summary": summary, "examples": results}, f, indent=2)
 
@@ -206,6 +206,8 @@ def main():
     parser.add_argument("--config", default="config.yaml")
     parser.add_argument("--checkpoint", default="0",
                         help="Comma-separated checkpoint numbers")
+    parser.add_argument("--output_suffix", default="",
+                        help="Suffix appended to response filenames and output files (e.g. _ablr1e5)")
     args = parser.parse_args()
 
     cfg = load_config(args.config)
@@ -214,13 +216,13 @@ def main():
 
     all_summaries = []
     for ckpt in checkpoints:
-        summary = evaluate_checkpoint(ckpt, cfg, logger)
+        summary = evaluate_checkpoint(ckpt, cfg, logger, suffix=args.output_suffix)
         if summary:
             all_summaries.append(summary)
 
     # Save combined CSV
     if all_summaries:
-        csv_path = Path(cfg["evaluation"]["results_dir"]) / "json_eval_summary.csv"
+        csv_path = Path(cfg["evaluation"]["results_dir"]) / f"json_eval_summary{args.output_suffix}.csv"
         fields = ["checkpoint", "n_total", "json_validity_rate",
                   "schema_compliance_rate", "exact_match_rate", "field_f1_mean"]
         with open(csv_path, "w", newline="") as f:
