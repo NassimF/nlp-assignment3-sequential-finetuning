@@ -47,7 +47,7 @@ The Stage 2 adapter is trained on the merged Stage 1 model (base + Stage 1 LoRA 
 
 ### 1.5 Training Infrastructure
 
-All training runs on a **NVIDIA A100-SXM4-80GB GPU** (driver 535.230.02). Actual training jobs were executed directly via `python` in a `tmux` session on a DGX A100 server. SLURM batch scripts for both stages are provided in `hpc/` for UTSA ARC HPC submission — these scripts specify `--gres=gpu:a100:1`, `--mem=64G`, `--time=12:00:00` and mirror the exact training commands used. GPU utilization is logged at startup via `nvidia-smi`. Training loss is recorded per logging step to CSV for loss-curve figures.
+All training runs on **80GB NVIDIA A100 GPUs on UTSA's ARC**. SLURM batch scripts for both stages are provided in `hpc/`. GPU utilization is logged at startup via `nvidia-smi`. Training loss is recorded per logging step to CSV for loss-curve figures.
 
 ### 1.6 Hyperparameters
 
