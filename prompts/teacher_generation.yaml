@@ -1,6 +1,8 @@
 # Teacher-model prompt templates for Stage 2b JSON dataset generation.
 # Called by src/data/generate_json_dataset.py with {domain} / {error_type} filled in.
-# The teacher (Qwen3-235B) returns a complete training example as a JSON object.
+# The teacher (llama-3.3-70b-instruct-awq) returns a complete training example as a JSON object.
+# Qwen3-235B was initially selected but rejected: it exhausts its token budget on internal
+# chain-of-thought reasoning and returns content=None, making batch generation impractical.
 # Both the outer wrapper and the inner "output" field are validated for JSON correctness.
 
 system: |

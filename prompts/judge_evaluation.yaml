@@ -1,7 +1,9 @@
 # Judge evaluation prompt for pairwise comparison.
 # Used by src/evaluation/judge_eval.py
 #
-# The judge (Qwen3-235B) scores both responses on 6 dimensions and declares a winner.
+# Judge models used:
+#   - Alpaca pairwise eval: qwen3-235b-a22b-thinking-2507-fp8 (thinking model, well-calibrated scores)
+#   - JSON pairwise eval:   llama-3.3-70b-instruct-awq (Qwen3-235B became unavailable mid-run)
 # Response order is randomized per call to reduce position bias.
 # The judge is instructed to return raw JSON only — no markdown, no explanation outside the JSON.
 #
