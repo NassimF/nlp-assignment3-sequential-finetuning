@@ -51,3 +51,56 @@
 [2026-04-06 03:16:46] INFO judge_eval: Running judge eval: ckpt0v1
 [2026-04-06 03:16:46] INFO judge_eval: ckpt0 vs ckpt1: 100 prompts
 [2026-04-06 03:23:37] WARNING judge_eval:   Failed to parse judge response for json_0004
+[2026-04-06 03:27:05] WARNING judge_eval:   Failed to parse judge response for json_0005
+[2026-04-06 03:35:10] WARNING judge_eval:   Failed to parse judge response for json_0010
+[2026-04-06 03:38:38] WARNING judge_eval:   Failed to parse judge response for json_0011
+[2026-04-06 03:43:11] WARNING judge_eval:   Failed to parse judge response for json_0013
+[2026-04-06 03:46:39] WARNING judge_eval:   Failed to parse judge response for json_0014
+[2026-04-06 03:53:33] WARNING judge_eval:   Failed to parse judge response for json_0017
+[2026-04-06 03:57:01] WARNING judge_eval:   Failed to parse judge response for json_0018
+[2026-04-06 04:06:49] WARNING judge_eval:   Failed to parse judge response for json_0021
+[2026-04-06 04:10:17] WARNING judge_eval:   Failed to parse judge response for json_0022
+[2026-04-06 04:13:45] WARNING judge_eval:   Failed to parse judge response for json_0023
+[2026-04-06 04:17:13] WARNING judge_eval:   Failed to parse judge response for json_0024
+[2026-04-06 04:22:17] WARNING judge_eval:   Failed to parse judge response for json_0028
+[2026-04-06 04:29:22] WARNING judge_eval:   Failed to parse judge response for json_0034
+[2026-04-06 04:35:40] WARNING judge_eval:   Failed to parse judge response for json_0038
+[2026-04-06 04:39:08] WARNING judge_eval:   Failed to parse judge response for json_0039
+[2026-04-06 04:42:36] WARNING judge_eval:   Failed to parse judge response for json_0040
+[2026-04-06 04:50:50] WARNING judge_eval:   Failed to parse judge response for json_0045
+[2026-04-06 04:59:30] WARNING judge_eval:   Failed to parse judge response for json_0049
+[2026-04-06 05:03:24] WARNING judge_eval:   Failed to parse judge response for json_0051
+[2026-04-06 05:06:52] WARNING judge_eval:   Failed to parse judge response for json_0052
+[2026-04-06 05:10:20] WARNING judge_eval:   Failed to parse judge response for json_0053
+[2026-04-06 05:14:00] WARNING judge_eval:   Failed to parse judge response for json_0055
+[2026-04-06 05:19:44] WARNING judge_eval:   Failed to parse judge response for json_0057
+[2026-04-06 05:23:32] WARNING judge_eval:   Failed to parse judge response for json_0059
+[2026-04-06 05:27:56] WARNING judge_eval:   Failed to parse judge response for json_0061
+[2026-04-06 05:31:24] WARNING judge_eval:   Failed to parse judge response for json_0062
+[2026-04-06 05:34:52] WARNING judge_eval:   Failed to parse judge response for json_0063
+[2026-04-06 05:44:23] WARNING judge_eval:   Failed to parse judge response for json_0067
+[2026-04-06 05:51:15] WARNING judge_eval:   Failed to parse judge response for json_0069
+[2026-04-06 05:59:09] WARNING judge_eval:   Failed to parse judge response for json_0073
+[2026-04-06 06:02:37] WARNING judge_eval:   Failed to parse judge response for json_0074
+[2026-04-06 06:07:04] WARNING judge_eval:   Failed to parse judge response for json_0076
+[2026-04-06 06:13:37] WARNING judge_eval:   Failed to parse judge response for json_0079
+[2026-04-06 06:18:24] WARNING judge_eval:   Failed to parse judge response for json_0082
+[2026-04-06 06:27:43] WARNING judge_eval:   Failed to parse judge response for json_0087
+[2026-04-06 06:31:11] WARNING judge_eval:   Failed to parse judge response for json_0088
+[2026-04-06 06:34:39] WARNING judge_eval:   Failed to parse judge response for json_0089
+[2026-04-06 06:38:07] WARNING judge_eval:   Failed to parse judge response for json_0090
+[2026-04-06 06:43:39] WARNING judge_eval:   Failed to parse judge response for json_0092
+[2026-04-06 06:52:24] INFO judge_eval:   ckpt0v1: 60 evaluated, 40 failed
+[2026-04-06 06:52:24] INFO judge_eval:   Saved → results/judge_ckpt0v1.jsonl
+[2026-04-06 06:52:24] INFO judge_eval:   Win rate A (ckpt0): 0.100
+[2026-04-06 06:52:24] INFO judge_eval:   Win rate B (ckpt1): 0.333
+[2026-04-06 06:52:24] INFO judge_eval:   Tie rate:                  0.567
+[2026-04-06 06:52:24] INFO judge_eval: Running judge eval: ckpt1v2
+[2026-04-06 06:52:24] INFO judge_eval: ckpt1 vs ckpt2: 100 prompts
+[2026-04-06 06:55:52] WARNING judge_eval:   Failed to parse judge response for json_0000
+[2026-04-06 07:04:13] WARNING judge_eval:   Failed to parse judge response for json_0004
+[2026-04-06 07:07:40] WARNING judge_eval:   Failed to parse judge response for json_0005
+[2026-04-06 07:11:09] WARNING judge_eval:   Failed to parse judge response for json_0006
+[2026-04-06 07:13:16] INFO judge_eval: Judge model: qwen3-235b-a22b-thinking-2507-fp8
+[2026-04-06 07:13:16] INFO judge_eval: Running judge eval: ckpt1v2
+[2026-04-06 07:13:16] INFO judge_eval: ckpt1 vs ckpt2: 100 prompts

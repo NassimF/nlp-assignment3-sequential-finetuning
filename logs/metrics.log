@@ -38,3 +38,23 @@
 [2026-04-05 18:45:06] INFO metrics:   Avg length:       201.4 words
 [2026-04-05 18:45:06] INFO metrics:   Completion rate:  0.933
 [2026-04-05 18:45:06] INFO metrics: Saved combined metrics summary → results/metrics_summary.csv
+[2026-04-06 07:05:44] INFO metrics: Checkpoint 2: computing ROUGE over 150 examples ...
+[2026-04-06 07:05:44] INFO metrics: Checkpoint 2: computing ROUGE over 150 examples ...
+[2026-04-06 07:05:47] INFO metrics: Checkpoint 2: computing BERTScore ...
+[2026-04-06 07:05:47] INFO metrics: Checkpoint 2: computing BERTScore ...
+[2026-04-06 07:05:56] INFO metrics: Checkpoint 2 Alpaca metrics:
+[2026-04-06 07:05:56] INFO metrics:   ROUGE-1:          0.4130
+[2026-04-06 07:05:56] INFO metrics:   ROUGE-2:          0.2026
+[2026-04-06 07:05:56] INFO metrics:   ROUGE-L:          0.2809
+[2026-04-06 07:05:56] INFO metrics:   BERTScore F1:     0.8239
+[2026-04-06 07:05:56] INFO metrics:   Avg length:       200.4 words
+[2026-04-06 07:05:56] INFO metrics:   Completion rate:  0.940
+[2026-04-06 07:05:56] INFO metrics: Saved combined metrics summary → results/metrics_summary_ablr1e5.csv
+[2026-04-06 07:05:56] INFO metrics: Checkpoint 2 Alpaca metrics:
+[2026-04-06 07:05:56] INFO metrics:   ROUGE-1:          0.4150
+[2026-04-06 07:05:56] INFO metrics:   ROUGE-2:          0.2026
+[2026-04-06 07:05:56] INFO metrics:   ROUGE-L:          0.2832
+[2026-04-06 07:05:56] INFO metrics:   BERTScore F1:     0.8231
+[2026-04-06 07:05:56] INFO metrics:   Avg length:       197.2 words
+[2026-04-06 07:05:56] INFO metrics:   Completion rate:  0.933
+[2026-04-06 07:05:56] INFO metrics: Saved combined metrics summary → results/metrics_summary_abfrac50.csv

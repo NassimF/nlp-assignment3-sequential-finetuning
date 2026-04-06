@@ -268,8 +268,9 @@ def main():
         if not results:
             continue
 
-        # Save JSONL
-        out_path = out_dir / f"judge_{label}.jsonl"
+        # Save JSONL — include eval_type in filename to avoid overwriting alpaca results
+        type_suffix = f"_{args.eval_type}" if args.eval_type != "alpaca" else ""
+        out_path = out_dir / f"judge_{label}{type_suffix}.jsonl"
         with open(out_path, "w") as f:
             for r in results:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
@@ -287,7 +288,8 @@ def main():
 
     # Save summary JSON
     if all_summaries:
-        summary_path = out_dir / "judge_summary.json"
+        type_suffix = f"_{args.eval_type}" if args.eval_type != "alpaca" else ""
+        summary_path = out_dir / f"judge_summary{type_suffix}.json"
         with open(summary_path, "w") as f:
             json.dump(all_summaries, f, indent=2)
         logger.info(f"Saved judge summary → {summary_path}")

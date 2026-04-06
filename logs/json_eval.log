@@ -45,3 +45,17 @@
 [2026-04-06 03:16:28] INFO json_eval:   Field F1 (mean):   0.128
 [2026-04-06 03:16:28] INFO json_eval:   Error taxonomy:    {'trailing_content': 26, 'none': 56, 'truncated_or_malformed': 6, 'invalid_key_format': 11, 'other_json_error': 1}
 [2026-04-06 03:16:28] INFO json_eval: Saved combined JSON eval summary → results/json_eval_summary.csv
+[2026-04-06 07:05:44] INFO json_eval: Checkpoint 2 JSON eval:
+[2026-04-06 07:05:44] INFO json_eval:   Validity:          0.570
+[2026-04-06 07:05:44] INFO json_eval:   Schema compliance: 0.530
+[2026-04-06 07:05:44] INFO json_eval:   Exact match:       0.100
+[2026-04-06 07:05:44] INFO json_eval:   Field F1 (mean):   0.128
+[2026-04-06 07:05:44] INFO json_eval:   Error taxonomy:    {'trailing_content': 23, 'none': 57, 'truncated_or_malformed': 6, 'invalid_key_format': 13, 'other_json_error': 1}
+[2026-04-06 07:05:44] INFO json_eval: Saved combined JSON eval summary → results/json_eval_summary_abfrac50.csv
+[2026-04-06 07:05:44] INFO json_eval: Checkpoint 2 JSON eval:
+[2026-04-06 07:05:44] INFO json_eval:   Validity:          0.580
+[2026-04-06 07:05:44] INFO json_eval:   Schema compliance: 0.540
+[2026-04-06 07:05:44] INFO json_eval:   Exact match:       0.150
+[2026-04-06 07:05:44] INFO json_eval:   Field F1 (mean):   0.132
+[2026-04-06 07:05:44] INFO json_eval:   Error taxonomy:    {'trailing_content': 21, 'none': 58, 'truncated_or_malformed': 7, 'other_json_error': 2, 'invalid_key_format': 12}
+[2026-04-06 07:05:44] INFO json_eval: Saved combined JSON eval summary → results/json_eval_summary_ablr1e5.csv

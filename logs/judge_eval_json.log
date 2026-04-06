@@ -1,0 +1,169 @@
+
+  judge ckpt0v1:   0%|          | 0/100 [00:00<?, ?it/s]
+  judge ckpt0v1:   1%|          | 1/100 [00:59<1:38:44, 59.84s/it]
+  judge ckpt0v1:   2%|▏         | 2/100 [01:48<1:27:10, 53.38s/it]
+  judge ckpt0v1:   3%|▎         | 3/100 [02:48<1:30:45, 56.14s/it]
+  judge ckpt0v1:   4%|▍         | 4/100 [03:22<1:15:59, 47.49s/it]
+  judge ckpt0v1:   5%|▌         | 5/100 [06:50<2:47:01, 105.49s/it]
+  judge ckpt0v1:   6%|▌         | 6/100 [10:18<3:39:49, 140.32s/it]
+  judge ckpt0v1:   7%|▋         | 7/100 [11:18<2:56:49, 114.08s/it]
+  judge ckpt0v1:   8%|▊         | 8/100 [14:31<3:33:29, 139.23s/it]
+  judge ckpt0v1:   9%|▉         | 9/100 [14:41<2:29:59, 98.89s/it] 
+  judge ckpt0v1:  10%|█         | 10/100 [14:55<1:48:46, 72.52s/it]
+  judge ckpt0v1:  11%|█         | 11/100 [18:23<2:49:10, 114.06s/it]
+  judge ckpt0v1:  12%|█▏        | 12/100 [21:51<3:29:11, 142.63s/it]
+  judge ckpt0v1:  13%|█▎        | 13/100 [22:56<2:52:52, 119.22s/it]
+  judge ckpt0v1:  14%|█▍        | 14/100 [26:24<3:29:18, 146.02s/it]
+  judge ckpt0v1:  15%|█▌        | 15/100 [29:52<3:53:15, 164.65s/it]
+  judge ckpt0v1:  16%|█▌        | 16/100 [31:01<3:10:09, 135.82s/it]
+  judge ckpt0v1:  17%|█▋        | 17/100 [33:19<3:08:33, 136.31s/it]
+  judge ckpt0v1:  18%|█▊        | 18/100 [36:47<3:35:44, 157.86s/it]
+  judge ckpt0v1:  19%|█▉        | 19/100 [40:15<3:53:25, 172.91s/it]
+  judge ckpt0v1:  20%|██        | 20/100 [43:26<3:57:54, 178.43s/it]
+  judge ckpt0v1:  21%|██        | 21/100 [46:34<3:58:46, 181.35s/it]
+  judge ckpt0v1:  22%|██▏       | 22/100 [50:02<4:06:12, 189.39s/it]
+  judge ckpt0v1:  23%|██▎       | 23/100 [53:30<4:10:19, 195.06s/it]
+  judge ckpt0v1:  24%|██▍       | 24/100 [56:58<4:11:55, 198.89s/it]
+  judge ckpt0v1:  25%|██▌       | 25/100 [1:00:26<4:12:04, 201.67s/it]
+  judge ckpt0v1:  26%|██▌       | 26/100 [1:01:28<3:16:49, 159.58s/it]
+  judge ckpt0v1:  27%|██▋       | 27/100 [1:01:43<2:21:34, 116.37s/it]
+  judge ckpt0v1:  28%|██▊       | 28/100 [1:02:02<1:44:31, 87.10s/it] 
+  judge ckpt0v1:  29%|██▉       | 29/100 [1:05:30<2:26:01, 123.41s/it]
+  judge ckpt0v1:  30%|███       | 30/100 [1:06:21<1:58:26, 101.52s/it]
+  judge ckpt0v1:  31%|███       | 31/100 [1:07:25<1:43:47, 90.25s/it] 
+  judge ckpt0v1:  32%|███▏      | 32/100 [1:08:00<1:23:26, 73.63s/it]
+  judge ckpt0v1:  33%|███▎      | 33/100 [1:08:54<1:15:48, 67.89s/it]
+  judge ckpt0v1:  34%|███▍      | 34/100 [1:09:07<56:39, 51.51s/it]  
+  judge ckpt0v1:  35%|███▌      | 35/100 [1:12:35<1:46:39, 98.45s/it]
+  judge ckpt0v1:  36%|███▌      | 36/100 [1:12:48<1:17:34, 72.72s/it]
+  judge ckpt0v1:  37%|███▋      | 37/100 [1:13:14<1:01:43, 58.78s/it]
+  judge ckpt0v1:  38%|███▊      | 38/100 [1:15:25<1:23:08, 80.46s/it]
+  judge ckpt0v1:  39%|███▉      | 39/100 [1:18:53<2:00:44, 118.76s/it]
+  judge ckpt0v1:  40%|████      | 40/100 [1:22:22<2:25:34, 145.57s/it]
+  judge ckpt0v1:  41%|████      | 41/100 [1:25:49<2:41:30, 164.25s/it]
+  judge ckpt0v1:  42%|████▏     | 42/100 [1:26:13<1:58:04, 122.14s/it]
+  judge ckpt0v1:  43%|████▎     | 43/100 [1:26:50<1:31:33, 96.38s/it] 
+  judge ckpt0v1:  44%|████▍     | 44/100 [1:30:05<1:57:44, 126.14s/it]
+  judge ckpt0v1:  45%|████▌     | 45/100 [1:30:35<1:29:13, 97.35s/it] 
+  judge ckpt0v1:  46%|████▌     | 46/100 [1:34:03<1:57:28, 130.52s/it]
+  judge ckpt0v1:  47%|████▋     | 47/100 [1:36:04<1:52:44, 127.64s/it]
+  judge ckpt0v1:  48%|████▊     | 48/100 [1:37:01<1:32:18, 106.50s/it]
+  judge ckpt0v1:  49%|████▉     | 49/100 [1:39:15<1:37:30, 114.71s/it]
+  judge ckpt0v1:  50%|█████     | 50/100 [1:42:43<1:58:55, 142.72s/it]
+  judge ckpt0v1:  51%|█████     | 51/100 [1:43:09<1:28:01, 107.78s/it]
+  judge ckpt0v1:  52%|█████▏    | 52/100 [1:46:37<1:50:10, 137.73s/it]
+  judge ckpt0v1:  53%|█████▎    | 53/100 [1:50:05<2:04:25, 158.83s/it]
+  judge ckpt0v1:  54%|█████▍    | 54/100 [1:53:33<2:13:07, 173.63s/it]
+  judge ckpt0v1:  55%|█████▌    | 55/100 [1:53:45<1:33:51, 125.14s/it]
+  judge ckpt0v1:  56%|█████▌    | 56/100 [1:57:13<1:50:01, 150.03s/it]
+  judge ckpt0v1:  57%|█████▋    | 57/100 [1:59:29<1:44:29, 145.80s/it]
+  judge ckpt0v1:  58%|█████▊    | 58/100 [2:02:57<1:55:05, 164.43s/it]
+  judge ckpt0v1:  59%|█████▉    | 59/100 [2:03:17<1:22:43, 121.05s/it]
+  judge ckpt0v1:  60%|██████    | 60/100 [2:06:45<1:38:06, 147.16s/it]
+  judge ckpt0v1:  61%|██████    | 61/100 [2:07:42<1:17:58, 119.95s/it]
+  judge ckpt0v1:  62%|██████▏   | 62/100 [2:11:09<1:32:37, 146.24s/it]
+  judge ckpt0v1:  63%|██████▎   | 63/100 [2:14:37<1:41:36, 164.76s/it]
+  judge ckpt0v1:  64%|██████▍   | 64/100 [2:18:05<1:46:36, 177.69s/it]
+  judge ckpt0v1:  65%|██████▌   | 65/100 [2:21:17<1:46:09, 182.00s/it]
+  judge ckpt0v1:  66%|██████▌   | 66/100 [2:23:31<1:34:55, 167.53s/it]
+  judge ckpt0v1:  67%|██████▋   | 67/100 [2:24:08<1:10:40, 128.51s/it]
+  judge ckpt0v1:  68%|██████▊   | 68/100 [2:27:36<1:21:15, 152.35s/it]
+  judge ckpt0v1:  69%|██████▉   | 69/100 [2:31:00<1:26:40, 167.76s/it]
+  judge ckpt0v1:  70%|███████   | 70/100 [2:34:28<1:29:56, 179.90s/it]
+  judge ckpt0v1:  71%|███████   | 71/100 [2:36:10<1:15:39, 156.55s/it]
+  judge ckpt0v1:  72%|███████▏  | 72/100 [2:36:52<56:55, 121.98s/it]  
+  judge ckpt0v1:  73%|███████▎  | 73/100 [2:38:54<54:54, 122.02s/it]
+  judge ckpt0v1:  74%|███████▍  | 74/100 [2:42:22<1:04:04, 147.87s/it]
+  judge ckpt0v1:  75%|███████▌  | 75/100 [2:45:50<1:09:09, 165.96s/it]
+  judge ckpt0v1:  76%|███████▌  | 76/100 [2:46:49<53:29, 133.73s/it]  
+  judge ckpt0v1:  77%|███████▋  | 77/100 [2:50:17<59:49, 156.06s/it]
+  judge ckpt0v1:  78%|███████▊  | 78/100 [2:52:20<53:32, 146.04s/it]
+  judge ckpt0v1:  79%|███████▉  | 79/100 [2:53:22<42:20, 120.97s/it]
+  judge ckpt0v1:  80%|████████  | 80/100 [2:56:50<49:02, 147.14s/it]
+  judge ckpt0v1:  81%|████████  | 81/100 [2:57:03<33:49, 106.83s/it]
+  judge ckpt0v1:  82%|████████▏ | 82/100 [2:58:09<28:21, 94.53s/it] 
+  judge ckpt0v1:  83%|████████▎ | 83/100 [3:01:37<36:26, 128.59s/it]
+  judge ckpt0v1:  84%|████████▍ | 84/100 [3:05:04<40:34, 152.16s/it]
+  judge ckpt0v1:  85%|████████▌ | 85/100 [3:05:23<28:03, 112.21s/it]
+  judge ckpt0v1:  86%|████████▌ | 86/100 [3:06:19<22:15, 95.37s/it] 
+  judge ckpt0v1:  87%|████████▋ | 87/100 [3:07:28<18:56, 87.42s/it]
+  judge ckpt0v1:  88%|████████▊ | 88/100 [3:10:56<24:43, 123.61s/it]
+  judge ckpt0v1:  89%|████████▉ | 89/100 [3:14:24<27:18, 148.99s/it]
+  judge ckpt0v1:  90%|█████████ | 90/100 [3:17:52<27:47, 166.75s/it]
+  judge ckpt0v1:  91%|█████████ | 91/100 [3:21:20<26:52, 179.12s/it]
+  judge ckpt0v1:  92%|█████████▏| 92/100 [3:23:24<21:39, 162.44s/it]
+  judge ckpt0v1:  93%|█████████▎| 93/100 [3:26:52<20:32, 176.07s/it]
+  judge ckpt0v1:  94%|█████████▍| 94/100 [3:29:01<16:11, 161.94s/it]
+  judge ckpt0v1:  95%|█████████▌| 95/100 [3:30:09<11:09, 133.83s/it]
+  judge ckpt0v1:  96%|█████████▌| 96/100 [3:31:08<07:25, 111.39s/it]
+  judge ckpt0v1:  97%|█████████▋| 97/100 [3:31:33<04:16, 85.42s/it] 
+  judge ckpt0v1:  98%|█████████▊| 98/100 [3:32:34<02:36, 78.18s/it]
+  judge ckpt0v1:  99%|█████████▉| 99/100 [3:33:24<01:09, 69.58s/it]
+  judge ckpt0v1: 100%|██████████| 100/100 [3:35:37<00:00, 88.87s/it]
+  judge ckpt0v1: 100%|██████████| 100/100 [3:35:37<00:00, 129.38s/it]
+
+  judge ckpt1v2:   0%|          | 0/100 [00:00<?, ?it/s]
+  judge ckpt1v2:   1%|          | 1/100 [03:28<5:43:22, 208.11s/it]
+  judge ckpt1v2:   2%|▏         | 2/100 [04:25<3:14:56, 119.35s/it]
+  judge ckpt1v2:   3%|▎         | 3/100 [07:39<4:08:25, 153.67s/it]
+  judge ckpt1v2:   4%|▍         | 4/100 [08:20<2:54:20, 108.96s/it]
+  judge ckpt1v2:   5%|▌         | 5/100 [11:48<3:49:05, 144.68s/it]
+  judge ckpt1v2:   6%|▌         | 6/100 [15:16<4:20:16, 166.13s/it]
+  judge ckpt1v2:   7%|▋         | 7/100 [18:44<4:38:47, 179.86s/it]Terminated
+
+ERROR conda.cli.main_run:execute(125): `conda run python src/evaluation/judge_eval.py --config config.yaml --eval_type json` failed. (See above for error)
+[2026-04-06 03:16:46] INFO judge_eval: Judge model: qwen3-235b-a22b-thinking-2507-fp8
+[2026-04-06 03:16:46] INFO judge_eval: Running judge eval: ckpt0v1
+[2026-04-06 03:16:46] INFO judge_eval: ckpt0 vs ckpt1: 100 prompts
+[2026-04-06 03:23:37] WARNING judge_eval:   Failed to parse judge response for json_0004
+[2026-04-06 03:27:05] WARNING judge_eval:   Failed to parse judge response for json_0005
+[2026-04-06 03:35:10] WARNING judge_eval:   Failed to parse judge response for json_0010
+[2026-04-06 03:38:38] WARNING judge_eval:   Failed to parse judge response for json_0011
+[2026-04-06 03:43:11] WARNING judge_eval:   Failed to parse judge response for json_0013
+[2026-04-06 03:46:39] WARNING judge_eval:   Failed to parse judge response for json_0014
+[2026-04-06 03:53:33] WARNING judge_eval:   Failed to parse judge response for json_0017
+[2026-04-06 03:57:01] WARNING judge_eval:   Failed to parse judge response for json_0018
+[2026-04-06 04:06:49] WARNING judge_eval:   Failed to parse judge response for json_0021
+[2026-04-06 04:10:17] WARNING judge_eval:   Failed to parse judge response for json_0022
+[2026-04-06 04:13:45] WARNING judge_eval:   Failed to parse judge response for json_0023
+[2026-04-06 04:17:13] WARNING judge_eval:   Failed to parse judge response for json_0024
+[2026-04-06 04:22:17] WARNING judge_eval:   Failed to parse judge response for json_0028
+[2026-04-06 04:29:22] WARNING judge_eval:   Failed to parse judge response for json_0034
+[2026-04-06 04:35:40] WARNING judge_eval:   Failed to parse judge response for json_0038
+[2026-04-06 04:39:08] WARNING judge_eval:   Failed to parse judge response for json_0039
+[2026-04-06 04:42:36] WARNING judge_eval:   Failed to parse judge response for json_0040
+[2026-04-06 04:50:50] WARNING judge_eval:   Failed to parse judge response for json_0045
+[2026-04-06 04:59:30] WARNING judge_eval:   Failed to parse judge response for json_0049
+[2026-04-06 05:03:24] WARNING judge_eval:   Failed to parse judge response for json_0051
+[2026-04-06 05:06:52] WARNING judge_eval:   Failed to parse judge response for json_0052
+[2026-04-06 05:10:20] WARNING judge_eval:   Failed to parse judge response for json_0053
+[2026-04-06 05:14:00] WARNING judge_eval:   Failed to parse judge response for json_0055
+[2026-04-06 05:19:44] WARNING judge_eval:   Failed to parse judge response for json_0057
+[2026-04-06 05:23:32] WARNING judge_eval:   Failed to parse judge response for json_0059
+[2026-04-06 05:27:56] WARNING judge_eval:   Failed to parse judge response for json_0061
+[2026-04-06 05:31:24] WARNING judge_eval:   Failed to parse judge response for json_0062
+[2026-04-06 05:34:52] WARNING judge_eval:   Failed to parse judge response for json_0063
+[2026-04-06 05:44:23] WARNING judge_eval:   Failed to parse judge response for json_0067
+[2026-04-06 05:51:15] WARNING judge_eval:   Failed to parse judge response for json_0069
+[2026-04-06 05:59:09] WARNING judge_eval:   Failed to parse judge response for json_0073
+[2026-04-06 06:02:37] WARNING judge_eval:   Failed to parse judge response for json_0074
+[2026-04-06 06:07:04] WARNING judge_eval:   Failed to parse judge response for json_0076
+[2026-04-06 06:13:37] WARNING judge_eval:   Failed to parse judge response for json_0079
+[2026-04-06 06:18:24] WARNING judge_eval:   Failed to parse judge response for json_0082
+[2026-04-06 06:27:43] WARNING judge_eval:   Failed to parse judge response for json_0087
+[2026-04-06 06:31:11] WARNING judge_eval:   Failed to parse judge response for json_0088
+[2026-04-06 06:34:39] WARNING judge_eval:   Failed to parse judge response for json_0089
+[2026-04-06 06:38:07] WARNING judge_eval:   Failed to parse judge response for json_0090
+[2026-04-06 06:43:39] WARNING judge_eval:   Failed to parse judge response for json_0092
+[2026-04-06 06:52:24] INFO judge_eval:   ckpt0v1: 60 evaluated, 40 failed
+[2026-04-06 06:52:24] INFO judge_eval:   Saved → results/judge_ckpt0v1.jsonl
+[2026-04-06 06:52:24] INFO judge_eval:   Win rate A (ckpt0): 0.100
+[2026-04-06 06:52:24] INFO judge_eval:   Win rate B (ckpt1): 0.333
+[2026-04-06 06:52:24] INFO judge_eval:   Tie rate:                  0.567
+[2026-04-06 06:52:24] INFO judge_eval: Running judge eval: ckpt1v2
+[2026-04-06 06:52:24] INFO judge_eval: ckpt1 vs ckpt2: 100 prompts
+[2026-04-06 06:55:52] WARNING judge_eval:   Failed to parse judge response for json_0000
+[2026-04-06 07:04:13] WARNING judge_eval:   Failed to parse judge response for json_0004
+[2026-04-06 07:07:40] WARNING judge_eval:   Failed to parse judge response for json_0005
+[2026-04-06 07:11:09] WARNING judge_eval:   Failed to parse judge response for json_0006
+
