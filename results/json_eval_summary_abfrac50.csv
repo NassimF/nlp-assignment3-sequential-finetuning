@@ -1,0 +1,2 @@
+checkpoint,n_total,json_validity_rate,schema_compliance_rate,exact_match_rate,field_f1_mean
+2,100,0.57,0.53,0.1,0.12833333333333333

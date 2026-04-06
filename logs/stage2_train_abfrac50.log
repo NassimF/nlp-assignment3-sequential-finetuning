@@ -1,0 +1,23 @@
+[2026-04-06 03:50:44] INFO stage2_train_abfrac50: ============================================================
+[2026-04-06 03:50:44] INFO stage2_train_abfrac50: Stage 2 — QLoRA fine-tuning on teacher-generated JSON data
+[2026-04-06 03:50:44] INFO stage2_train_abfrac50: ============================================================
+[2026-04-06 03:50:44] INFO stage2_train_abfrac50: GPU 0: NVIDIA A100-SXM4-80GB, 81920 MiB, 81050 MiB, 535.230.02
+[2026-04-06 03:50:44] INFO stage2_train_abfrac50: GPU 1: NVIDIA A100-SXM4-80GB, 81920 MiB, 81050 MiB, 535.230.02
+[2026-04-06 03:50:44] INFO stage2_train_abfrac50: Loading tokenizer: microsoft/Phi-3.5-mini-instruct
+[2026-04-06 03:50:45] INFO stage2_train_abfrac50: Loading dataset: data/json_train.jsonl
+[2026-04-06 03:50:45] INFO stage2_train_abfrac50: Data fraction 0.5: using 490/490 examples
+[2026-04-06 03:50:45] INFO stage2_train_abfrac50: Training examples: 490
+[2026-04-06 03:50:45] INFO stage2_train_abfrac50: Loading base model: microsoft/Phi-3.5-mini-instruct
+[2026-04-06 03:50:51] INFO stage2_train_abfrac50: Loading Stage 1 adapter from: checkpoints/stage1
+[2026-04-06 03:51:03] INFO stage2_train_abfrac50: Stage 1 adapter merged into base model.
+[2026-04-06 03:51:05] INFO stage2_train_abfrac50: Starting training ...
+[2026-04-06 03:51:05] INFO stage2_train_abfrac50:   Epochs:            2
+[2026-04-06 03:51:05] INFO stage2_train_abfrac50:   Batch size:        4
+[2026-04-06 03:51:05] INFO stage2_train_abfrac50:   Grad accum steps:  4
+[2026-04-06 03:51:05] INFO stage2_train_abfrac50:   Effective batch:   16
+[2026-04-06 03:51:05] INFO stage2_train_abfrac50:   Learning rate:     2e-05
+[2026-04-06 03:51:05] INFO stage2_train_abfrac50:   Max seq length:    1024
+[2026-04-06 03:51:52] INFO stage2_train_abfrac50: step=25  loss=1.0811
+[2026-04-06 03:52:37] INFO stage2_train_abfrac50: step=50  loss=0.9304
+[2026-04-06 03:52:59] INFO stage2_train_abfrac50: Saving adapter to checkpoints/stage2_abfrac50 ...
+[2026-04-06 03:52:59] INFO stage2_train_abfrac50: Stage 2 training complete.

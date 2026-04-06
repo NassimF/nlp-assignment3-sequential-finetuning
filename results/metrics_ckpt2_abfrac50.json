@@ -1,0 +1,10 @@
+{
+  "checkpoint": 2,
+  "n_total": 150,
+  "rouge1": 0.41499812128061,
+  "rouge2": 0.2025522361077984,
+  "rougeL": 0.28317765317528765,
+  "bertscore_f1": 0.8231217265129089,
+  "avg_output_length": 197.16,
+  "task_completion_rate": 0.9333333333333333
+}
