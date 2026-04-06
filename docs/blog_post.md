@@ -297,6 +297,20 @@ The `structured_output_validity` dimension was given a neutral default of 3 for 
 
 ---
 
+## 5. Conclusion
+
+This assignment implemented and evaluated a complete two-stage sequential instruction-tuning pipeline for Phi-3.5 Mini Instruct, yielding a clear answer to the central research question.
+
+**Does Stage 2 cause catastrophic forgetting? No.** Across all evaluation axes — ROUGE-L (+0.003), BERTScore (+0.0007), task completion rate (−0.7%, within noise), and pairwise judge win rate (+7.9pp from ckpt1 to ckpt2) — Stage 2 fine-tuning on 981 teacher-generated JSON examples does not degrade the general instruction-following capability gained in Stage 1. The judge results are particularly striking: ckpt2 actually wins more pairwise comparisons than ckpt1, suggesting the structured-output training incidentally improved general response quality.
+
+**JSON specialization gains are modest and mixed.** Overall validity improves from 48% (base) to 58% (Stage 1) to 56% (Stage 2). Stage 1's +10pp jump reflects spillover from general instruction-following discipline. Stage 2's slight regression (−2pp) is driven by the dominant failure mode — trailing content after the JSON object — that Stage 2 partially reintroduces. Per-task, extraction and tool-call generation improve meaningfully; classification and schema-constrained generation show partial regression.
+
+**The ablation study reveals LR as the key lever.** Halving the Stage 2 learning rate (1e-5 vs 2e-5) eliminates the JSON validity regression entirely (58% vs 56%) while preserving Alpaca ROUGE-L. This confirms the -2pp regression is caused by over-aggressive fine-tuning rather than an inherent data distribution conflict. For practitioners: when Stage 2 data is small and domain-specific, use a lower learning rate than Stage 1 to get the best of both worlds — structured-output improvement without general capability regression.
+
+**The null forgetting result is expected but not trivial.** The 52:1 data ratio (51K vs 981 examples), the LoRA architecture's limited parameter budget (0.65% trainable), and the fresh adapter design all contribute to forgetting prevention. These factors should be considered deliberately when designing sequential fine-tuning pipelines — forgetting risk increases when Stage 2 data is large, the learning rate is high, or full-parameter fine-tuning is used.
+
+---
+
 ## Appendix: Full Prompt Templates
 
 ### A. Teacher-Generation System Prompt
