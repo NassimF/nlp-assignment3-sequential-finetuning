@@ -95,13 +95,13 @@ bash scripts/run_eval_checkpoint2.sh   # also runs judge + aggregation
 
 ## Assignment Requirements Checklist
 
-- [ ] 3-checkpoint comparison table (ckpt0, ckpt1, ckpt2)
-- [ ] Alpaca eval: 100+ prompts, ROUGE-1/2/L, BERTScore, length, completion rate, judge win rate
-- [ ] JSON eval: validity, schema compliance, exact match, field F1, error taxonomy
-- [ ] Judge: all 3 pairs (0v1, 1v2, 0v2), 6 dimensions, Section 9 output schema
-- [ ] Forgetting analysis: absolute Δ win rate, Δ ROUGE-L, Δ BERTScore, per-category
-- [ ] At least 1 ablation (LR sweep or data fraction)
-- [ ] SLURM scripts in hpc/ (both stages)
-- [ ] Training logs + loss curves in logs/
-- [ ] Blog post in docs/blog_post.md (5 pages + appendix)
-- [ ] Prompt engineering section with iteration evidence (15% of grade)
+- [x] 3-checkpoint comparison table (ckpt0, ckpt1, ckpt2)
+- [x] Alpaca eval: 100+ prompts, ROUGE-1/2/L, BERTScore, length, completion rate, judge win rate
+- [x] JSON eval: validity, schema compliance, exact match, field F1, error taxonomy
+- [x] Judge: all 3 pairs (0v1, 1v2, 0v2), 6 dimensions, Section 9 output schema (Alpaca done; JSON running)
+- [x] Forgetting analysis: absolute Δ win rate, Δ ROUGE-L, Δ BERTScore, per-category
+- [ ] At least 1 ablation (LR sweep or data fraction) — scripts ready, not yet run
+- [x] SLURM scripts in hpc/ (both stages)
+- [x] Training logs + loss curves in logs/
+- [x] Blog post in docs/blog_post.md (5 pages + appendix)
+- [x] Prompt engineering section with iteration evidence (15% of grade)
