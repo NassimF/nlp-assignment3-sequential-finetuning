@@ -1,0 +1,53 @@
+[2026-04-05 18:45:08] INFO judge_eval: Judge model: qwen3-235b-a22b-thinking-2507-fp8
+[2026-04-05 18:45:08] INFO judge_eval: Running judge eval: ckpt0v1
+[2026-04-05 18:45:08] INFO judge_eval: ckpt0 vs ckpt1: 150 prompts
+[2026-04-05 18:53:48] WARNING judge_eval:   Failed to parse judge response for alpaca_0008
+[2026-04-05 19:08:16] WARNING judge_eval:   Failed to parse judge response for alpaca_0022
+[2026-04-05 19:14:45] WARNING judge_eval:   Failed to parse judge response for alpaca_0027
+[2026-04-05 19:22:42] WARNING judge_eval:   Failed to parse judge response for alpaca_0034
+[2026-04-05 19:33:43] WARNING judge_eval:   Failed to parse judge response for alpaca_0045
+[2026-04-05 19:44:09] WARNING judge_eval:   Failed to parse judge response for alpaca_0055
+[2026-04-05 20:02:03] WARNING judge_eval:   Failed to parse judge response for alpaca_0071
+[2026-04-05 20:34:12] WARNING judge_eval:   Failed to parse judge response for alpaca_0110
+[2026-04-05 21:06:41] INFO judge_eval:   ckpt0v1: 142 evaluated, 8 failed
+[2026-04-05 21:06:41] INFO judge_eval:   Saved → results/judge_ckpt0v1.jsonl
+[2026-04-05 21:06:41] INFO judge_eval:   Win rate A (ckpt0): 0.275
+[2026-04-05 21:06:41] INFO judge_eval:   Win rate B (ckpt1): 0.162
+[2026-04-05 21:06:41] INFO judge_eval:   Tie rate:                  0.563
+[2026-04-05 21:06:41] INFO judge_eval: Running judge eval: ckpt1v2
+[2026-04-05 21:06:41] INFO judge_eval: ckpt1 vs ckpt2: 150 prompts
+[2026-04-05 21:15:48] WARNING judge_eval:   Failed to parse judge response for alpaca_0008
+[2026-04-05 21:48:40] WARNING judge_eval:   Failed to parse judge response for alpaca_0045
+[2026-04-05 22:25:50] WARNING judge_eval:   Failed to parse judge response for alpaca_0092
+[2026-04-05 22:31:38] WARNING judge_eval:   Failed to parse judge response for alpaca_0097
+[2026-04-05 22:59:59] WARNING judge_eval:   Failed to parse judge response for alpaca_0127
+[2026-04-05 23:20:06] INFO judge_eval:   ckpt1v2: 145 evaluated, 5 failed
+[2026-04-05 23:20:06] INFO judge_eval:   Saved → results/judge_ckpt1v2.jsonl
+[2026-04-05 23:20:06] INFO judge_eval:   Win rate A (ckpt1): 0.179
+[2026-04-05 23:20:06] INFO judge_eval:   Win rate B (ckpt2): 0.241
+[2026-04-05 23:20:06] INFO judge_eval:   Tie rate:                  0.579
+[2026-04-05 23:20:06] INFO judge_eval: Running judge eval: ckpt0v2
+[2026-04-05 23:20:06] INFO judge_eval: ckpt0 vs ckpt2: 150 prompts
+[2026-04-05 23:31:55] WARNING judge_eval:   Failed to parse judge response for alpaca_0008
+[2026-04-05 23:50:35] WARNING judge_eval:   Failed to parse judge response for alpaca_0027
+[2026-04-05 23:57:44] WARNING judge_eval:   Failed to parse judge response for alpaca_0032
+[2026-04-06 00:01:12] WARNING judge_eval:   Failed to parse judge response for alpaca_0033
+[2026-04-06 00:16:17] WARNING judge_eval:   Failed to parse judge response for alpaca_0045
+[2026-04-06 00:49:23] WARNING judge_eval:   Failed to parse judge response for alpaca_0078
+[2026-04-06 00:53:18] WARNING judge_eval:   Failed to parse judge response for alpaca_0081
+[2026-04-06 00:57:48] WARNING judge_eval:   Failed to parse judge response for alpaca_0084
+[2026-04-06 01:06:53] WARNING judge_eval:   Failed to parse judge response for alpaca_0092
+[2026-04-06 01:11:51] WARNING judge_eval:   Failed to parse judge response for alpaca_0097
+[2026-04-06 01:16:11] WARNING judge_eval:   Failed to parse judge response for alpaca_0099
+[2026-04-06 01:36:49] WARNING judge_eval:   Failed to parse judge response for alpaca_0121
+[2026-04-06 01:59:37] WARNING judge_eval:   Failed to parse judge response for alpaca_0146
+[2026-04-06 02:01:38] INFO judge_eval:   ckpt0v2: 137 evaluated, 13 failed
+[2026-04-06 02:01:38] INFO judge_eval:   Saved → results/judge_ckpt0v2.jsonl
+[2026-04-06 02:01:38] INFO judge_eval:   Win rate A (ckpt0): 0.277
+[2026-04-06 02:01:38] INFO judge_eval:   Win rate B (ckpt2): 0.241
+[2026-04-06 02:01:38] INFO judge_eval:   Tie rate:                  0.482
+[2026-04-06 02:01:38] INFO judge_eval: Saved judge summary → results/judge_summary.json
+[2026-04-06 03:16:46] INFO judge_eval: Judge model: qwen3-235b-a22b-thinking-2507-fp8
+[2026-04-06 03:16:46] INFO judge_eval: Running judge eval: ckpt0v1
+[2026-04-06 03:16:46] INFO judge_eval: ckpt0 vs ckpt1: 100 prompts
+[2026-04-06 03:23:37] WARNING judge_eval:   Failed to parse judge response for json_0004

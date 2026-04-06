@@ -18,3 +18,15 @@
 [2026-04-05 15:51:02] INFO generate_responses: GPU 1: NVIDIA A100-SXM4-80GB, 81920 MiB, 81050 MiB, 535.230.02
 [2026-04-05 15:51:02] INFO generate_responses: Loading model at checkpoint 1 ...
 [2026-04-05 15:51:20] INFO generate_responses: Checkpoint 1 — Alpaca eval
+[2026-04-05 16:41:54] INFO generate_responses:   Saved 150 responses → logs/responses_ckpt1_alpaca.jsonl
+[2026-04-05 16:41:54] INFO generate_responses: Checkpoint 1 — JSON eval
+[2026-04-05 17:17:41] INFO generate_responses:   Saved 100 responses → logs/responses_ckpt1_json.jsonl
+[2026-04-05 17:17:41] INFO generate_responses: All inference complete.
+[2026-04-05 17:18:08] INFO generate_responses: GPU 0: NVIDIA A100-SXM4-80GB, 81920 MiB, 81050 MiB, 535.230.02
+[2026-04-05 17:18:08] INFO generate_responses: GPU 1: NVIDIA A100-SXM4-80GB, 81920 MiB, 81050 MiB, 535.230.02
+[2026-04-05 17:18:08] INFO generate_responses: Loading model at checkpoint 2 ...
+[2026-04-05 17:18:26] INFO generate_responses: Checkpoint 2 — Alpaca eval
+[2026-04-05 18:07:55] INFO generate_responses:   Saved 150 responses → logs/responses_ckpt2_alpaca.jsonl
+[2026-04-05 18:07:55] INFO generate_responses: Checkpoint 2 — JSON eval
+[2026-04-05 18:44:52] INFO generate_responses:   Saved 100 responses → logs/responses_ckpt2_json.jsonl
+[2026-04-05 18:44:52] INFO generate_responses: All inference complete.

@@ -49,11 +49,13 @@ Check/update `model.teacher` and `model.judge` in `config.yaml` if needed.
 | Stage | Description | Status |
 |-------|-------------|--------|
 | 1 | Scaffold, env, config | ✅ Complete |
-| 2 | Data prep (Alpaca + teacher JSON) | 🔄 In progress (Alpaca done, JSON generating) |
-| 3 | Stage 1 QLoRA training (Alpaca) | ⬜ Todo |
-| 4 | Stage 2 QLoRA training (JSON) | ⬜ Todo |
-| 5 | Judge eval + forgetting analysis | ⬜ Todo |
-| 6 | Blog post report | ⬜ Todo |
+| 2 | Data prep (Alpaca + teacher JSON) | ✅ Complete (981 train + 100 eval JSON examples) |
+| 3 | Stage 1 QLoRA training (Alpaca) | ✅ Complete (final loss 0.910, step 9552) |
+| 4 | Stage 2 QLoRA training (JSON) | ✅ Complete (final loss 0.751, step 124) |
+| 5a | Inference + auto metrics (all 3 ckpts) | ✅ Complete |
+| 5b | Judge eval Alpaca (3 pairs) | ✅ Complete |
+| 5c | Judge eval JSON (3 pairs) | 🔄 Running (PID 357638, ~5h) |
+| 6 | Blog post report | 🔄 ~95% complete (pending JSON judge results) |
 
 Update the Status column as stages complete.
 

@@ -1,0 +1,77 @@
+{
+  "ckpt0v1": {
+    "n": 142,
+    "wins_a": 39,
+    "wins_b": 23,
+    "ties": 80,
+    "win_rate_a": 0.2746478873239437,
+    "win_rate_b": 0.1619718309859155,
+    "tie_rate": 0.5633802816901409,
+    "checkpoint_a_avg": {
+      "instruction_following": 4.450704225352113,
+      "correctness": 4.330985915492958,
+      "clarity": 4.577464788732394,
+      "completeness": 4.330985915492958,
+      "structured_output_validity": 3.0,
+      "hallucination_risk": 4.401408450704225
+    },
+    "checkpoint_b_avg": {
+      "instruction_following": 4.52112676056338,
+      "correctness": 4.274647887323944,
+      "clarity": 4.542253521126761,
+      "completeness": 4.359154929577465,
+      "structured_output_validity": 3.0,
+      "hallucination_risk": 4.28169014084507
+    }
+  },
+  "ckpt1v2": {
+    "n": 145,
+    "wins_a": 26,
+    "wins_b": 35,
+    "ties": 84,
+    "win_rate_a": 0.1793103448275862,
+    "win_rate_b": 0.2413793103448276,
+    "tie_rate": 0.5793103448275863,
+    "checkpoint_a_avg": {
+      "instruction_following": 4.489655172413793,
+      "correctness": 4.310344827586207,
+      "clarity": 4.517241379310345,
+      "completeness": 4.358620689655172,
+      "structured_output_validity": 3.0,
+      "hallucination_risk": 4.4206896551724135
+    },
+    "checkpoint_b_avg": {
+      "instruction_following": 4.468965517241379,
+      "correctness": 4.324137931034483,
+      "clarity": 4.517241379310345,
+      "completeness": 4.337931034482758,
+      "structured_output_validity": 3.0,
+      "hallucination_risk": 4.482758620689655
+    }
+  },
+  "ckpt0v2": {
+    "n": 137,
+    "wins_a": 38,
+    "wins_b": 33,
+    "ties": 66,
+    "win_rate_a": 0.2773722627737226,
+    "win_rate_b": 0.24087591240875914,
+    "tie_rate": 0.48175182481751827,
+    "checkpoint_a_avg": {
+      "instruction_following": 4.562043795620438,
+      "correctness": 4.416058394160584,
+      "clarity": 4.627737226277373,
+      "completeness": 4.437956204379562,
+      "structured_output_validity": 3.0,
+      "hallucination_risk": 4.4963503649635035
+    },
+    "checkpoint_b_avg": {
+      "instruction_following": 4.525547445255475,
+      "correctness": 4.357664233576642,
+      "clarity": 4.569343065693431,
+      "completeness": 4.394160583941606,
+      "structured_output_validity": 3.0,
+      "hallucination_risk": 4.445255474452555
+    }
+  }
+}

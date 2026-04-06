@@ -1,0 +1,6 @@
+[2026-04-06 02:01:38] INFO aggregate_results: Saved comparison table → results/checkpoint_comparison_table.csv
+[2026-04-06 02:01:38] INFO aggregate_results: Saved JSON metrics table → results/json_metrics_table.csv
+[2026-04-06 02:01:39] INFO aggregate_results: Saved forgetting curve → results/forgetting_curve.png
+[2026-04-06 02:01:39] INFO aggregate_results: Saved loss curves → results/loss_curves.png
+[2026-04-06 02:01:39] INFO aggregate_results: 
+=== Checkpoint Comparison Summary ===
