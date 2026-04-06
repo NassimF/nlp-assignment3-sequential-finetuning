@@ -141,6 +141,21 @@ The key forgetting metrics are the deltas from ckpt1 → ckpt2 on Alpaca evaluat
 
 The judge win rates confirm the automatic metric findings: in the direct ckpt1 vs ckpt2 comparison, ckpt2 wins 24.1% vs ckpt1's 17.9% (tie 57.9%, n=145) — Stage 2 marginally *improved* general instruction-following rather than degrading it. Against the baseline, ckpt2 closes the gap with ckpt0 (24.1% vs 27.7%) compared to ckpt1 (16.2% vs 27.5%), further confirming no forgetting.
 
+**Per-category breakdown** of ROUGE-L delta (ckpt1 → ckpt2) across Alpaca instruction types:
+
+| Category | n | Ckpt1 ROUGE-L | Ckpt2 ROUGE-L | Δ |
+|---|---|---|---|---|
+| Rewriting | 11 | 0.484 | 0.500 | **+0.016** |
+| Summarization | 6 | 0.375 | 0.386 | **+0.011** |
+| QA / Explanation | 27 | 0.249 | 0.255 | **+0.006** |
+| Classification | 13 | 0.247 | 0.249 | +0.002 |
+| Other / Open-ended | 73 | 0.265 | 0.273 | **+0.007** |
+| Creative writing | 20 | 0.253 | 0.227 | **−0.025** |
+
+*Table 2.4: Per-category ROUGE-L forgetting analysis. Categories assigned by instruction keyword matching.*
+
+The only category showing regression is **creative writing** (−0.025 ROUGE-L), which covers poems, stories, and essays. This is a plausible consequence of Stage 2 JSON training: structured-output supervision may reduce the model's tendency toward open-ended generative diversity, making its creative outputs more "template-like" and thus less similar to the varied reference answers. All other categories hold steady or improve slightly.
+
 **Why no catastrophic forgetting?** Three factors likely contribute:
 1. **Data ratio:** The Stage 2 dataset is tiny (981 examples) relative to Stage 1 (51K). There are simply too few gradient updates to substantially overwrite Stage 1's representations.
 2. **Fresh adapter:** Stage 2 applies a new LoRA adapter on top of the merged Stage 1 model rather than continuing to update the same adapter. This may provide some implicit regularization.
@@ -190,15 +205,25 @@ This is the dominant failure mode across all checkpoints: the model knows the co
 
 ### 3.3 Failure Mode Analysis
 
-<!-- Summarize the error taxonomy from json_eval — which error types dominate at ckpt0 and ckpt1,
-     and whether ckpt2 eliminates them or shifts the failure distribution. -->
+The error taxonomy from `json_eval` reveals how failure modes shift across checkpoints:
 
-Common failure modes observed across checkpoints:
+| Error Type | Ckpt0 | Ckpt1 | Ckpt2 | Description |
+|---|---|---|---|---|
+| Trailing content | 29 | 24 | 26 | Explanation/markdown appended after JSON |
+| Invalid key format | 14 | 10 | 11 | Single-quoted keys (`'key'`) instead of `"key"` |
+| Truncated/malformed | 8 | 7 | 6 | Hits max_tokens mid-object or unclosed brackets |
+| Other JSON error | 1 | 1 | 1 | Misc (duplicate keys, bare words) |
+| **No error (valid)** | **48** | **58** | **56** | Parses successfully |
 
-- **Truncated/malformed JSON** — model generates plausible JSON structure but closes brackets incorrectly or hits max_tokens mid-object.
-- **Invalid key format** — model uses Python dict syntax (`'key'` with single quotes) instead of JSON-compliant double quotes.
-- **Trailing content** — model appends explanation text after the JSON object, breaking `json.loads()`.
-- **Schema drift** — model generates valid JSON but uses different key names than the reference schema.
+*Table 3.1: Error taxonomy across checkpoints (100 JSON eval prompts each).*
+
+**Trailing content is the dominant failure mode** at all checkpoints (29→24→26 instances). As shown in Example 2 above, the model correctly extracts the requested values but wraps them in markdown code fences (` ```json `) and appends a natural-language explanation — a deeply ingrained chat-model behavior from pre-training that conflicts with the "return raw JSON only" instruction. Stage 1 partially suppresses this (29→24) by reinforcing instruction-following discipline, but Stage 2 allows slight regression (24→26), likely because some teacher-generated training examples included explanatory text around the JSON output.
+
+**Invalid key format** (single quotes) drops meaningfully from ckpt0 to ckpt1 (14→10), reflecting Stage 1's improvement in output formatting discipline. Stage 2 holds this at 11 — a near-complete retention of Stage 1's formatting gains.
+
+**Truncated output** steadily decreases across checkpoints (8→7→6), suggesting the model becomes incrementally more efficient at completing JSON objects within the 512-token limit.
+
+The practical fix for trailing content would be a post-processing step stripping markdown fences before `json.loads()`, which would likely raise overall validity rates by ~20pp across all checkpoints. This was intentionally not applied to measure raw model behavior.
 
 ### 3.4 Implications for Sequential Fine-Tuning
 
