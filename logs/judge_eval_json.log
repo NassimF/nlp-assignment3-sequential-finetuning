@@ -167,3 +167,882 @@ ERROR conda.cli.main_run:execute(125): `conda run python src/evaluation/judge_ev
 [2026-04-06 07:07:40] WARNING judge_eval:   Failed to parse judge response for json_0005
 [2026-04-06 07:11:09] WARNING judge_eval:   Failed to parse judge response for json_0006
 
+[2026-04-06 07:13:16] INFO judge_eval: Judge model: qwen3-235b-a22b-thinking-2507-fp8
+[2026-04-06 07:13:16] INFO judge_eval: Running judge eval: ckpt1v2
+[2026-04-06 07:13:16] INFO judge_eval: ckpt1 vs ckpt2: 100 prompts
+[2026-04-06 07:16:44] WARNING judge_eval:   Failed to parse judge response for json_0000
+[2026-04-06 07:22:32] WARNING judge_eval:   Failed to parse judge response for json_0004
+[2026-04-06 07:34:14] WARNING judge_eval:   Failed to parse judge response for json_0011
+[2026-04-06 07:43:08] WARNING judge_eval:   Failed to parse judge response for json_0015
+[2026-04-06 07:47:39] WARNING judge_eval:   Failed to parse judge response for json_0017
+[2026-04-06 07:51:07] WARNING judge_eval:   Failed to parse judge response for json_0018
+[2026-04-06 07:55:53] WARNING judge_eval:   Failed to parse judge response for json_0021
+[2026-04-06 07:59:21] WARNING judge_eval:   Failed to parse judge response for json_0022
+[2026-04-06 08:02:49] WARNING judge_eval:   Failed to parse judge response for json_0023
+[2026-04-06 08:06:17] WARNING judge_eval:   Failed to parse judge response for json_0024
+[2026-04-06 08:12:33] WARNING judge_eval:   Failed to parse judge response for json_0028
+[2026-04-06 08:16:01] WARNING judge_eval:   Failed to parse judge response for json_0029
+[2026-04-06 08:21:31] WARNING judge_eval:   Failed to parse judge response for json_0032
+[2026-04-06 08:26:22] WARNING judge_eval:   Failed to parse judge response for json_0034
+[2026-04-06 08:29:49] WARNING judge_eval:   Failed to parse judge response for json_0035
+[2026-04-06 08:35:08] WARNING judge_eval:   Failed to parse judge response for json_0037
+[2026-04-06 08:38:36] WARNING judge_eval:   Failed to parse judge response for json_0038
+[2026-04-06 08:50:55] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:50:59] WARNING judge_eval:   Failed to parse judge response for json_0039
+[2026-04-06 08:50:59] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:00] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:02] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:06] WARNING judge_eval:   Failed to parse judge response for json_0040
+[2026-04-06 08:51:06] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:07] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:09] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:13] WARNING judge_eval:   Failed to parse judge response for json_0041
+[2026-04-06 08:51:13] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:15] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:17] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:21] WARNING judge_eval:   Failed to parse judge response for json_0042
+[2026-04-06 08:51:21] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:22] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:24] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:28] WARNING judge_eval:   Failed to parse judge response for json_0043
+[2026-04-06 08:51:28] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:29] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:31] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:35] WARNING judge_eval:   Failed to parse judge response for json_0044
+[2026-04-06 08:51:35] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:36] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:38] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:42] WARNING judge_eval:   Failed to parse judge response for json_0045
+[2026-04-06 08:51:42] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:43] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:45] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:49] WARNING judge_eval:   Failed to parse judge response for json_0046
+[2026-04-06 08:51:49] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:50] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:52] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:56] WARNING judge_eval:   Failed to parse judge response for json_0047
+[2026-04-06 08:51:56] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:57] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:51:59] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:03] WARNING judge_eval:   Failed to parse judge response for json_0048
+[2026-04-06 08:52:03] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:04] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:06] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:10] WARNING judge_eval:   Failed to parse judge response for json_0049
+[2026-04-06 08:52:10] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:11] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:13] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:17] WARNING judge_eval:   Failed to parse judge response for json_0050
+[2026-04-06 08:52:17] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:18] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:20] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:24] WARNING judge_eval:   Failed to parse judge response for json_0051
+[2026-04-06 08:52:24] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:25] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:27] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:31] WARNING judge_eval:   Failed to parse judge response for json_0052
+[2026-04-06 08:52:31] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:32] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:34] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:38] WARNING judge_eval:   Failed to parse judge response for json_0053
+[2026-04-06 08:52:38] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:39] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:41] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:45] WARNING judge_eval:   Failed to parse judge response for json_0054
+[2026-04-06 08:52:45] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:46] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:48] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:52] WARNING judge_eval:   Failed to parse judge response for json_0055
+[2026-04-06 08:52:52] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:53] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:55] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:52:59] WARNING judge_eval:   Failed to parse judge response for json_0056
+[2026-04-06 08:52:59] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:00] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:02] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:06] WARNING judge_eval:   Failed to parse judge response for json_0057
+[2026-04-06 08:53:06] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:07] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:09] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:13] WARNING judge_eval:   Failed to parse judge response for json_0058
+[2026-04-06 08:53:13] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:14] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:16] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:20] WARNING judge_eval:   Failed to parse judge response for json_0059
+[2026-04-06 08:53:20] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:21] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:23] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:27] WARNING judge_eval:   Failed to parse judge response for json_0060
+[2026-04-06 08:53:27] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:28] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:30] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:34] WARNING judge_eval:   Failed to parse judge response for json_0061
+[2026-04-06 08:53:34] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:35] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:37] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:42] WARNING judge_eval:   Failed to parse judge response for json_0062
+[2026-04-06 08:53:42] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:43] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:45] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:49] WARNING judge_eval:   Failed to parse judge response for json_0063
+[2026-04-06 08:53:49] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:50] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:52] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:56] WARNING judge_eval:   Failed to parse judge response for json_0064
+[2026-04-06 08:53:56] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:57] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:53:59] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:03] WARNING judge_eval:   Failed to parse judge response for json_0065
+[2026-04-06 08:54:03] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:04] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:06] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:10] WARNING judge_eval:   Failed to parse judge response for json_0066
+[2026-04-06 08:54:10] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:11] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:13] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:17] WARNING judge_eval:   Failed to parse judge response for json_0067
+[2026-04-06 08:54:17] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:18] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:20] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:24] WARNING judge_eval:   Failed to parse judge response for json_0068
+[2026-04-06 08:54:24] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:25] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:27] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:31] WARNING judge_eval:   Failed to parse judge response for json_0069
+[2026-04-06 08:54:31] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:32] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:34] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:38] WARNING judge_eval:   Failed to parse judge response for json_0070
+[2026-04-06 08:54:38] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:39] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:41] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:45] WARNING judge_eval:   Failed to parse judge response for json_0071
+[2026-04-06 08:54:45] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:46] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:48] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:52] WARNING judge_eval:   Failed to parse judge response for json_0072
+[2026-04-06 08:54:52] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:53] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:55] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:54:59] WARNING judge_eval:   Failed to parse judge response for json_0073
+[2026-04-06 08:54:59] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:00] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:02] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:06] WARNING judge_eval:   Failed to parse judge response for json_0074
+[2026-04-06 08:55:06] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:07] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:09] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:13] WARNING judge_eval:   Failed to parse judge response for json_0075
+[2026-04-06 08:55:13] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:14] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:16] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:20] WARNING judge_eval:   Failed to parse judge response for json_0076
+[2026-04-06 08:55:20] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:21] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:23] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:27] WARNING judge_eval:   Failed to parse judge response for json_0077
+[2026-04-06 08:55:27] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:28] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:30] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:34] WARNING judge_eval:   Failed to parse judge response for json_0078
+[2026-04-06 08:55:34] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:35] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:37] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:41] WARNING judge_eval:   Failed to parse judge response for json_0079
+[2026-04-06 08:55:41] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:42] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:44] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:48] WARNING judge_eval:   Failed to parse judge response for json_0080
+[2026-04-06 08:55:48] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:49] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:51] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:55] WARNING judge_eval:   Failed to parse judge response for json_0081
+[2026-04-06 08:55:55] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:56] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:55:58] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:02] WARNING judge_eval:   Failed to parse judge response for json_0082
+[2026-04-06 08:56:02] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:03] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:06] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:10] WARNING judge_eval:   Failed to parse judge response for json_0083
+[2026-04-06 08:56:10] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:11] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:13] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:17] WARNING judge_eval:   Failed to parse judge response for json_0084
+[2026-04-06 08:56:17] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:18] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:20] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:24] WARNING judge_eval:   Failed to parse judge response for json_0085
+[2026-04-06 08:56:24] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:25] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:27] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:31] WARNING judge_eval:   Failed to parse judge response for json_0086
+[2026-04-06 08:56:31] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:32] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:34] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:38] WARNING judge_eval:   Failed to parse judge response for json_0087
+[2026-04-06 08:56:38] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:39] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:41] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:45] WARNING judge_eval:   Failed to parse judge response for json_0088
+[2026-04-06 08:56:45] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:46] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:48] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:52] WARNING judge_eval:   Failed to parse judge response for json_0089
+[2026-04-06 08:56:52] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:53] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:55] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:56:59] WARNING judge_eval:   Failed to parse judge response for json_0090
+[2026-04-06 08:56:59] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:00] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:02] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:06] WARNING judge_eval:   Failed to parse judge response for json_0091
+[2026-04-06 08:57:06] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:07] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:09] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:13] WARNING judge_eval:   Failed to parse judge response for json_0092
+[2026-04-06 08:57:13] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:14] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:16] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:20] WARNING judge_eval:   Failed to parse judge response for json_0093
+[2026-04-06 08:57:20] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:21] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:23] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:27] WARNING judge_eval:   Failed to parse judge response for json_0094
+[2026-04-06 08:57:27] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:28] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:30] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:34] WARNING judge_eval:   Failed to parse judge response for json_0095
+[2026-04-06 08:57:34] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:35] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:37] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:41] WARNING judge_eval:   Failed to parse judge response for json_0096
+[2026-04-06 08:57:41] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:42] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:44] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:48] WARNING judge_eval:   Failed to parse judge response for json_0097
+[2026-04-06 08:57:48] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:49] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:51] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:55] WARNING judge_eval:   Failed to parse judge response for json_0098
+[2026-04-06 08:57:55] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:56] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:57:58] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:02] WARNING judge_eval:   Failed to parse judge response for json_0099
+[2026-04-06 08:58:02] INFO judge_eval:   ckpt1v2: 22 evaluated, 78 failed
+[2026-04-06 08:58:02] INFO judge_eval:   Saved → results/judge_ckpt1v2_json.jsonl
+[2026-04-06 08:58:02] INFO judge_eval:   Win rate A (ckpt1): 0.273
+[2026-04-06 08:58:02] INFO judge_eval:   Win rate B (ckpt2): 0.273
+[2026-04-06 08:58:02] INFO judge_eval:   Tie rate:                  0.455
+[2026-04-06 08:58:02] INFO judge_eval: Running judge eval: ckpt0v2
+[2026-04-06 08:58:02] INFO judge_eval: ckpt0 vs ckpt2: 100 prompts
+[2026-04-06 08:58:02] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:03] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:05] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:09] WARNING judge_eval:   Failed to parse judge response for json_0000
+[2026-04-06 08:58:09] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:10] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:12] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:16] WARNING judge_eval:   Failed to parse judge response for json_0001
+[2026-04-06 08:58:16] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:17] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:19] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:23] WARNING judge_eval:   Failed to parse judge response for json_0002
+[2026-04-06 08:58:23] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:24] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:26] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:30] WARNING judge_eval:   Failed to parse judge response for json_0003
+[2026-04-06 08:58:30] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:31] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:34] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:38] WARNING judge_eval:   Failed to parse judge response for json_0004
+[2026-04-06 08:58:38] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:39] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:41] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:45] WARNING judge_eval:   Failed to parse judge response for json_0005
+[2026-04-06 08:58:45] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:46] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:48] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:52] WARNING judge_eval:   Failed to parse judge response for json_0006
+[2026-04-06 08:58:52] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:53] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:55] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:58:59] WARNING judge_eval:   Failed to parse judge response for json_0007
+[2026-04-06 08:58:59] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:00] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:02] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:06] WARNING judge_eval:   Failed to parse judge response for json_0008
+[2026-04-06 08:59:06] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:07] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:09] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:13] WARNING judge_eval:   Failed to parse judge response for json_0009
+[2026-04-06 08:59:13] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:14] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:16] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:20] WARNING judge_eval:   Failed to parse judge response for json_0010
+[2026-04-06 08:59:20] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:21] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:23] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:27] WARNING judge_eval:   Failed to parse judge response for json_0011
+[2026-04-06 08:59:27] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:28] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:30] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:34] WARNING judge_eval:   Failed to parse judge response for json_0012
+[2026-04-06 08:59:34] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:35] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:37] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:41] WARNING judge_eval:   Failed to parse judge response for json_0013
+[2026-04-06 08:59:41] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:42] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:44] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:48] WARNING judge_eval:   Failed to parse judge response for json_0014
+[2026-04-06 08:59:48] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:49] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:51] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:55] WARNING judge_eval:   Failed to parse judge response for json_0015
+[2026-04-06 08:59:55] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:56] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 08:59:58] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:02] WARNING judge_eval:   Failed to parse judge response for json_0016
+[2026-04-06 09:00:02] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:03] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:05] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:09] WARNING judge_eval:   Failed to parse judge response for json_0017
+[2026-04-06 09:00:09] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:10] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:12] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:16] WARNING judge_eval:   Failed to parse judge response for json_0018
+[2026-04-06 09:00:16] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:17] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:19] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:23] WARNING judge_eval:   Failed to parse judge response for json_0019
+[2026-04-06 09:00:23] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:24] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:26] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:30] WARNING judge_eval:   Failed to parse judge response for json_0020
+[2026-04-06 09:00:30] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:31] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:33] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:37] WARNING judge_eval:   Failed to parse judge response for json_0021
+[2026-04-06 09:00:37] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:38] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:40] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:44] WARNING judge_eval:   Failed to parse judge response for json_0022
+[2026-04-06 09:00:44] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:45] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:47] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:51] WARNING judge_eval:   Failed to parse judge response for json_0023
+[2026-04-06 09:00:51] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:52] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:54] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:58] WARNING judge_eval:   Failed to parse judge response for json_0024
+[2026-04-06 09:00:58] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:00:59] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:01] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:06] WARNING judge_eval:   Failed to parse judge response for json_0025
+[2026-04-06 09:01:06] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:07] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:09] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:13] WARNING judge_eval:   Failed to parse judge response for json_0026
+[2026-04-06 09:01:13] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:14] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:16] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:20] WARNING judge_eval:   Failed to parse judge response for json_0027
+[2026-04-06 09:01:20] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:21] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:23] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:27] WARNING judge_eval:   Failed to parse judge response for json_0028
+[2026-04-06 09:01:27] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:28] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:30] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:34] WARNING judge_eval:   Failed to parse judge response for json_0029
+[2026-04-06 09:01:34] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:35] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:37] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:41] WARNING judge_eval:   Failed to parse judge response for json_0030
+[2026-04-06 09:01:41] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:42] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:44] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:48] WARNING judge_eval:   Failed to parse judge response for json_0031
+[2026-04-06 09:01:48] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:49] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:51] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:55] WARNING judge_eval:   Failed to parse judge response for json_0032
+[2026-04-06 09:01:55] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:56] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:01:58] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:02] WARNING judge_eval:   Failed to parse judge response for json_0033
+[2026-04-06 09:02:02] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:03] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:05] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:09] WARNING judge_eval:   Failed to parse judge response for json_0034
+[2026-04-06 09:02:09] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:10] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:12] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:16] WARNING judge_eval:   Failed to parse judge response for json_0035
+[2026-04-06 09:02:16] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:17] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:19] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:23] WARNING judge_eval:   Failed to parse judge response for json_0036
+[2026-04-06 09:02:23] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:24] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:26] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:30] WARNING judge_eval:   Failed to parse judge response for json_0037
+[2026-04-06 09:02:30] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:31] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:33] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:37] WARNING judge_eval:   Failed to parse judge response for json_0038
+[2026-04-06 09:02:37] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:38] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:40] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:44] WARNING judge_eval:   Failed to parse judge response for json_0039
+[2026-04-06 09:02:44] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:45] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:47] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:51] WARNING judge_eval:   Failed to parse judge response for json_0040
+[2026-04-06 09:02:51] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:52] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:54] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:58] WARNING judge_eval:   Failed to parse judge response for json_0041
+[2026-04-06 09:02:58] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:02:59] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:01] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:05] WARNING judge_eval:   Failed to parse judge response for json_0042
+[2026-04-06 09:03:05] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:06] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:08] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:12] WARNING judge_eval:   Failed to parse judge response for json_0043
+[2026-04-06 09:03:12] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:13] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:15] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:19] WARNING judge_eval:   Failed to parse judge response for json_0044
+[2026-04-06 09:03:19] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:20] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:22] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:26] WARNING judge_eval:   Failed to parse judge response for json_0045
+[2026-04-06 09:03:26] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:27] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:29] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:33] WARNING judge_eval:   Failed to parse judge response for json_0046
+[2026-04-06 09:03:34] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:35] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:37] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:41] WARNING judge_eval:   Failed to parse judge response for json_0047
+[2026-04-06 09:03:41] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:42] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:44] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:48] WARNING judge_eval:   Failed to parse judge response for json_0048
+[2026-04-06 09:03:48] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:49] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:51] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:55] WARNING judge_eval:   Failed to parse judge response for json_0049
+[2026-04-06 09:03:55] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:56] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:03:58] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:02] WARNING judge_eval:   Failed to parse judge response for json_0050
+[2026-04-06 09:04:02] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:03] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:05] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:09] WARNING judge_eval:   Failed to parse judge response for json_0051
+[2026-04-06 09:04:09] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:10] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:12] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:16] WARNING judge_eval:   Failed to parse judge response for json_0052
+[2026-04-06 09:04:16] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:17] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:19] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:23] WARNING judge_eval:   Failed to parse judge response for json_0053
+[2026-04-06 09:04:23] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:24] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:26] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:30] WARNING judge_eval:   Failed to parse judge response for json_0054
+[2026-04-06 09:04:30] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:31] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:33] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:37] WARNING judge_eval:   Failed to parse judge response for json_0055
+[2026-04-06 09:04:37] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:38] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:40] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:44] WARNING judge_eval:   Failed to parse judge response for json_0056
+[2026-04-06 09:04:44] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:45] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:47] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:51] WARNING judge_eval:   Failed to parse judge response for json_0057
+[2026-04-06 09:04:51] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:52] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:54] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:58] WARNING judge_eval:   Failed to parse judge response for json_0058
+[2026-04-06 09:04:58] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:04:59] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:01] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:05] WARNING judge_eval:   Failed to parse judge response for json_0059
+[2026-04-06 09:05:05] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:06] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:08] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:12] WARNING judge_eval:   Failed to parse judge response for json_0060
+[2026-04-06 09:05:12] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:13] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:15] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:19] WARNING judge_eval:   Failed to parse judge response for json_0061
+[2026-04-06 09:05:19] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:20] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:22] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:26] WARNING judge_eval:   Failed to parse judge response for json_0062
+[2026-04-06 09:05:26] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:27] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:29] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:33] WARNING judge_eval:   Failed to parse judge response for json_0063
+[2026-04-06 09:05:33] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:34] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:36] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:40] WARNING judge_eval:   Failed to parse judge response for json_0064
+[2026-04-06 09:05:40] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:41] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:43] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:47] WARNING judge_eval:   Failed to parse judge response for json_0065
+[2026-04-06 09:05:47] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:48] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:50] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:54] WARNING judge_eval:   Failed to parse judge response for json_0066
+[2026-04-06 09:05:54] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:55] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:05:58] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:02] WARNING judge_eval:   Failed to parse judge response for json_0067
+[2026-04-06 09:06:02] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:03] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:05] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:09] WARNING judge_eval:   Failed to parse judge response for json_0068
+[2026-04-06 09:06:09] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:10] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:12] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:16] WARNING judge_eval:   Failed to parse judge response for json_0069
+[2026-04-06 09:06:16] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:17] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:19] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:23] WARNING judge_eval:   Failed to parse judge response for json_0070
+[2026-04-06 09:06:23] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:24] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:26] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:30] WARNING judge_eval:   Failed to parse judge response for json_0071
+[2026-04-06 09:06:30] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:31] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:33] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:37] WARNING judge_eval:   Failed to parse judge response for json_0072
+[2026-04-06 09:06:37] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:38] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:40] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:44] WARNING judge_eval:   Failed to parse judge response for json_0073
+[2026-04-06 09:06:44] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:45] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:47] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:51] WARNING judge_eval:   Failed to parse judge response for json_0074
+[2026-04-06 09:06:51] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:52] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:54] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:58] WARNING judge_eval:   Failed to parse judge response for json_0075
+[2026-04-06 09:06:58] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:06:59] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:01] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:05] WARNING judge_eval:   Failed to parse judge response for json_0076
+[2026-04-06 09:07:05] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:06] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:08] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:12] WARNING judge_eval:   Failed to parse judge response for json_0077
+[2026-04-06 09:07:12] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:13] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:15] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:19] WARNING judge_eval:   Failed to parse judge response for json_0078
+[2026-04-06 09:07:19] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:20] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:22] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:26] WARNING judge_eval:   Failed to parse judge response for json_0079
+[2026-04-06 09:07:26] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:27] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:29] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:33] WARNING judge_eval:   Failed to parse judge response for json_0080
+[2026-04-06 09:07:33] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:34] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:36] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:40] WARNING judge_eval:   Failed to parse judge response for json_0081
+[2026-04-06 09:07:40] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:41] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:43] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:47] WARNING judge_eval:   Failed to parse judge response for json_0082
+[2026-04-06 09:07:47] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:48] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:50] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:54] WARNING judge_eval:   Failed to parse judge response for json_0083
+[2026-04-06 09:07:54] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:55] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:07:57] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:01] WARNING judge_eval:   Failed to parse judge response for json_0084
+[2026-04-06 09:08:01] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:02] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:04] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:08] WARNING judge_eval:   Failed to parse judge response for json_0085
+[2026-04-06 09:08:08] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:09] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:11] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:15] WARNING judge_eval:   Failed to parse judge response for json_0086
+[2026-04-06 09:08:15] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:16] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:18] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:22] WARNING judge_eval:   Failed to parse judge response for json_0087
+[2026-04-06 09:08:23] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:24] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:26] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:30] WARNING judge_eval:   Failed to parse judge response for json_0088
+[2026-04-06 09:08:30] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:31] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:33] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:37] WARNING judge_eval:   Failed to parse judge response for json_0089
+[2026-04-06 09:08:37] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:38] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:40] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:44] WARNING judge_eval:   Failed to parse judge response for json_0090
+[2026-04-06 09:08:44] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:45] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:47] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:51] WARNING judge_eval:   Failed to parse judge response for json_0091
+[2026-04-06 09:08:51] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:52] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:54] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:58] WARNING judge_eval:   Failed to parse judge response for json_0092
+[2026-04-06 09:08:58] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:08:59] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:01] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:05] WARNING judge_eval:   Failed to parse judge response for json_0093
+[2026-04-06 09:09:05] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:06] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:08] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:12] WARNING judge_eval:   Failed to parse judge response for json_0094
+[2026-04-06 09:09:12] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:13] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:15] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:19] WARNING judge_eval:   Failed to parse judge response for json_0095
+[2026-04-06 09:09:19] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:20] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:22] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:26] WARNING judge_eval:   Failed to parse judge response for json_0096
+[2026-04-06 09:09:26] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:27] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:29] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:33] WARNING judge_eval:   Failed to parse judge response for json_0097
+[2026-04-06 09:09:33] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:34] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:36] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:40] WARNING judge_eval:   Failed to parse judge response for json_0098
+[2026-04-06 09:09:40] WARNING judge_eval:   Judge call failed (attempt 1): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:41] WARNING judge_eval:   Judge call failed (attempt 2): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:43] WARNING judge_eval:   Judge call failed (attempt 3): Error code: 404 - {'error': {'message': 'Model not found or no running instances available', 'code': 404, 'type': 'NotFound'}}
+[2026-04-06 09:09:47] WARNING judge_eval:   Failed to parse judge response for json_0099
+[2026-04-06 09:09:47] INFO judge_eval:   ckpt0v2: 0 evaluated, 100 failed
+[2026-04-06 09:09:47] INFO judge_eval: Saved judge summary → results/judge_summary_json.json
+
+  judge ckpt1v2:   0%|          | 0/100 [00:00<?, ?it/s]
+  judge ckpt1v2:   1%|          | 1/100 [03:28<5:43:48, 208.37s/it]
+  judge ckpt1v2:   2%|▏         | 2/100 [03:49<2:40:35, 98.32s/it] 
+  judge ckpt1v2:   3%|▎         | 3/100 [04:55<2:14:46, 83.37s/it]
+  judge ckpt1v2:   4%|▍         | 4/100 [05:48<1:54:08, 71.34s/it]
+  judge ckpt1v2:   5%|▌         | 5/100 [09:16<3:11:01, 120.65s/it]
+  judge ckpt1v2:   6%|▌         | 6/100 [11:02<3:01:28, 115.84s/it]
+  judge ckpt1v2:   7%|▋         | 7/100 [13:13<3:06:58, 120.62s/it]
+  judge ckpt1v2:   8%|▊         | 8/100 [16:29<3:41:51, 144.69s/it]
+  judge ckpt1v2:   9%|▉         | 9/100 [16:41<2:36:22, 103.10s/it]
+  judge ckpt1v2:  10%|█         | 10/100 [17:02<1:56:51, 77.90s/it]
+  judge ckpt1v2:  11%|█         | 11/100 [17:30<1:32:43, 62.52s/it]
+  judge ckpt1v2:  12%|█▏        | 12/100 [20:58<2:36:35, 106.77s/it]
+  judge ckpt1v2:  13%|█▎        | 13/100 [22:05<2:17:18, 94.70s/it] 
+  judge ckpt1v2:  14%|█▍        | 14/100 [24:20<2:33:14, 106.92s/it]
+  judge ckpt1v2:  15%|█▌        | 15/100 [26:24<2:38:46, 112.08s/it]
+  judge ckpt1v2:  16%|█▌        | 16/100 [29:52<3:17:20, 140.96s/it]
+  judge ckpt1v2:  17%|█▋        | 17/100 [30:55<2:42:27, 117.44s/it]
+  judge ckpt1v2:  18%|█▊        | 18/100 [34:23<3:17:43, 144.68s/it]
+  judge ckpt1v2:  19%|█▉        | 19/100 [37:51<3:41:00, 163.71s/it]
+  judge ckpt1v2:  20%|██        | 20/100 [38:53<2:57:49, 133.37s/it]
+  judge ckpt1v2:  21%|██        | 21/100 [39:08<2:08:45, 97.79s/it] 
+  judge ckpt1v2:  22%|██▏       | 22/100 [42:36<2:50:06, 130.85s/it]
+  judge ckpt1v2:  23%|██▎       | 23/100 [46:04<3:17:42, 154.06s/it]
+  judge ckpt1v2:  24%|██▍       | 24/100 [49:32<3:35:32, 170.17s/it]
+  judge ckpt1v2:  25%|██▌       | 25/100 [53:00<3:46:58, 181.58s/it]
+  judge ckpt1v2:  26%|██▌       | 26/100 [55:03<3:22:13, 163.97s/it]
+  judge ckpt1v2:  27%|██▋       | 27/100 [55:37<2:31:54, 124.85s/it]
+  judge ckpt1v2:  28%|██▊       | 28/100 [55:48<1:49:02, 90.87s/it] 
+  judge ckpt1v2:  29%|██▉       | 29/100 [59:17<2:29:12, 126.09s/it]
+  judge ckpt1v2:  30%|███       | 30/100 [1:02:44<2:55:39, 150.57s/it]
+  judge ckpt1v2:  31%|███       | 31/100 [1:03:51<2:24:22, 125.54s/it]
+  judge ckpt1v2:  32%|███▏      | 32/100 [1:04:46<1:58:19, 104.41s/it]
+  judge ckpt1v2:  33%|███▎      | 33/100 [1:08:15<2:31:17, 135.49s/it]
+  judge ckpt1v2:  34%|███▍      | 34/100 [1:09:37<2:11:41, 119.73s/it]
+  judge ckpt1v2:  35%|███▌      | 35/100 [1:13:05<2:38:20, 146.16s/it]
+  judge ckpt1v2:  36%|███▌      | 36/100 [1:16:33<2:55:32, 164.57s/it]
+  judge ckpt1v2:  37%|███▋      | 37/100 [1:18:23<2:35:46, 148.35s/it]
+  judge ckpt1v2:  38%|███▊      | 38/100 [1:21:51<2:51:48, 166.26s/it]
+  judge ckpt1v2:  39%|███▉      | 39/100 [1:25:19<3:01:47, 178.81s/it]
+  judge ckpt1v2:  40%|████      | 40/100 [1:37:43<5:48:10, 348.18s/it]
+  judge ckpt1v2:  41%|████      | 41/100 [1:37:50<4:01:44, 245.84s/it]
+  judge ckpt1v2:  42%|████▏     | 42/100 [1:37:57<2:48:23, 174.20s/it]
+  judge ckpt1v2:  43%|████▎     | 43/100 [1:38:04<1:57:51, 124.05s/it]
+  judge ckpt1v2:  44%|████▍     | 44/100 [1:38:11<1:23:01, 88.95s/it] 
+  judge ckpt1v2:  45%|████▌     | 45/100 [1:38:18<59:01, 64.38s/it]  
+  judge ckpt1v2:  46%|████▌     | 46/100 [1:38:25<42:27, 47.18s/it]
+  judge ckpt1v2:  47%|████▋     | 47/100 [1:38:32<31:02, 35.14s/it]
+  judge ckpt1v2:  48%|████▊     | 48/100 [1:38:39<23:09, 26.71s/it]
+  judge ckpt1v2:  49%|████▉     | 49/100 [1:38:46<17:41, 20.81s/it]
+  judge ckpt1v2:  50%|█████     | 50/100 [1:38:53<13:54, 16.68s/it]
+  judge ckpt1v2:  51%|█████     | 51/100 [1:39:00<11:15, 13.79s/it]
+  judge ckpt1v2:  52%|█████▏    | 52/100 [1:39:07<09:24, 11.77s/it]
+  judge ckpt1v2:  53%|█████▎    | 53/100 [1:39:14<08:06, 10.35s/it]
+  judge ckpt1v2:  54%|█████▍    | 54/100 [1:39:22<07:10,  9.36s/it]
+  judge ckpt1v2:  55%|█████▌    | 55/100 [1:39:29<06:30,  8.67s/it]
+  judge ckpt1v2:  56%|█████▌    | 56/100 [1:39:36<05:59,  8.18s/it]
+  judge ckpt1v2:  57%|█████▋    | 57/100 [1:39:43<05:37,  7.85s/it]
+  judge ckpt1v2:  58%|█████▊    | 58/100 [1:39:50<05:19,  7.61s/it]
+  judge ckpt1v2:  59%|█████▉    | 59/100 [1:39:57<05:05,  7.44s/it]
+  judge ckpt1v2:  60%|██████    | 60/100 [1:40:04<04:52,  7.32s/it]
+  judge ckpt1v2:  61%|██████    | 61/100 [1:40:11<04:42,  7.24s/it]
+  judge ckpt1v2:  62%|██████▏   | 62/100 [1:40:18<04:32,  7.18s/it]
+  judge ckpt1v2:  63%|██████▎   | 63/100 [1:40:25<04:24,  7.14s/it]
+  judge ckpt1v2:  64%|██████▍   | 64/100 [1:40:32<04:16,  7.11s/it]
+  judge ckpt1v2:  65%|██████▌   | 65/100 [1:40:39<04:08,  7.10s/it]
+  judge ckpt1v2:  66%|██████▌   | 66/100 [1:40:46<04:00,  7.08s/it]
+  judge ckpt1v2:  67%|██████▋   | 67/100 [1:40:53<03:53,  7.07s/it]
+  judge ckpt1v2:  68%|██████▊   | 68/100 [1:41:00<03:46,  7.06s/it]
+  judge ckpt1v2:  69%|██████▉   | 69/100 [1:41:07<03:38,  7.06s/it]
+  judge ckpt1v2:  70%|███████   | 70/100 [1:41:14<03:31,  7.05s/it]
+  judge ckpt1v2:  71%|███████   | 71/100 [1:41:21<03:24,  7.05s/it]
+  judge ckpt1v2:  72%|███████▏  | 72/100 [1:41:28<03:17,  7.05s/it]
+  judge ckpt1v2:  73%|███████▎  | 73/100 [1:41:35<03:10,  7.05s/it]
+  judge ckpt1v2:  74%|███████▍  | 74/100 [1:41:42<03:03,  7.05s/it]
+  judge ckpt1v2:  75%|███████▌  | 75/100 [1:41:50<02:56,  7.05s/it]
+  judge ckpt1v2:  76%|███████▌  | 76/100 [1:41:57<02:49,  7.05s/it]
+  judge ckpt1v2:  77%|███████▋  | 77/100 [1:42:04<02:42,  7.05s/it]
+  judge ckpt1v2:  78%|███████▊  | 78/100 [1:42:11<02:35,  7.05s/it]
+  judge ckpt1v2:  79%|███████▉  | 79/100 [1:42:18<02:28,  7.05s/it]
+  judge ckpt1v2:  80%|████████  | 80/100 [1:42:25<02:20,  7.05s/it]
+  judge ckpt1v2:  81%|████████  | 81/100 [1:42:32<02:13,  7.05s/it]
+  judge ckpt1v2:  82%|████████▏ | 82/100 [1:42:39<02:06,  7.05s/it]
+  judge ckpt1v2:  83%|████████▎ | 83/100 [1:42:46<01:59,  7.05s/it]
+  judge ckpt1v2:  84%|████████▍ | 84/100 [1:42:53<01:52,  7.05s/it]
+  judge ckpt1v2:  85%|████████▌ | 85/100 [1:43:00<01:45,  7.05s/it]
+  judge ckpt1v2:  86%|████████▌ | 86/100 [1:43:07<01:38,  7.05s/it]
+  judge ckpt1v2:  87%|████████▋ | 87/100 [1:43:14<01:31,  7.05s/it]
+  judge ckpt1v2:  88%|████████▊ | 88/100 [1:43:21<01:24,  7.05s/it]
+  judge ckpt1v2:  89%|████████▉ | 89/100 [1:43:28<01:17,  7.05s/it]
+  judge ckpt1v2:  90%|█████████ | 90/100 [1:43:35<01:10,  7.05s/it]
+  judge ckpt1v2:  91%|█████████ | 91/100 [1:43:42<01:03,  7.05s/it]
+  judge ckpt1v2:  92%|█████████▏| 92/100 [1:43:49<00:56,  7.05s/it]
+  judge ckpt1v2:  93%|█████████▎| 93/100 [1:43:56<00:49,  7.05s/it]
+  judge ckpt1v2:  94%|█████████▍| 94/100 [1:44:03<00:42,  7.05s/it]
+  judge ckpt1v2:  95%|█████████▌| 95/100 [1:44:10<00:35,  7.05s/it]
+  judge ckpt1v2:  96%|█████████▌| 96/100 [1:44:18<00:28,  7.05s/it]
+  judge ckpt1v2:  97%|█████████▋| 97/100 [1:44:25<00:21,  7.05s/it]
+  judge ckpt1v2:  98%|█████████▊| 98/100 [1:44:32<00:14,  7.05s/it]
+  judge ckpt1v2:  99%|█████████▉| 99/100 [1:44:39<00:07,  7.05s/it]
+  judge ckpt1v2: 100%|██████████| 100/100 [1:44:46<00:00,  7.05s/it]
+  judge ckpt1v2: 100%|██████████| 100/100 [1:44:46<00:00, 62.86s/it]
+
+  judge ckpt0v2:   0%|          | 0/100 [00:00<?, ?it/s]
+  judge ckpt0v2:   1%|          | 1/100 [00:07<11:37,  7.05s/it]
+  judge ckpt0v2:   2%|▏         | 2/100 [00:14<11:30,  7.05s/it]
+  judge ckpt0v2:   3%|▎         | 3/100 [00:21<11:23,  7.05s/it]
+  judge ckpt0v2:   4%|▍         | 4/100 [00:28<11:16,  7.04s/it]
+  judge ckpt0v2:   5%|▌         | 5/100 [00:35<11:09,  7.05s/it]
+  judge ckpt0v2:   6%|▌         | 6/100 [00:42<11:02,  7.05s/it]
+  judge ckpt0v2:   7%|▋         | 7/100 [00:49<10:55,  7.05s/it]
+  judge ckpt0v2:   8%|▊         | 8/100 [00:56<10:48,  7.05s/it]
+  judge ckpt0v2:   9%|▉         | 9/100 [01:03<10:41,  7.05s/it]
+  judge ckpt0v2:  10%|█         | 10/100 [01:10<10:34,  7.05s/it]
+  judge ckpt0v2:  11%|█         | 11/100 [01:17<10:26,  7.04s/it]
+  judge ckpt0v2:  12%|█▏        | 12/100 [01:24<10:20,  7.05s/it]
+  judge ckpt0v2:  13%|█▎        | 13/100 [01:31<10:13,  7.05s/it]
+  judge ckpt0v2:  14%|█▍        | 14/100 [01:38<10:05,  7.05s/it]
+  judge ckpt0v2:  15%|█▌        | 15/100 [01:45<09:58,  7.05s/it]
+  judge ckpt0v2:  16%|█▌        | 16/100 [01:52<09:52,  7.05s/it]
+  judge ckpt0v2:  17%|█▋        | 17/100 [01:59<09:44,  7.05s/it]
+  judge ckpt0v2:  18%|█▊        | 18/100 [02:06<09:37,  7.05s/it]
+  judge ckpt0v2:  19%|█▉        | 19/100 [02:13<09:30,  7.05s/it]
+  judge ckpt0v2:  20%|██        | 20/100 [02:20<09:23,  7.05s/it]
+  judge ckpt0v2:  21%|██        | 21/100 [02:27<09:16,  7.05s/it]
+  judge ckpt0v2:  22%|██▏       | 22/100 [02:35<09:09,  7.05s/it]
+  judge ckpt0v2:  23%|██▎       | 23/100 [02:42<09:02,  7.05s/it]
+  judge ckpt0v2:  24%|██▍       | 24/100 [02:49<08:55,  7.05s/it]
+  judge ckpt0v2:  25%|██▌       | 25/100 [02:56<08:48,  7.05s/it]
+  judge ckpt0v2:  26%|██▌       | 26/100 [03:03<08:41,  7.05s/it]
+  judge ckpt0v2:  27%|██▋       | 27/100 [03:10<08:34,  7.05s/it]
+  judge ckpt0v2:  28%|██▊       | 28/100 [03:17<08:27,  7.05s/it]
+  judge ckpt0v2:  29%|██▉       | 29/100 [03:24<08:20,  7.05s/it]
+  judge ckpt0v2:  30%|███       | 30/100 [03:31<08:13,  7.05s/it]
+  judge ckpt0v2:  31%|███       | 31/100 [03:38<08:06,  7.05s/it]
+  judge ckpt0v2:  32%|███▏      | 32/100 [03:45<07:59,  7.05s/it]
+  judge ckpt0v2:  33%|███▎      | 33/100 [03:52<07:52,  7.05s/it]
+  judge ckpt0v2:  34%|███▍      | 34/100 [03:59<07:45,  7.05s/it]
+  judge ckpt0v2:  35%|███▌      | 35/100 [04:06<07:38,  7.05s/it]
+  judge ckpt0v2:  36%|███▌      | 36/100 [04:13<07:31,  7.05s/it]
+  judge ckpt0v2:  37%|███▋      | 37/100 [04:20<07:23,  7.05s/it]
+  judge ckpt0v2:  38%|███▊      | 38/100 [04:27<07:16,  7.05s/it]
+  judge ckpt0v2:  39%|███▉      | 39/100 [04:34<07:09,  7.05s/it]
+  judge ckpt0v2:  40%|████      | 40/100 [04:41<07:02,  7.05s/it]
+  judge ckpt0v2:  41%|████      | 41/100 [04:48<06:55,  7.05s/it]
+  judge ckpt0v2:  42%|████▏     | 42/100 [04:55<06:48,  7.05s/it]
+  judge ckpt0v2:  43%|████▎     | 43/100 [05:03<06:41,  7.05s/it]
+  judge ckpt0v2:  44%|████▍     | 44/100 [05:10<06:34,  7.05s/it]
+  judge ckpt0v2:  45%|████▌     | 45/100 [05:17<06:27,  7.05s/it]
+  judge ckpt0v2:  46%|████▌     | 46/100 [05:24<06:20,  7.05s/it]
+  judge ckpt0v2:  47%|████▋     | 47/100 [05:31<06:13,  7.05s/it]
+  judge ckpt0v2:  48%|████▊     | 48/100 [05:38<06:06,  7.05s/it]
+  judge ckpt0v2:  49%|████▉     | 49/100 [05:45<05:59,  7.05s/it]
+  judge ckpt0v2:  50%|█████     | 50/100 [05:52<05:52,  7.05s/it]
+  judge ckpt0v2:  51%|█████     | 51/100 [05:59<05:45,  7.05s/it]
+  judge ckpt0v2:  52%|█████▏    | 52/100 [06:06<05:38,  7.05s/it]
+  judge ckpt0v2:  53%|█████▎    | 53/100 [06:13<05:31,  7.05s/it]
+  judge ckpt0v2:  54%|█████▍    | 54/100 [06:20<05:24,  7.05s/it]
+  judge ckpt0v2:  55%|█████▌    | 55/100 [06:27<05:17,  7.05s/it]
+  judge ckpt0v2:  56%|█████▌    | 56/100 [06:34<05:10,  7.05s/it]
+  judge ckpt0v2:  57%|█████▋    | 57/100 [06:41<05:03,  7.05s/it]
+  judge ckpt0v2:  58%|█████▊    | 58/100 [06:48<04:55,  7.05s/it]
+  judge ckpt0v2:  59%|█████▉    | 59/100 [06:55<04:48,  7.05s/it]
+  judge ckpt0v2:  60%|██████    | 60/100 [07:02<04:41,  7.05s/it]
+  judge ckpt0v2:  61%|██████    | 61/100 [07:09<04:34,  7.05s/it]
+  judge ckpt0v2:  62%|██████▏   | 62/100 [07:16<04:27,  7.05s/it]
+  judge ckpt0v2:  63%|██████▎   | 63/100 [07:23<04:20,  7.05s/it]
+  judge ckpt0v2:  64%|██████▍   | 64/100 [07:31<04:13,  7.05s/it]
+  judge ckpt0v2:  65%|██████▌   | 65/100 [07:38<04:06,  7.05s/it]
+  judge ckpt0v2:  66%|██████▌   | 66/100 [07:45<03:59,  7.05s/it]
+  judge ckpt0v2:  67%|██████▋   | 67/100 [07:52<03:52,  7.05s/it]
+  judge ckpt0v2:  68%|██████▊   | 68/100 [07:59<03:45,  7.05s/it]
+  judge ckpt0v2:  69%|██████▉   | 69/100 [08:06<03:38,  7.05s/it]
+  judge ckpt0v2:  70%|███████   | 70/100 [08:13<03:31,  7.05s/it]
+  judge ckpt0v2:  71%|███████   | 71/100 [08:20<03:24,  7.05s/it]
+  judge ckpt0v2:  72%|███████▏  | 72/100 [08:27<03:17,  7.05s/it]
+  judge ckpt0v2:  73%|███████▎  | 73/100 [08:34<03:10,  7.05s/it]
+  judge ckpt0v2:  74%|███████▍  | 74/100 [08:41<03:03,  7.05s/it]
+  judge ckpt0v2:  75%|███████▌  | 75/100 [08:48<02:56,  7.05s/it]
+  judge ckpt0v2:  76%|███████▌  | 76/100 [08:55<02:49,  7.05s/it]
+  judge ckpt0v2:  77%|███████▋  | 77/100 [09:02<02:42,  7.05s/it]
+  judge ckpt0v2:  78%|███████▊  | 78/100 [09:09<02:35,  7.05s/it]
+  judge ckpt0v2:  79%|███████▉  | 79/100 [09:16<02:28,  7.05s/it]
+  judge ckpt0v2:  80%|████████  | 80/100 [09:23<02:21,  7.05s/it]
+  judge ckpt0v2:  81%|████████  | 81/100 [09:30<02:13,  7.05s/it]
+  judge ckpt0v2:  82%|████████▏ | 82/100 [09:37<02:06,  7.05s/it]
+  judge ckpt0v2:  83%|████████▎ | 83/100 [09:44<01:59,  7.05s/it]
+  judge ckpt0v2:  84%|████████▍ | 84/100 [09:52<01:52,  7.05s/it]
+  judge ckpt0v2:  85%|████████▌ | 85/100 [09:59<01:45,  7.05s/it]
+  judge ckpt0v2:  86%|████████▌ | 86/100 [10:06<01:38,  7.05s/it]
+  judge ckpt0v2:  87%|████████▋ | 87/100 [10:13<01:31,  7.05s/it]
+  judge ckpt0v2:  88%|████████▊ | 88/100 [10:20<01:24,  7.05s/it]
+  judge ckpt0v2:  89%|████████▉ | 89/100 [10:27<01:17,  7.05s/it]
+  judge ckpt0v2:  90%|█████████ | 90/100 [10:34<01:10,  7.05s/it]
+  judge ckpt0v2:  91%|█████████ | 91/100 [10:41<01:03,  7.05s/it]
+  judge ckpt0v2:  92%|█████████▏| 92/100 [10:48<00:56,  7.05s/it]
+  judge ckpt0v2:  93%|█████████▎| 93/100 [10:55<00:49,  7.05s/it]
+  judge ckpt0v2:  94%|█████████▍| 94/100 [11:02<00:42,  7.05s/it]
+  judge ckpt0v2:  95%|█████████▌| 95/100 [11:09<00:35,  7.05s/it]
+  judge ckpt0v2:  96%|█████████▌| 96/100 [11:16<00:28,  7.05s/it]
+  judge ckpt0v2:  97%|█████████▋| 97/100 [11:23<00:21,  7.05s/it]
+  judge ckpt0v2:  98%|█████████▊| 98/100 [11:30<00:14,  7.05s/it]
+  judge ckpt0v2:  99%|█████████▉| 99/100 [11:37<00:07,  7.05s/it]
+  judge ckpt0v2: 100%|██████████| 100/100 [11:44<00:00,  7.05s/it]
+  judge ckpt0v2: 100%|██████████| 100/100 [11:44<00:00,  7.05s/it]
+
+

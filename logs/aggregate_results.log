@@ -4,3 +4,30 @@
 [2026-04-06 02:01:39] INFO aggregate_results: Saved loss curves → results/loss_curves.png
 [2026-04-06 02:01:39] INFO aggregate_results: 
 === Checkpoint Comparison Summary ===
+[2026-04-06 07:32:00] INFO aggregate_results: Saved comparison table → results/checkpoint_comparison_table.csv
+[2026-04-06 07:32:00] INFO aggregate_results: Saved JSON metrics table → results/json_metrics_table.csv
+[2026-04-06 07:32:01] INFO aggregate_results: Saved forgetting curve → results/forgetting_curve.png
+[2026-04-06 07:32:01] INFO aggregate_results: Saved loss curves → results/loss_curves.png
+[2026-04-06 07:32:01] INFO aggregate_results: 
+=== Checkpoint Comparison Summary ===
+[2026-04-06 10:08:08] INFO aggregate_results: Saved comparison table → results/checkpoint_comparison_table.csv
+[2026-04-06 10:08:08] INFO aggregate_results: Saved JSON metrics table → results/json_metrics_table.csv
+[2026-04-06 10:08:09] INFO aggregate_results: Saved forgetting curve → results/forgetting_curve.png
+[2026-04-06 10:08:09] INFO aggregate_results: Saved loss curves → results/loss_curves.png
+[2026-04-06 10:08:09] INFO aggregate_results: 
+=== Checkpoint Comparison Summary ===
+[2026-04-06 10:08:30] INFO aggregate_results: Saved comparison table → results/checkpoint_comparison_table.csv
+[2026-04-06 10:08:30] INFO aggregate_results: Saved JSON metrics table → results/json_metrics_table.csv
+[2026-04-06 10:08:31] INFO aggregate_results: Saved forgetting curve → results/forgetting_curve.png
+[2026-04-06 10:08:32] INFO aggregate_results: Saved loss curves → results/loss_curves.png
+[2026-04-06 10:08:32] INFO aggregate_results: 
+=== Checkpoint Comparison Summary ===
+[2026-04-06 10:08:32] INFO aggregate_results:   Base (ckpt0): ROUGE-L=0.2788, BERTScore=0.8229, JSON validity=0.480
+[2026-04-06 10:08:32] INFO aggregate_results:   Stage1-Alpaca (ckpt1): ROUGE-L=0.2796, BERTScore=0.8225, JSON validity=0.580
+[2026-04-06 10:08:32] INFO aggregate_results:   Stage2-JSON (ckpt2): ROUGE-L=0.2825, BERTScore=0.8232, JSON validity=0.560
+[2026-04-06 10:08:32] INFO aggregate_results: 
+=== Forgetting Analysis (ckpt1 → ckpt2) ===
+[2026-04-06 10:08:32] INFO aggregate_results:   ΔROUGE-L:    +0.0029
+[2026-04-06 10:08:32] INFO aggregate_results:   ΔBERTScore:  +0.0006
+[2026-04-06 10:08:32] INFO aggregate_results:   ΔJSON validity: -0.020
+[2026-04-06 10:08:32] INFO aggregate_results:   Judge: ckpt2 win rate vs ckpt1: 0.241
