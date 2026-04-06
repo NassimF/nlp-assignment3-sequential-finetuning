@@ -168,11 +168,13 @@ def plot_forgetting_curve(checkpoints: list[int], results_dir: str,
             for xi, v in zip(xs, vs):
                 ax.annotate(f"{v:.3f}", (xi, v), textcoords="offset points",
                             xytext=(0, 8), ha="center", fontsize=9)
+            # Use tight y-axis so small differences are visible
+            margin = (max(vs) - min(vs)) * 3 + 0.002
+            ax.set_ylim(min(vs) - margin, max(vs) + margin * 2)
         ax.set_xticks(x)
         ax.set_xticklabels(ckpt_labels)
         ax.set_ylabel(ylabel)
         ax.set_title(title)
-        ax.set_ylim(bottom=0)
         ax.grid(axis="y", alpha=0.3)
 
     plot_metric(axes[0], rl_vals,  "ROUGE-L",      "ROUGE-L (Alpaca)",         "#2196F3")
