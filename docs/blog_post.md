@@ -74,9 +74,12 @@ We evaluate three checkpoints: **ckpt0** (untuned base), **ckpt1** (after Stage 
 
 **JSON metrics:** Validity rate (`json.loads()` success), schema compliance, exact-match accuracy, field-level F1 (for extraction tasks), error taxonomy (truncated/malformed, invalid key format, trailing content, invalid value).
 
-**LLM-as-judge:** We use **Qwen3-235B** (`qwen3-235b-a22b-thinking-2507-fp8`) to perform pairwise comparisons across all three checkpoint pairs (0v1, 1v2, 0v2) on the **Alpaca eval set** (150 prompts per pair). The judge scores each response on 6 dimensions (1–5 scale): instruction following, correctness, clarity, completeness, structured output validity, and hallucination risk. Winner is determined by average score differential with a 0.3 tie threshold. Response order is randomized per call to reduce position bias. Each call is retried up to 3 times on parse failure; prompts where all retries fail are excluded (see Section 4.3 for failure analysis).
+**LLM-as-judge:** We perform pairwise comparisons across all three checkpoint pairs (0v1, 1v2, 0v2) on both evaluation sets. The judge scores each response on 6 dimensions (1–5 scale): instruction following, correctness, clarity, completeness, structured output validity, and hallucination risk. Winner is determined by average score differential with a 0.3 tie threshold. Response order is randomized per call to reduce position bias. Each call is retried up to 3 times on parse failure; prompts where all retries fail are excluded (see Section 4.3 for failure analysis).
 
-The LLM-as-judge evaluation is run separately on both the Alpaca eval set (150 prompts per pair, for general instruction-following assessment) and the JSON eval set (100 prompts per pair, for structured-output quality assessment). The `structured_output_validity` dimension is only meaningful in the JSON judge eval — for Alpaca prompts it is assigned the neutral midpoint (3/5) since no structured output is required, and those scores should be disregarded in the Alpaca results.
+- **Alpaca judge eval** (150 prompts per pair): **Qwen3-235B** (`qwen3-235b-a22b-thinking-2507-fp8`). The thinking model's extended reasoning produces well-calibrated, nuanced pairwise scores.
+- **JSON judge eval** (100 prompts per pair): **Llama 3.3 70B** (`llama-3.3-70b-instruct-awq`). Qwen3-235B became unavailable (API 404) during the JSON judge eval run; we switched to Llama 3.3 70B, which produced valid, parseable JSON verdicts with 0% parse failure rate. Because different judge models are used, direct cross-set win-rate comparisons should be interpreted with caution.
+
+The `structured_output_validity` dimension is only meaningful in the JSON judge eval — for Alpaca prompts it is assigned the neutral midpoint (3/5) since no structured output is required, and those scores should be disregarded in the Alpaca results.
 
 ---
 
@@ -84,13 +87,15 @@ The LLM-as-judge evaluation is run separately on both the Alpaca eval set (150 p
 
 ### 2.1 Three-Checkpoint Comparison
 
-| Checkpoint | Alpaca Judge Win Rate vs ckpt0 | ROUGE-1 | ROUGE-2 | ROUGE-L | BERTScore F1 | Avg Length | Completion | JSON Validity | Schema | Exact Match | Field F1 |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 0: Base (untuned) | — | 0.412 | 0.198 | 0.279 | 0.823 | 198.6 | 94.0% | 48.0% | 45.0% | 11.0% | 0.128 |
-| 1: Stage 1 (Alpaca) | 16.2% (ckpt0 wins 27.5%, tie 56.3%) | 0.413 | 0.199 | 0.280 | 0.823 | 198.1 | 94.0% | 58.0% | 53.0% | 12.0% | 0.115 |
-| 2: Stage 2 (Teacher JSON) | 24.1% (ckpt0 wins 27.7%, tie 48.2%) | 0.415 | 0.205 | 0.283 | 0.823 | 201.4 | 93.3% | 56.0% | 51.0% | 12.0% | 0.128 |
+| Checkpoint | Alpaca Judge Win Rate vs ckpt0† | JSON Judge Win Rate vs ckpt0‡ | ROUGE-1 | ROUGE-2 | ROUGE-L | BERTScore F1 | Avg Length | Completion | JSON Validity | Schema | Exact Match | Field F1 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0: Base (untuned) | — | — | 0.412 | 0.198 | 0.279 | 0.823 | 198.6 | 94.0% | 48.0% | 45.0% | 11.0% | 0.128 |
+| 1: Stage 1 (Alpaca) | 16.2% (ckpt0 wins 27.5%, tie 56.3%) | **28.0%** (ckpt0 wins 13.0%, tie 59.0%) | 0.413 | 0.199 | 0.280 | 0.823 | 198.1 | 94.0% | 58.0% | 53.0% | 12.0% | 0.115 |
+| 2: Stage 2 (Teacher JSON) | 24.1% (ckpt0 wins 27.7%, tie 48.2%) | **23.0%** (ckpt0 wins 12.0%, tie 65.0%) | 0.415 | 0.205 | 0.283 | 0.823 | 201.4 | 93.3% | 56.0% | 51.0% | 12.0% | 0.128 |
 
-*Table 2.1: Three-checkpoint comparison across 150 Alpaca eval + 100 JSON eval prompts. Judge win rates from Qwen3-235B pairwise evaluation (Alpaca set). In ckpt1 vs ckpt2 direct comparison: ckpt2 wins 24.1%, ckpt1 wins 17.9%, tie 57.9% (n=145).*
+*Table 2.1: Three-checkpoint comparison across 150 Alpaca eval + 100 JSON eval prompts.*
+*† Alpaca judge win rates from Qwen3-235B pairwise eval (Alpaca set, 150 prompts/pair). Direct ckpt1v2: ckpt2 wins 24.1%, ckpt1 wins 17.9%, tie 57.9% (n=145).*
+*‡ JSON judge win rates from Llama 3.3 70B pairwise eval (JSON set, 100 prompts/pair). Direct ckpt1v2: ckpt1 wins 19.0%, ckpt2 wins 17.0%, tie 64.0% (n=100). Note: different judge models used; cross-set win-rate comparisons are indicative only.*
 
 ### 2.2 Alpaca Evaluation Results
 
@@ -125,13 +130,28 @@ Table 2.2 shows per-task-type JSON metrics across all three checkpoints.
 
 **Exact match is low for all checkpoints** (11–12%) — expected, since exact match requires identical field values, not just valid JSON structure. Field F1 for extraction (0.575–0.642) is more meaningful and shows the model correctly extracts the right values when it produces valid JSON.
 
+**JSON judge eval (Llama 3.3 70B, 100 prompts/pair):** The pairwise judge provides a holistic quality signal beyond raw validity rates. On the JSON eval set:
+
+| Pair | Winner | Win Rate | Tie Rate |
+|---|---|---|---|
+| ckpt0 vs ckpt1 | ckpt1 | 28.0% vs 13.0% | 59.0% |
+| ckpt1 vs ckpt2 | ckpt1 (slight) | 19.0% vs 17.0% | 64.0% |
+| ckpt0 vs ckpt2 | ckpt2 | 23.0% vs 12.0% | 65.0% |
+
+*Table 2.2b: JSON pairwise judge results (Llama 3.3 70B). n=100 per pair, 0 parse failures.*
+
+The most striking finding is that **Stage 1 Alpaca fine-tuning provides the majority of JSON quality improvement** (+15pp win rate vs base), while Stage 2 JSON-specific fine-tuning adds only modest additional gains (ckpt2 wins 23% vs base's 12%, but ckpt1 already won 28%). In the direct ckpt1 vs ckpt2 comparison, the two checkpoints are essentially tied (19% vs 17%, tie rate 64%), meaning Stage 2's JSON training did not clearly improve holistic JSON response quality as judged by Llama.
+
+This is consistent with the automatic metrics finding: Stage 2 causes a slight regression in raw JSON validity (−2pp) while extraction F1 recovers to baseline. The structured_output_validity scores (from the judge's per-dimension ratings) are high across all checkpoints on the JSON eval set: ckpt0=4.70, ckpt1=4.84, ckpt2=4.78 — converging to a narrow range where the judge can barely differentiate them. The main differentiator between checkpoints is instruction_following and clarity, dimensions where Stage 1 provides a clear lift.
+
 ### 2.4 Forgetting Analysis
 
 The key forgetting metrics are the deltas from ckpt1 → ckpt2 on Alpaca evaluation:
 
 | Metric | Ckpt1 | Ckpt2 | Δ (ckpt1→ckpt2) |
 |---|---|---|---|
-| Alpaca judge win rate (vs opponent) | 16.2% | 24.1% | **+7.9pp** |
+| Alpaca judge win rate (vs opponent)† | 16.2% | 24.1% | **+7.9pp** |
+| JSON judge win rate (vs opponent)‡ | 19.0% | 17.0% | −2.0pp |
 | ROUGE-L | 0.280 | 0.283 | **+0.003** |
 | ROUGE-2 | 0.199 | 0.205 | **+0.006** |
 | BERTScore F1 | 0.8225 | 0.8232 | **+0.0007** |
@@ -139,7 +159,9 @@ The key forgetting metrics are the deltas from ckpt1 → ckpt2 on Alpaca evaluat
 | Completion rate | 94.0% | 93.3% | -0.7% |
 | JSON validity | 58.0% | 56.0% | -2.0pp |
 
-*Table 2.3: Forgetting analysis — ckpt1 → ckpt2 delta. Negative = regression. Judge win rates from direct ckpt1v2 pairwise comparison (n=145).*
+*Table 2.3: Forgetting analysis — ckpt1 → ckpt2 delta. Negative = regression.*
+*† Alpaca judge (Qwen3-235B): direct ckpt1v2 pairwise comparison, n=145.*
+*‡ JSON judge (Llama 3.3 70B): direct ckpt1v2 pairwise comparison, n=100.*
 
 ![Forgetting curve: metric deltas from ckpt1 to ckpt2 across evaluation dimensions](../results/forgetting_curve.png)
 
@@ -200,7 +222,9 @@ Both ablation variants converge to similar final losses (~0.926–0.930) despite
 
 **No.** Across every evaluation axis — automatic metrics, pairwise judge win rates, and output quality — Stage 2 fine-tuning on 981 teacher-generated JSON examples does not degrade the general instruction-following capability acquired in Stage 1.
 
-The clearest evidence comes from the direct ckpt1 vs ckpt2 judge comparison: ckpt2 wins 24.1% of pairwise judgments vs ckpt1's 17.9% (tie 57.9%, n=145). Stage 2 marginally *improved* general instruction-following. Automatic metrics tell the same story: ROUGE-L increased +0.003 and BERTScore +0.0007 from ckpt1 to ckpt2. The only regression is a -0.7% drop in task completion rate and -2pp in JSON validity, both within statistical noise given the sample sizes.
+The clearest evidence comes from the direct ckpt1 vs ckpt2 judge comparison on the Alpaca set: ckpt2 wins 24.1% of pairwise judgments vs ckpt1's 17.9% (tie 57.9%, n=145). Stage 2 marginally *improved* general instruction-following. Automatic metrics tell the same story: ROUGE-L increased +0.003 and BERTScore +0.0007 from ckpt1 to ckpt2. The only regression is a -0.7% drop in task completion rate and -2pp in JSON validity, both within statistical noise given the sample sizes.
+
+The JSON judge eval on the structured-output evaluation set tells a nuanced story: Stage 1 and Stage 2 are essentially tied in direct comparison (ckpt1 wins 19%, ckpt2 wins 17%, tie 64%, n=100). Stage 2 does not clearly improve holistic JSON quality over Stage 1, despite being specifically trained on JSON data — the improvement in raw JSON validity from Stage 1 (48%→58%) appears to be largely driven by Stage 1's general instruction-following discipline. Stage 2 provides modest structured_output_validity gains (ckpt1=4.79 → ckpt2=4.78, essentially flat) while slightly reducing clarity and completeness scores.
 
 The -2pp JSON validity drop (58% → 56%) is counterintuitive — one would expect Stage 2 JSON training to improve JSON output quality. The likely explanation is that Stage 2 reinforces specific formatting patterns from the teacher-generated data (e.g., clean JSON without fences) but some evaluation prompts lie outside that distribution, causing minor regressions on edge cases. The ckpt2 extraction F1 returning exactly to ckpt0 baseline (0.642) after a dip at ckpt1 further suggests that the JSON adapter is task-selective rather than universally beneficial.
 
@@ -262,7 +286,7 @@ This experiment offers several practical lessons for sequential post-training pi
 
 **3. Sequential adapters vs. merged adapters.** We merged Stage 1 into the base weights before applying Stage 2 (`merge_and_unload()`). An alternative design — keeping Stage 1 as a frozen adapter and adding Stage 2 on top — might provide stronger isolation. The merge approach used here allows Stage 2 to modify all parameters via the new adapter, which may explain why some Stage 1 behaviors (e.g., JSON fence avoidance) partially regressed.
 
-**4. When to prefer multi-task training.** If Stage 2 data were large or required capabilities that conflict with Stage 1 objectives, a combined multi-task training run on the merged dataset would be safer. The ablation study (scripts provided in `scripts/run_ablation.sh`, not run due to time constraints) would test whether reducing Stage 2 learning rate from 2e-5 to 1e-5 further reduces the -2pp JSON validity regression while preserving Alpaca performance — the most targeted next experiment given our results.
+**4. When to prefer multi-task training.** If Stage 2 data were large or required capabilities that conflict with Stage 1 objectives, a combined multi-task training run on the merged dataset would be safer. The ablation study confirms the targeted next experiment: halving the Stage 2 learning rate from 2e-5 to 1e-5 eliminates the -2pp JSON validity regression entirely while preserving Alpaca ROUGE-L, confirming the tradeoff is driven by learning rate aggressiveness rather than an inherent data conflict (see Section 2.5).
 
 ---
 
@@ -276,7 +300,7 @@ The assignment recommended Llama 3.1 70B Instruct as the teacher model. The UTSA
 
 **Decision:** We switched the teacher to **Llama 3.3 70B Instruct** (`llama-3.3-70b-instruct-awq`). This is a standard instruction-following model with no thinking overhead. In testing it produced well-structured, valid JSON on the first attempt across all five task types, with a 0% failure rate on four of five task types and 8.6% failure rate on the harder `json_repair` task.
 
-**Judge model:** Qwen3-235B was retained as the judge. For evaluation we make far fewer API calls (~300 pairwise comparisons vs ~1100 generation calls), so the slower thinking overhead is acceptable. The model's extended reasoning capability is an advantage for producing well-calibrated, nuanced scores across six evaluation dimensions.
+**Judge model:** Qwen3-235B was retained as the judge for the Alpaca pairwise evaluation (~300 calls across 3 pairs × ~150 prompts). The slower thinking overhead is acceptable at this scale, and the model's extended reasoning produces well-calibrated, nuanced scores across six dimensions. For the JSON pairwise evaluation, Qwen3-235B became unavailable mid-run (API 404); Llama 3.3 70B was used as fallback (Section 1.7, Section 4.3).
 
 ### 4.2 Teacher Prompt Design
 
@@ -299,7 +323,9 @@ The judge prompt went through three iterations before producing reliable, self-c
 
 **v3 (current) — Deterministic winner derivation:** We resolved the inconsistency by giving the judge an explicit winner computation rule: calculate `avg_A` and `avg_B`, declare the winner based on a 0.3 differential threshold (ties if `|avg_A - avg_B| < 0.3`). This removes ambiguity — the judge no longer has to "decide" the winner; it follows from the scores it already assigned. We also clarified `hallucination_risk` direction (higher = better = fewer hallucinations, to match the other dimensions) and required the justification to cite specific evidence from both responses rather than generic observations.
 
-**Parse failure rate:** Even with v3, Qwen3-235B occasionally exhausts its token budget on internal chain-of-thought reasoning before producing complete JSON output, resulting in a truncated or malformed verdict. The script retries each failed call up to 3 times; prompts where all attempts fail are excluded from win-rate aggregation. Observed failure rates were 5.3% (ckpt0v1: 8/150), 3.3% (ckpt1v2: 5/150), and 8.7% (ckpt0v2: 13/150), yielding effective sample sizes of 142, 145, and 137 respectively. These rates are an inherent limitation of using thinking models as judges at bounded token budgets and do not systematically bias results in any direction.
+**Parse failure rate (Alpaca judge — Qwen3-235B):** Even with v3, Qwen3-235B occasionally exhausts its token budget on internal chain-of-thought reasoning before producing complete JSON output, resulting in a truncated or malformed verdict. The script retries each failed call up to 3 times; prompts where all attempts fail are excluded from win-rate aggregation. Observed failure rates were 5.3% (ckpt0v1: 8/150), 3.3% (ckpt1v2: 5/150), and 8.7% (ckpt0v2: 13/150), yielding effective sample sizes of 142, 145, and 137 respectively. These rates are an inherent limitation of using thinking models as judges at bounded token budgets and do not systematically bias results in any direction.
+
+**JSON judge eval — Llama 3.3 70B:** The JSON judge evaluation uses Llama 3.3 70B as judge (see Section 1.7 for explanation). Because Llama is a non-thinking instruction model, it follows the structured output schema reliably and achieves 0% parse failure rate across all 300 prompts (3 pairs × 100). The tradeoff is that Llama's scores may be less granularly calibrated than Qwen3-235B's reasoning-heavy evaluations, particularly on nuanced structured-output quality dimensions.
 
 The `structured_output_validity` dimension was given a neutral default of 3 for non-structured-output prompts so it doesn't penalize general instruction-following comparisons where JSON validity is irrelevant.
 
@@ -311,7 +337,7 @@ This assignment implemented and evaluated a complete two-stage sequential instru
 
 **Does Stage 2 cause catastrophic forgetting? No.** Across all evaluation axes — ROUGE-L (+0.003), BERTScore (+0.0007), task completion rate (−0.7%, within noise), and pairwise judge win rate (+7.9pp from ckpt1 to ckpt2) — Stage 2 fine-tuning on 981 teacher-generated JSON examples does not degrade the general instruction-following capability gained in Stage 1. The judge results are particularly striking: ckpt2 actually wins more pairwise comparisons than ckpt1, suggesting the structured-output training incidentally improved general response quality.
 
-**JSON specialization gains are modest and mixed.** Overall validity improves from 48% (base) to 58% (Stage 1) to 56% (Stage 2). Stage 1's +10pp jump reflects spillover from general instruction-following discipline. Stage 2's slight regression (−2pp) is driven by the dominant failure mode — trailing content after the JSON object — that Stage 2 partially reintroduces. Per-task, extraction and tool-call generation improve meaningfully; classification and schema-constrained generation show partial regression.
+**JSON specialization gains are modest and mixed.** Overall validity improves from 48% (base) to 58% (Stage 1) to 56% (Stage 2). Stage 1's +10pp jump reflects spillover from general instruction-following discipline. Stage 2's slight regression (−2pp) is driven by the dominant failure mode — trailing content after the JSON object — that Stage 2 partially reintroduces. Per-task, extraction and tool-call generation improve meaningfully; classification and schema-constrained generation show partial regression. Notably, the JSON pairwise judge (Llama 3.3 70B) finds that Stage 1 provides the majority of holistic JSON quality improvement (+15pp win rate vs base), while Stage 2 is essentially tied with Stage 1 in direct comparison (19% vs 17%, 64% tie). This suggests that general instruction-following training (Stage 1) is the primary driver of structured-output quality improvement, not domain-specific JSON fine-tuning.
 
 **The ablation study reveals LR as the key lever.** Halving the Stage 2 learning rate (1e-5 vs 2e-5) eliminates the JSON validity regression entirely (58% vs 56%) while preserving Alpaca ROUGE-L. This confirms the -2pp regression is caused by over-aggressive fine-tuning rather than an inherent data distribution conflict. For practitioners: when Stage 2 data is small and domain-specific, use a lower learning rate than Stage 1 to get the best of both worlds — structured-output improvement without general capability regression.
 

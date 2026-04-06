@@ -15,7 +15,9 @@ model:
   teacher: "llama-3.3-70b-instruct-awq"
   # Judge: Qwen3-235B used for evaluation — fewer calls, quality matters more than speed.
   # Its reasoning capability produces better-calibrated pairwise scores across 6 dimensions.
-  judge:   "qwen3-235b-a22b-thinking-2507-fp8"
+  # Primary judge (Qwen3-235B) is currently unavailable; using Llama 3.3 70B.
+  # When Qwen3-235B comes back online, revert to: "qwen3-235b-a22b-thinking-2507-fp8"
+  judge:   "llama-3.3-70b-instruct-awq"
 
 # ── 4-bit Quantization (QLoRA) ────────────────────────────────────────────────
 quantization:
@@ -89,8 +91,8 @@ inference:
 
 # ── Evaluation ────────────────────────────────────────────────────────────────
 evaluation:
-  judge_max_new_tokens: 4096   # Qwen3-235B needs headroom for internal thinking tokens
-  judge_temperature: 0.6       # temperature=0.0 suppresses output on thinking models
+  judge_max_new_tokens: 1024   # Llama 3.3 70B: standard instruction-following model
+  judge_temperature: 0.0       # Deterministic for consistent evaluation
   results_dir: "results"
   logs_dir: "logs"
   judge_dimensions:

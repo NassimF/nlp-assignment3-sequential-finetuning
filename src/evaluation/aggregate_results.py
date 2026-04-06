@@ -283,12 +283,10 @@ def main():
     if rows:
         logger.info("\n=== Checkpoint Comparison Summary ===")
         for row in rows:
-            logger.info(
-                f"  {row['checkpoint']}: "
-                f"ROUGE-L={row['alpaca_rougeL']:.4f if isinstance(row['alpaca_rougeL'], float) else row['alpaca_rougeL']}, "
-                f"BERTScore={row['alpaca_bertscore']:.4f if isinstance(row['alpaca_bertscore'], float) else row['alpaca_bertscore']}, "
-                f"JSON validity={row['json_validity']:.3f if isinstance(row['json_validity'], float) else row['json_validity']}"
-            )
+            rl   = f"{row['alpaca_rougeL']:.4f}"   if isinstance(row['alpaca_rougeL'],   float) else str(row['alpaca_rougeL'])
+            bs   = f"{row['alpaca_bertscore']:.4f}" if isinstance(row['alpaca_bertscore'], float) else str(row['alpaca_bertscore'])
+            jv   = f"{row['json_validity']:.3f}"    if isinstance(row['json_validity'],    float) else str(row['json_validity'])
+            logger.info(f"  {row['checkpoint']}: ROUGE-L={rl}, BERTScore={bs}, JSON validity={jv}")
 
     # ── Forgetting analysis: ckpt1 → ckpt2 ───────────────────────────────────
     if len(checkpoints) >= 3:

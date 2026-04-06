@@ -31,9 +31,9 @@ conda activate nlp-assignment3   # cloned from alpaca-lora, has torch 2.9.1
   rejected: it is a thinking model that exhausts its token budget on internal reasoning before
   producing visible output (content=None even at max_tokens=4096), making batch generation
   impractical. Llama 3.3 70B produces reliable, well-structured JSON output.
-- **Judge**: `qwen3-235b-a22b-thinking-2507-fp8` — evaluation scoring. Thinking model is fine here
-  since we make far fewer judge calls and higher reasoning quality produces better-calibrated
-  pairwise scores across 6 dimensions.
+- **Judge**: `qwen3-235b-a22b-thinking-2507-fp8` for Alpaca judge eval (complete).
+  Qwen3-235B became unavailable (API 404) during JSON judge eval; switched to
+  `llama-3.3-70b-instruct-awq` for JSON judge eval. Config.yaml `model.judge` updated accordingly.
 
 ## API Credentials
 
@@ -54,8 +54,9 @@ Check/update `model.teacher` and `model.judge` in `config.yaml` if needed.
 | 4 | Stage 2 QLoRA training (JSON) | ✅ Complete (final loss 0.751, step 124) |
 | 5a | Inference + auto metrics (all 3 ckpts) | ✅ Complete |
 | 5b | Judge eval Alpaca (3 pairs) | ✅ Complete |
-| 5c | Judge eval JSON (3 pairs) | 🔄 Running (PID 357638, ~5h) |
-| 6 | Blog post report | 🔄 ~95% complete (pending JSON judge results) |
+| 5c | Judge eval JSON (3 pairs) | ✅ Complete (Llama 3.3 70B, n=100/pair, 0 failures) |
+| 5d | Ablation study (LR=1e-5, data_fraction=0.5) | ✅ Complete |
+| 6 | Blog post report | ✅ Complete |
 
 Update the Status column as stages complete.
 
@@ -98,9 +99,9 @@ bash scripts/run_eval_checkpoint2.sh   # also runs judge + aggregation
 - [x] 3-checkpoint comparison table (ckpt0, ckpt1, ckpt2)
 - [x] Alpaca eval: 100+ prompts, ROUGE-1/2/L, BERTScore, length, completion rate, judge win rate
 - [x] JSON eval: validity, schema compliance, exact match, field F1, error taxonomy
-- [x] Judge: all 3 pairs (0v1, 1v2, 0v2), 6 dimensions, Section 9 output schema (Alpaca done; JSON running)
+- [x] Judge: all 3 pairs (0v1, 1v2, 0v2), 6 dimensions, Section 9 output schema (Alpaca: Qwen3-235B; JSON: Llama 3.3 70B)
 - [x] Forgetting analysis: absolute Δ win rate, Δ ROUGE-L, Δ BERTScore, per-category
-- [ ] At least 1 ablation (LR sweep or data fraction) — scripts ready, not yet run
+- [x] At least 1 ablation (LR=1e-5 + data_fraction=0.5 both complete)
 - [x] SLURM scripts in hpc/ (both stages)
 - [x] Training logs + loss curves in logs/
 - [x] Blog post in docs/blog_post.md (5 pages + appendix)
