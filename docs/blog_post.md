@@ -62,6 +62,10 @@ All training runs on **80GB NVIDIA A100 GPUs on UTSA's ARC**. SLURM batch script
 
 *Table 1.2: Training hyperparameters.*
 
+![Training loss curves for Stage 1 (Alpaca, 9552 steps) and Stage 2 (Teacher JSON, 124 steps)](../results/loss_curves.png)
+
+*Figure 1.1: Training loss curves. Stage 1 converges from ~2.1 to 0.91 over 9552 steps. Stage 2 converges rapidly from ~1.09 to 0.75 over 124 steps due to the small dataset size.*
+
 ### 1.7 Evaluation Protocol
 
 We evaluate three checkpoints: **ckpt0** (untuned base), **ckpt1** (after Stage 1), and **ckpt2** (after Stage 2). For each checkpoint, responses are generated on both the Alpaca eval set (150 prompts) and the JSON eval set (100 prompts) using greedy decoding (temperature=0.1, do_sample=False, max_new_tokens=512).
@@ -136,6 +140,10 @@ The key forgetting metrics are the deltas from ckpt1 → ckpt2 on Alpaca evaluat
 | JSON validity | 58.0% | 56.0% | -2.0pp |
 
 *Table 2.3: Forgetting analysis — ckpt1 → ckpt2 delta. Negative = regression. Judge win rates from direct ckpt1v2 pairwise comparison (n=145).*
+
+![Forgetting curve: metric deltas from ckpt1 to ckpt2 across evaluation dimensions](../results/forgetting_curve.png)
+
+*Figure 2.1: Forgetting curve showing ckpt1 → ckpt2 metric deltas. Positive values indicate improvement; negative values indicate regression. All deltas are near zero, confirming no catastrophic forgetting.*
 
 **There is no evidence of catastrophic forgetting on automatic metrics.** All Alpaca metrics are stable or slightly improved from ckpt1 to ckpt2. ROUGE-L increases by +0.003, BERTScore is essentially flat (within measurement noise). The -2pp drop in JSON validity and -0.7% completion rate are within the range of statistical noise given the 100/150 sample sizes.
 
